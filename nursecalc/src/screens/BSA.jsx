@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { bsaMosteller, bsaDose, lbToKg } from "../lib/calc-engine.js";
 import { runValidation } from "../lib/validation.js";
 import CalculatorShell from "../components/CalculatorShell.jsx";
-import { NumField, Toggle, WeightField } from "../components/Field.jsx";
+import { NumField, WeightField } from "../components/Field.jsx";
 import ResultCard from "../components/ResultCard.jsx";
 import WorkedSolution from "../components/WorkedSolution.jsx";
 
@@ -27,6 +27,7 @@ export default function BSA() {
     }
     const validation = runValidation({
       inputs: { "Height (cm)": heightCm, Weight: weight },
+      positive: { "Height (cm)": heightCm },
       weight: weight === "" ? null : weight,
       weightUnit,
     });
@@ -39,7 +40,15 @@ export default function BSA() {
       description="BSA = √[(height cm × weight kg) ÷ 3600]. Optionally compute a BSA-based dose (e.g. chemotherapy — always double-checked per protocol)."
       validation={validation}
       result={result}
-      resultSubline={result && weightUnit === "lb" ? `Weight converted: ${weight} lb ÷ 2.2 = ${(Number(weight) / 2.2).toFixed(2)} kg` : null}
+      resultSubline={result && weightUnit === "lb" ? `Weight converted: ${weight} lb ÷ 2.2 = ${lbToKg(Number(weight)).toFixed(2)} kg` : null}
+      extra={
+        doseResult && (
+          <>
+            <ResultCard result={doseResult} subline="BSA-based dose" />
+            <WorkedSolution result={doseResult} />
+          </>
+        )
+      }
     >
       <NumField label="Height" value={heightCm} onChange={setHeightCm} suffix="cm" placeholder="e.g. 165" />
       <WeightField weight={weight} setWeight={setWeight} weightUnit={weightUnit} setWeightUnit={setWeightUnit} />
@@ -50,12 +59,6 @@ export default function BSA() {
         suffix="mg/m²"
         placeholder="e.g. 75"
       />
-      {doseResult && (
-        <div className="space-y-4 border-t border-slate-200 pt-4 dark:border-slate-800">
-          <ResultCard result={doseResult} subline="BSA-based dose" />
-          <WorkedSolution result={doseResult} />
-        </div>
-      )}
     </CalculatorShell>
   );
 }

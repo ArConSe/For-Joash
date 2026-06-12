@@ -34,6 +34,10 @@ export default function SafeDoseRange() {
         [`Reference maximum (${unitLabel}/kg)`]: maxPerKg,
         Weight: weight,
       },
+      positive: {
+        [`Reference minimum (${unitLabel}/kg)`]: minPerKg,
+        [`Reference maximum (${unitLabel}/kg)`]: maxPerKg,
+      },
       weight: weight === "" ? null : weight,
       weightUnit,
       isPediatric,

@@ -20,13 +20,12 @@ export default function LiquidOral() {
         perVolume: Number(perVolume),
       });
     }
-    const validation = runValidation({
-      inputs: {
-        "Ordered dose (D)": desired,
-        "Strength on hand (H)": onHand,
-        "Vehicle volume (Q)": perVolume,
-      },
-    });
+    const inputs = {
+      "Ordered dose (D)": desired,
+      "Strength on hand (H)": onHand,
+      "Vehicle volume (Q)": perVolume,
+    };
+    const validation = runValidation({ inputs, positive: inputs });
     return { result, validation };
   }, [desired, onHand, perVolume, pristine]);
 

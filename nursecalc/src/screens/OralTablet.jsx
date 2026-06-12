@@ -15,8 +15,10 @@ export default function OralTablet() {
     if (Number(desired) > 0 && Number(onHand) > 0) {
       result = oralTablet({ desired: Number(desired), onHand: Number(onHand) });
     }
+    const inputs = { "Ordered dose (D)": desired, "Tablet strength on hand (H)": onHand };
     const validation = runValidation({
-      inputs: { "Ordered dose (D)": desired, "Tablet strength on hand (H)": onHand },
+      inputs,
+      positive: inputs,
       resultType: "oralTablet",
       resultValue: result?.value,
     });

@@ -70,6 +70,7 @@ export default function Titration() {
       inputs[`Total drug in bag (${isUnits ? "units" : "mg"})`] = customDrug;
       inputs["Total bag volume (mL)"] = customVol;
     }
+    const positive = { ...inputs }; // weight's zero case is owned by validateWeight
     if (needsWeight) inputs["Weight"] = weight;
 
     let result = null;
@@ -101,6 +102,7 @@ export default function Titration() {
 
     const v = runValidation({
       inputs,
+      positive,
       weight: needsWeight && weight !== "" ? weight : null,
       weightUnit,
       resultType: direction === "doseToRate" ? "rate" : null,

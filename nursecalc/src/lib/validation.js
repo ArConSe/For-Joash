@@ -129,15 +129,31 @@ export function validateDoseRange({ dose, doseRange, label = "dose" }) {
 }
 
 /**
+ * Greater-than-zero guard for fields where zero is as unusable as blank
+ * (times, volumes, concentrations, denominators). Pass the same fields
+ * through requireNumbers too — it owns the empty/NaN/negative cases, so
+ * this only flags exact zero to avoid duplicate messages.
+ */
+export function requirePositive(fields) {
+  const errors = [];
+  for (const [name, val] of Object.entries(fields)) {
+    if (val === "" || val === null || val === undefined) continue;
+    if (Number(val) === 0) errors.push(`${name} must be greater than zero.`);
+  }
+  return errors;
+}
+
+/**
  * Top-level runner a screen calls.
  * Returns the combined { errors, warnings, banners } object.
  */
-export function runValidation({ inputs = {}, weight, weightUnit, resultType, resultValue, drug, category, isPediatric }) {
+export function runValidation({ inputs = {}, positive = {}, weight, weightUnit, resultType, resultValue, drug, category, isPediatric }) {
   const errors = [];
   const warnings = [];
   let banners = [];
 
   errors.push(...requireNumbers(inputs));
+  errors.push(...requirePositive(positive));
 
   if (weight != null) {
     const w = validateWeight(Number(weight), weightUnit);

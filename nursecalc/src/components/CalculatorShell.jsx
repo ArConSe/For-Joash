@@ -19,6 +19,7 @@ export default function CalculatorShell({
   resultSubline,
   highAlert = false,
   drug,
+  extra,
   showResult = true,
 }) {
   const blocked = validation.errors.length > 0;
@@ -47,6 +48,7 @@ export default function CalculatorShell({
           </div>
           <ResultCard result={result} highAlert={highAlert} subline={resultSubline} />
           <WorkedSolution result={result} />
+          {extra}
           {drug && <NursingConsiderations drug={drug} />}
           <button onClick={() => window.print()} className="nc-btn-ghost no-print">
             🖨 Print / Save as PDF

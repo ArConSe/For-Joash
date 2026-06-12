@@ -26,6 +26,7 @@ export default function WeightBased() {
     }
     const validation = runValidation({
       inputs: { [`Dose per kg (${unitLabel}/kg)`]: dosePerKg, Weight: weight },
+      positive: { [`Dose per kg (${unitLabel}/kg)`]: dosePerKg },
       weight: weight === "" ? null : weight,
       weightUnit,
       isPediatric,

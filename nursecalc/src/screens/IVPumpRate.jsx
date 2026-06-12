@@ -19,11 +19,10 @@ export default function IVPumpRate() {
     if (Number(volumeMl) > 0 && hours > 0) {
       result = pumpRate({ volumeMl: Number(volumeMl), timeHr: hours });
     }
+    const timeValue = timeHr === "" && timeMin === "" ? "" : hours;
     const validation = runValidation({
-      inputs: {
-        "Volume (mL)": volumeMl,
-        "Infusion time": timeHr === "" && timeMin === "" ? "" : hours,
-      },
+      inputs: { "Volume (mL)": volumeMl, "Infusion time": timeValue },
+      positive: { "Volume (mL)": volumeMl, "Infusion time": timeValue },
       resultType: "pumpRate",
       resultValue: result?.value,
     });

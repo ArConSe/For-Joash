@@ -15,9 +15,8 @@ export default function Reconstitution() {
     if (Number(desired) > 0 && Number(conc) > 0) {
       result = reconstitution({ desired: Number(desired), reconstitutedConc: Number(conc) });
     }
-    const validation = runValidation({
-      inputs: { "Ordered dose (mg)": desired, "Reconstituted concentration (mg/mL)": conc },
-    });
+    const inputs = { "Ordered dose (mg)": desired, "Reconstituted concentration (mg/mL)": conc };
+    const validation = runValidation({ inputs, positive: inputs });
     return { result, validation };
   }, [desired, conc, pristine]);
 

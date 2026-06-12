@@ -16,9 +16,8 @@ export default function InfusionTime() {
     if (Number(volumeMl) > 0 && Number(rateMlHr) > 0) {
       result = infusionTime({ volumeMl: Number(volumeMl), rateMlHr: Number(rateMlHr) });
     }
-    const validation = runValidation({
-      inputs: { "Volume (mL)": volumeMl, "Rate (mL/hr)": rateMlHr },
-    });
+    const inputs = { "Volume (mL)": volumeMl, "Rate (mL/hr)": rateMlHr };
+    const validation = runValidation({ inputs, positive: inputs });
     return { result, validation };
   }, [volumeMl, rateMlHr, pristine]);
 

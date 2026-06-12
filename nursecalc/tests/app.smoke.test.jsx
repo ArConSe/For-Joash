@@ -66,6 +66,25 @@ describe("App", () => {
     expect(screen.queryByText(/gtt\/min$/)).toBeNull();
   });
 
+  it("zero time blocks with a clear error instead of failing silently", () => {
+    render(<App />);
+    type("Total volume", "1000");
+    type("Infusion time", "0");
+    expect(screen.getByText(/Infusion time must be greater than zero/i)).toBeTruthy();
+    expect(screen.queryByText(/gtt\/min$/)).toBeNull();
+  });
+
+  it("BSA optional mg/m² dose renders inside the printable area", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /BSA/i }));
+    type("Height", "165");
+    type("Patient weight", "70");
+    type("Ordered dose per m", "75");
+    // BSA 1.79 m² × 75 mg/m² = 134.25 mg, shown via the shell's print slot
+    expect(screen.getByText("134.25 mg")).toBeTruthy();
+    expect(screen.getByText("134.25 mg").closest(".print-area")).toBeTruthy();
+  });
+
   it("every remaining screen mounts without crashing", () => {
     render(<App />);
     for (const name of [

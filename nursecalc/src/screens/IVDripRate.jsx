@@ -26,11 +26,10 @@ export default function IVDripRate() {
     let result = null;
     if (Number(volumeMl) > 0 && timeMin > 0) {
       result = dripRate({ volumeMl: Number(volumeMl), timeMin, dropFactor: Number(dropFactor) });
-    } else if (time !== "" && Number(time) <= 0) {
-      inputs["Infusion time (must be > 0)"] = "";
     }
     const validation = runValidation({
       inputs,
+      positive: inputs,
       resultType: "dripRate",
       resultValue: result?.value,
     });

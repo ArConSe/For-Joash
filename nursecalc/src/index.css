@@ -41,9 +41,18 @@
 
 /* Print: result + worked solution only, clean one-pager */
 @media print {
+  /* Tailwind sizes/spacing are rem-based — shrinking the root compacts
+     the whole printout so result + solution + nursing card fit one A4 page */
+  html {
+    font-size: 11px;
+  }
   body {
     background: #fff !important;
     color: #000 !important;
+  }
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
   .no-print {
     display: none !important;

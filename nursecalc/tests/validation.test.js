@@ -2,6 +2,7 @@
 import { describe, it, expect } from "vitest";
 import {
   requireNumbers,
+  requirePositive,
   validateWeight,
   validateResult,
   validateDoseRange,
@@ -16,6 +17,19 @@ describe("requireNumbers", () => {
     expect(requireNumbers({ Dose: "abc" })).toHaveLength(1);
     expect(requireNumbers({ Dose: "-5" })).toHaveLength(1);
     expect(requireNumbers({ Dose: "5" })).toHaveLength(0);
+  });
+});
+
+describe("requirePositive", () => {
+  it("flags zero, leaves blanks/negatives to requireNumbers", () => {
+    expect(requirePositive({ Time: "0" })).toHaveLength(1);
+    expect(requirePositive({ Time: "" })).toHaveLength(0);
+    expect(requirePositive({ Time: "-5" })).toHaveLength(0);
+    expect(requirePositive({ Time: "8" })).toHaveLength(0);
+  });
+  it("runValidation blocks on a zero denominator without duplicating messages", () => {
+    const v = runValidation({ inputs: { Time: "0" }, positive: { Time: "0" } });
+    expect(v.errors).toEqual(["Time must be greater than zero."]);
   });
 });
 
