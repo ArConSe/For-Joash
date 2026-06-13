@@ -28,9 +28,9 @@ export default function DrugGuide({ focusDrugId = null }) {
         <h2 className="text-2xl font-bold">Drug Guide</h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           {ALL_DRUGS.length} handbook cards — critical-care drips plus high-yield ward and
-          emergency medications, paraphrased per Davis's Drug Guide. Doses are typical adult
-          references for learning; the order and facility policy always override. Pediatric
-          dosing defers to a pediatric reference.
+          emergency medications, paraphrased from open references (FDA labeling via DailyMed,
+          Open RN, StatPearls, WHO). Doses are typical adult references for learning; the order
+          and facility policy always override. Pediatric dosing defers to a pediatric reference.
         </p>
       </header>
 

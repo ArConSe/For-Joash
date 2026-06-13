@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "General drug-handbook cards for the Drug Guide screen (ward/emergency medications beyond the titration drips).",
-    "sourcing": "PARAPHRASED nursing implications grounded in Davis's Drug Guide, Mosby's Nursing Drug Reference, Lehne's, and Lilley — never verbatim monograph text. Dose summaries are typical adult references for learning; the prescriber's order and facility policy always override. Pediatric dosing defers to a pediatric reference.",
+    "sourcing": "Grounded in OPEN, freely available references: U.S. FDA prescribing information (DailyMed / openFDA), Open RN 'Nursing Pharmacology' (CC BY), StatPearls, MedlinePlus, and the WHO Model Formulary; AHA ACLS guidelines for the emergency drugs. Dose summaries and antidotes spot-verified against these sources (2025-2026) and are typical adult references for learning. PARAPHRASED nursing implications — never verbatim monograph text. The prescriber's order and facility policy always override; pediatric dosing defers to a pediatric reference.",
     "selection": "High-yield medications for nursing students and ward nurses (Philippine context): ACLS adjuncts, cardiac, anticoagulation, analgesia/sedation + reversal, seizures, respiratory, steroids, antibiotics, GI, concentrated electrolytes, obstetrics."
   },
   "drugs": [
@@ -19,7 +19,7 @@
         "holdNotify": "Tachydysrhythmias, chest pain, worsening rhythm.",
         "contraindication": "Angle-closure glaucoma; use caution in MI (tachycardia raises O2 demand).",
         "teaching": "Dry mouth and blurred vision are expected and transient.",
-        "source": "per Davis's Drug Guide"
+        "source": "per AHA ACLS guidelines & FDA labeling (DailyMed)"
       }
     },
     {
@@ -36,7 +36,7 @@
         "holdNotify": "Prolonged asystole, bronchospasm, persistent dysrhythmia.",
         "teaching": "Warn the patient FIRST: brief chest pressure, flushing, and a frightening 'sinking' feeling lasting seconds are expected.",
         "contraindication": "2nd/3rd-degree block or sick sinus without pacemaker; caution in asthma.",
-        "source": "per Davis's Drug Guide"
+        "source": "per AHA ACLS guidelines & FDA labeling (DailyMed)"
       }
     },
     {
@@ -52,7 +52,7 @@
         "holdNotify": "HR below cutoff, or toxicity signs: anorexia, nausea/vomiting (earliest), visual changes — halos, yellow-green tint — confusion, new dysrhythmias.",
         "antidote": "Digoxin immune Fab (DigiFab)",
         "teaching": "Take the pulse before each dose; same time daily; report appetite loss or visual changes immediately.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -68,7 +68,7 @@
         "monitor": "K+ (hypokalemia — watch with digoxin!), BP (orthostatic), strict I&O, daily weight, hearing (tinnitus = ototoxicity).",
         "holdNotify": "SBP below ordered floor, K+ below normal, no urine response, hearing changes.",
         "teaching": "Rise slowly; eat potassium-rich foods unless restricted; report ringing in ears; daily same-scale weights.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -83,7 +83,7 @@
         "monitor": "HR, BP, signs of HF (edema, dyspnea, weight gain), glucose in diabetics — beta blockade masks tachycardia of hypoglycemia.",
         "holdNotify": "Bradycardia, hypotension, wheezing (bronchospasm), worsening HF.",
         "teaching": "Never stop abruptly — taper (rebound hypertension/angina). Check pulse before doses. Diabetics: monitor glucose more closely.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -100,7 +100,7 @@
         "holdNotify": "SBP below ordered floor, K+ elevated, any facial/airway swelling.",
         "contraindication": "Pregnancy (fetal injury), history of ACE-inhibitor angioedema, bilateral renal artery stenosis.",
         "teaching": "Report a nagging dry cough (may need switch), swelling of lips/face immediately; avoid potassium salt substitutes.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -114,7 +114,7 @@
         "monitor": "BP and HR, peripheral edema (common, dose-related), dizziness, headache.",
         "holdNotify": "Symptomatic hypotension, worsening edema with dyspnea.",
         "teaching": "Edema of ankles is common — report if marked; rise slowly; do not stop abruptly; good oral hygiene (gingival hyperplasia is possible with CCBs).",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -130,7 +130,7 @@
         "holdNotify": "Active bleeding, melena, ringing in the ears.",
         "contraindication": "Children/teens with viral illness (Reye's syndrome), active GI bleed, aspirin allergy/asthma triad.",
         "teaching": "Take with food for daily use; report black stools; stop per surgeon's instruction before procedures.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -147,7 +147,7 @@
         "antidote": "Vitamin K (phytonadione); severe bleeding per protocol (PCC/FFP)",
         "contraindication": "Pregnancy (teratogenic), active bleeding.",
         "teaching": "Keep vitamin K intake CONSISTENT (don't binge or eliminate leafy greens); same time daily; regular INR checks; medical-alert ID; report blood in urine/stool, unusual bruising.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -163,7 +163,7 @@
         "holdNotify": "Active bleeding, platelet drop >50%, epidural catheter timing per policy (spinal hematoma risk).",
         "antidote": "Protamine sulfate (partial reversal)",
         "teaching": "Bruising at injection sites is common; report unusual bleeding; self-injection technique if going home on it.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -180,7 +180,7 @@
         "holdNotify": "RR <12, difficult to rouse, SBP below ordered floor.",
         "antidote": "Naloxone",
         "teaching": "Call for help before getting up (dizziness/falls); report nausea or itching; constipation prevention.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -195,7 +195,7 @@
         "monitor": "RR and sedation CONTINUOUSLY after response — naloxone is shorter-acting than most opioids, so re-sedation is common; repeat dosing may be needed. BP, HR, withdrawal signs.",
         "holdNotify": "Re-sedation, RR dropping again, agitation/withdrawal.",
         "teaching": "Family/caregiver: the patient must still be observed after waking — the overdose can outlast the antidote.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -211,7 +211,7 @@
         "holdNotify": "RR <12, hard to rouse, hypotension.",
         "antidote": "Flumazenil (caution: can provoke seizures in dependent patients)",
         "teaching": "No driving; avoid alcohol; fall precautions; do not stop long-term use abruptly.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -227,7 +227,7 @@
         "holdNotify": "Signs of hepatotoxicity: RUQ pain, jaundice, dark urine.",
         "antidote": "N-acetylcysteine (for overdose, per protocol)",
         "teaching": "Never exceed the daily maximum; check labels of other medicines for hidden paracetamol; limit alcohol.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -243,7 +243,7 @@
         "holdNotify": "GI bleeding signs, oliguria, worsening BP control.",
         "contraindication": "Active GI bleed/ulcer, third-trimester pregnancy, aspirin-sensitive asthma; caution in cardiac and renal disease.",
         "teaching": "Take with food; report black stools; avoid stacking with other NSAIDs; hydrate.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -258,7 +258,7 @@
         "monitor": "Phenytoin level, ECG/BP during IV loading, gait/nystagmus/ataxia (toxicity), gum changes, rash (stop if severe — SJS risk).",
         "holdNotify": "Toxicity signs, bradycardia/hypotension during infusion, rash.",
         "teaching": "Meticulous oral hygiene and dental visits (gingival hyperplasia); never stop abruptly (status epilepticus); reduces hormonal contraceptive effectiveness; same brand/timing daily.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -273,7 +273,7 @@
         "monitor": "Neuro status/ICP response, strict hourly I&O, serum osmolality and electrolytes, lungs — can precipitate pulmonary edema/HF as it pulls fluid intravascularly.",
         "holdNotify": "Anuria/no diuretic response, crackles/dyspnea, osmolality above protocol ceiling.",
         "contraindication": "Anuria, severe dehydration, active intracranial bleeding (relative, per order).",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -288,7 +288,7 @@
         "monitor": "Lung sounds and peak flow before/after, HR (tachycardia), tremor, potassium with frequent/continuous nebs (drives K+ into cells).",
         "holdNotify": "Paradoxical bronchospasm, chest pain, marked tachycardia.",
         "teaching": "This is the RESCUE inhaler — carry it always; correct MDI-spacer technique; increasing use means worsening control — see the provider.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -303,7 +303,7 @@
         "monitor": "Blood glucose (hyperglycemia — including non-diabetics), BP, K+ (hypokalemia), signs of infection (may be MASKED — fever may be absent), GI bleeding, mood changes.",
         "holdNotify": "Glucose persistently elevated, GI bleeding signs, signs of infection.",
         "teaching": "NEVER stop long-term steroids abruptly (adrenal crisis) — always taper; take with food; report black stools; expect possible mood/sleep changes; medical-alert ID for chronic use.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -319,7 +319,7 @@
         "monitor": "Hypersensitivity, IV site, diarrhea — watch for C. difficile (profuse/watery), superinfection (thrush).",
         "holdNotify": "Rash/anaphylaxis, severe diarrhea.",
         "teaching": "Complete the full course; report watery diarrhea even after finishing.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -334,7 +334,7 @@
         "monitor": "Trough level before the dose per policy, renal function (creatinine, urine output — nephrotoxic), hearing/tinnitus (ototoxic), IV site (irritant).",
         "holdNotify": "Rising creatinine, hearing changes, trough above target.",
         "teaching": "Report ringing in the ears or decreased hearing immediately.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -349,7 +349,7 @@
         "monitor": "Peak and trough levels per policy, creatinine and urine output (nephrotoxicity — usually reversible), tinnitus/vertigo/hearing loss (ototoxicity — often IRREVERSIBLE), vestibular signs.",
         "holdNotify": "Trough elevated, creatinine rising, any hearing/balance changes.",
         "teaching": "Report ringing ears, dizziness, or fullness in the head immediately; keep hydrated.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -365,7 +365,7 @@
         "holdNotify": "Any involuntary movements, severe restlessness.",
         "contraindication": "GI obstruction, perforation, or hemorrhage; Parkinson's disease; seizure disorder.",
         "teaching": "Report uncontrollable movements or restlessness immediately; avoid driving until effects known.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -380,7 +380,7 @@
         "monitor": "Symptom relief; with long-term use: magnesium level, B12, fracture risk, C. difficile-associated diarrhea.",
         "holdNotify": "Severe diarrhea, signs of hypomagnesemia (tremor, cramps, dysrhythmia).",
         "teaching": "Take before the first meal; long-term use only under provider guidance; report watery diarrhea.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -396,7 +396,7 @@
         "monitor": "Serum K+, ECG with higher rates, IV site (burning — slow the rate per policy), urine output.",
         "holdNotify": "Oliguria, K+ above range, ECG changes (peaked T waves), site pain/infiltration.",
         "teaching": "Take oral K+ with food and water, sitting upright; do not crush extended-release tablets; don't use salt substitutes on top of supplements.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -411,7 +411,7 @@
         "monitor": "ECG during IV administration, calcium level, IV site closely, BP.",
         "holdNotify": "Bradycardia, dysrhythmia, site pain/swelling.",
         "teaching": "Used as the antidote for magnesium sulfate toxicity and for cardiac protection in hyperkalemia — keep at bedside during mag infusions per protocol.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -427,7 +427,7 @@
         "monitor": "Contractions — frequency, duration, intensity, and RESTING TONE — and continuous FHR. Watch for tachysystole (>5 contractions/10 min) and non-reassuring FHR. Prolonged use: water intoxication (oxytocin is antidiuretic) — headache, confusion, hyponatremia. Postpartum: fundus and lochia.",
         "holdNotify": "STOP the infusion for tachysystole or non-reassuring FHR; reposition, fluids, O2 per protocol, notify provider immediately.",
         "teaching": "Explain the goal contraction pattern and why continuous monitoring is needed.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     }
   ]

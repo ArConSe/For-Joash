@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Seed presets for the NurseCalc Titration screen + Nursing Considerations cards.",
-    "sourcing": "Concentrations/dose ranges grounded in Davis's & Mosby's drug guides, ASHP Standardize 4 Safety, and ACLS references. Nursing considerations PARAPHRASED from Davis's Drug Guide nursing implications — do not reproduce monograph text verbatim. Standard concentrations are institution-variable presets; the prescriber's order and facility policy override. Pediatric dosing defers to a pediatric reference.",
+    "sourcing": "Grounded in OPEN, freely available references: U.S. FDA prescribing information (DailyMed / openFDA), Open RN 'Nursing Pharmacology' (CC BY), StatPearls, MedlinePlus, the WHO Model Formulary, and AHA ACLS guidelines for the cardiac drips. Dose ranges, antidotes, and high-alert handling spot-verified against these sources (2025-2026). Nursing considerations are PARAPHRASED — no copyrighted monograph text is reproduced. Standard concentrations are institution-variable presets; the prescriber's order and facility policy always override. Pediatric dosing defers to a pediatric reference.",
     "doseModes": {
       "mcgKgMin": "use doseToRateWeight / rateToDoseWeight",
       "mcgMin": "use doseToRateMcgMin",
@@ -21,10 +21,22 @@
       "lasa": "do NOT confuse dopamine with DOBUTamine",
       "doseMode": "mcgKgMin",
       "presets": [
-        { "label": "400 mg / 250 mL D5W", "totalDrugMg": 400, "totalVolumeMl": 250 },
-        { "label": "800 mg / 250 mL D5W", "totalDrugMg": 800, "totalVolumeMl": 250 }
+        {
+          "label": "400 mg / 250 mL D5W",
+          "totalDrugMg": 400,
+          "totalVolumeMl": 250
+        },
+        {
+          "label": "800 mg / 250 mL D5W",
+          "totalDrugMg": 800,
+          "totalVolumeMl": 250
+        }
       ],
-      "doseRange": { "min": 2, "max": 20, "unit": "mcg/kg/min" },
+      "doseRange": {
+        "min": 2,
+        "max": 20,
+        "unit": "mcg/kg/min"
+      },
       "rangeNote": "low/renal 2–5; cardiac/beta 5–10; vasopressor/alpha 10–20",
       "nursing": {
         "before": "Correct hypovolemia (fluids before pressors). Baseline BP, HR, ECG, urine output, IV site.",
@@ -34,7 +46,7 @@
         "extravasation": "Vesicant (boxed warning: tissue necrosis/sloughing/gangrene). Stop, do not flush, aspirate; antidote phentolamine + warm compress.",
         "teaching": "Report chest pain, palpitations, or pain/burning at the IV site immediately.",
         "antidote": "Phentolamine for extravasation",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -47,10 +59,22 @@
       "lasa": "do NOT confuse DOBUTamine with DOPamine",
       "doseMode": "mcgKgMin",
       "presets": [
-        { "label": "500 mg / 250 mL D5W", "totalDrugMg": 500, "totalVolumeMl": 250 },
-        { "label": "250 mg / 250 mL D5W", "totalDrugMg": 250, "totalVolumeMl": 250 }
+        {
+          "label": "500 mg / 250 mL D5W",
+          "totalDrugMg": 500,
+          "totalVolumeMl": 250
+        },
+        {
+          "label": "250 mg / 250 mL D5W",
+          "totalDrugMg": 250,
+          "totalVolumeMl": 250
+        }
       ],
-      "doseRange": { "min": 2, "max": 20, "unit": "mcg/kg/min" },
+      "doseRange": {
+        "min": 2,
+        "max": 20,
+        "unit": "mcg/kg/min"
+      },
       "rangeNote": "primarily inotrope (β1); may lower BP via vasodilation",
       "nursing": {
         "before": "Correct hypovolemia with volume expanders. Baseline VS, ECG.",
@@ -61,7 +85,7 @@
         "teaching": "Report chest pain, shortness of breath, or site pain immediately.",
         "antidote": "Phentolamine for extravasation",
         "contraindication": "Hypertrophic cardiomyopathy with outflow obstruction",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -74,10 +98,22 @@
       "doseMode": "mcgMin",
       "altDoseMode": "mcgKgMin",
       "presets": [
-        { "label": "4 mg / 250 mL (16 mcg/mL)", "totalDrugMg": 4, "totalVolumeMl": 250 },
-        { "label": "8 mg / 250 mL (32 mcg/mL)", "totalDrugMg": 8, "totalVolumeMl": 250 }
+        {
+          "label": "4 mg / 250 mL (16 mcg/mL)",
+          "totalDrugMg": 4,
+          "totalVolumeMl": 250
+        },
+        {
+          "label": "8 mg / 250 mL (32 mcg/mL)",
+          "totalDrugMg": 8,
+          "totalVolumeMl": 250
+        }
       ],
-      "doseRange": { "min": 2, "max": 30, "unit": "mcg/min" },
+      "doseRange": {
+        "min": 2,
+        "max": 30,
+        "unit": "mcg/min"
+      },
       "rangeNote": "first-line in septic shock; also dosed 0.01–1 mcg/kg/min",
       "nursing": {
         "before": "Ensure adequate volume. Baseline BP/HR. Central or large-bore antecubital line; avoid lower-extremity veins.",
@@ -87,7 +123,7 @@
         "extravasation": "Potent vesicant → ischemia/necrosis. Stop, aspirate; phentolamine.",
         "teaching": "Report site pain/burning immediately.",
         "antidote": "Phentolamine for extravasation",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -100,10 +136,22 @@
       "doseMode": "mcgMin",
       "altDoseMode": "mcgKgMin",
       "presets": [
-        { "label": "1 mg / 250 mL (4 mcg/mL)", "totalDrugMg": 1, "totalVolumeMl": 250 },
-        { "label": "2 mg / 250 mL (8 mcg/mL)", "totalDrugMg": 2, "totalVolumeMl": 250 }
+        {
+          "label": "1 mg / 250 mL (4 mcg/mL)",
+          "totalDrugMg": 1,
+          "totalVolumeMl": 250
+        },
+        {
+          "label": "2 mg / 250 mL (8 mcg/mL)",
+          "totalDrugMg": 2,
+          "totalVolumeMl": 250
+        }
       ],
-      "doseRange": { "min": 2, "max": 10, "unit": "mcg/min" },
+      "doseRange": {
+        "min": 2,
+        "max": 10,
+        "unit": "mcg/min"
+      },
       "rangeNote": "infusion ≠ arrest push dose; also 0.01–0.08 mcg/kg/min",
       "nursing": {
         "before": "Baseline VS, ECG, glucose (esp. diabetics).",
@@ -113,7 +161,7 @@
         "extravasation": "Vesicant (boxed warning). Stop, aspirate; phentolamine.",
         "teaching": "Report palpitations, chest pain, anxiety, or site pain.",
         "antidote": "Phentolamine for extravasation",
-        "source": "per Davis's Drug Guide"
+        "source": "per AHA ACLS guidelines & FDA labeling (DailyMed)"
       }
     },
     {
@@ -123,15 +171,25 @@
       "category": "pressor",
       "highAlert": true,
       "doseMode": "mcgMin",
-      "presets": [{ "label": "50 mg / 250 mL (200 mcg/mL)", "totalDrugMg": 50, "totalVolumeMl": 250 }],
-      "doseRange": { "min": 40, "max": 180, "unit": "mcg/min" },
+      "presets": [
+        {
+          "label": "50 mg / 250 mL (200 mcg/mL)",
+          "totalDrugMg": 50,
+          "totalVolumeMl": 250
+        }
+      ],
+      "doseRange": {
+        "min": 40,
+        "max": 180,
+        "unit": "mcg/min"
+      },
       "rangeNote": "pure alpha; watch reflex bradycardia",
       "nursing": {
         "before": "Correct volume. Baseline VS.",
         "monitor": "BP and HR — reflex bradycardia as BP rises; urine output/perfusion.",
         "holdNotify": "Bradycardia, BP outside target.",
         "extravasation": "Vasoconstrictor — vesicant precautions; phentolamine.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -141,13 +199,23 @@
       "category": "pressor",
       "highAlert": true,
       "doseMode": "unitsHr",
-      "presets": [{ "label": "20 units / 100 mL (0.2 units/mL)", "totalUnits": 20, "totalVolumeMl": 100 }],
-      "doseRange": { "min": 0.03, "max": 0.04, "unit": "units/min" },
+      "presets": [
+        {
+          "label": "20 units / 100 mL (0.2 units/mL)",
+          "totalUnits": 20,
+          "totalVolumeMl": 100
+        }
+      ],
+      "doseRange": {
+        "min": 0.03,
+        "max": 0.04,
+        "unit": "units/min"
+      },
       "rangeNote": "fixed dose, NOT titrated; adjunct to norepinephrine",
       "nursing": {
         "administration": "Fixed dose; adjunct in septic shock.",
         "monitor": "BP, perfusion, urine output; watch for peripheral/mesenteric ischemia.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -158,10 +226,22 @@
       "highAlert": true,
       "doseMode": "mgMin",
       "presets": [
-        { "label": "Maintenance 900 mg / 500 mL D5W", "totalDrugMg": 900, "totalVolumeMl": 500 },
-        { "label": "Maintenance 450 mg / 250 mL D5W", "totalDrugMg": 450, "totalVolumeMl": 250 }
+        {
+          "label": "Maintenance 900 mg / 500 mL D5W",
+          "totalDrugMg": 900,
+          "totalVolumeMl": 500
+        },
+        {
+          "label": "Maintenance 450 mg / 250 mL D5W",
+          "totalDrugMg": 450,
+          "totalVolumeMl": 250
+        }
       ],
-      "doseRange": { "min": 0.5, "max": 1, "unit": "mg/min" },
+      "doseRange": {
+        "min": 0.5,
+        "max": 1,
+        "unit": "mg/min"
+      },
       "rangeNote": "stable VT: 150 mg over 10 min, then 1 mg/min ×6 hr, then 0.5 mg/min ×18 hr. Use D5W.",
       "nursing": {
         "before": "Baseline BP, HR, continuous ECG.",
@@ -169,7 +249,7 @@
         "monitor": "Continuous ECG (QT prolongation, bradycardia), BP (hypotension with rapid infusion), IV site (phlebitis).",
         "holdNotify": "Significant bradycardia, hypotension, QT prolongation.",
         "contraindication": "Pregnancy/lactation (Category D)",
-        "source": "per Davis's Drug Guide"
+        "source": "per AHA ACLS guidelines & FDA labeling (DailyMed)"
       }
     },
     {
@@ -180,15 +260,27 @@
       "highAlert": true,
       "doseMode": "mgMin",
       "presets": [
-        { "label": "1 g / 250 mL (4 mg/mL)", "totalDrugMg": 1000, "totalVolumeMl": 250 },
-        { "label": "2 g / 250 mL (8 mg/mL)", "totalDrugMg": 2000, "totalVolumeMl": 250 }
+        {
+          "label": "1 g / 250 mL (4 mg/mL)",
+          "totalDrugMg": 1000,
+          "totalVolumeMl": 250
+        },
+        {
+          "label": "2 g / 250 mL (8 mg/mL)",
+          "totalDrugMg": 2000,
+          "totalVolumeMl": 250
+        }
       ],
-      "doseRange": { "min": 1, "max": 4, "unit": "mg/min" },
+      "doseRange": {
+        "min": 1,
+        "max": 4,
+        "unit": "mg/min"
+      },
       "rangeNote": "bolus 1–1.5 mg/kg; antiarrhythmic alternative to amiodarone",
       "nursing": {
         "monitor": "ECG, BP; watch CNS toxicity — confusion, slurred speech, perioral numbness, tremor, seizures.",
         "holdNotify": "Any neuro toxicity signs.",
-        "source": "per Davis's Drug Guide"
+        "source": "per AHA ACLS guidelines & FDA labeling (DailyMed)"
       }
     },
     {
@@ -199,15 +291,25 @@
       "highAlert": true,
       "lasa": "nitroglycerin vs nitroprusside — verify carefully",
       "doseMode": "mcgMin",
-      "presets": [{ "label": "50 mg / 250 mL (200 mcg/mL)", "totalDrugMg": 50, "totalVolumeMl": 250 }],
-      "doseRange": { "min": 5, "max": 200, "unit": "mcg/min" },
+      "presets": [
+        {
+          "label": "50 mg / 250 mL (200 mcg/mL)",
+          "totalDrugMg": 50,
+          "totalVolumeMl": 250
+        }
+      ],
+      "doseRange": {
+        "min": 5,
+        "max": 200,
+        "unit": "mcg/min"
+      },
       "rangeNote": "start 5 mcg/min, titrate; non-PVC tubing ideal",
       "nursing": {
         "before": "Baseline BP/HR; confirm SBP adequate. Ask about PDE inhibitors (sildenafil/tadalafil) — combination causes profound hypotension.",
         "administration": "Non-PVC tubing (drug adsorbs to PVC). Ordered in mcg/min.",
         "monitor": "BP frequently/continuously, HR (reflex tachycardia), headache (common), chest-pain relief.",
         "holdNotify": "SBP below ordered floor (commonly <90), worsening hypotension.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -217,13 +319,23 @@
       "category": "vasodilator",
       "highAlert": true,
       "doseMode": "mgHr",
-      "presets": [{ "label": "25 mg / 250 mL (0.1 mg/mL)", "totalDrugMg": 25, "totalVolumeMl": 250 }],
-      "doseRange": { "min": 5, "max": 15, "unit": "mg/hr" },
+      "presets": [
+        {
+          "label": "25 mg / 250 mL (0.1 mg/mL)",
+          "totalDrugMg": 25,
+          "totalVolumeMl": 250
+        }
+      ],
+      "doseRange": {
+        "min": 5,
+        "max": 15,
+        "unit": "mg/hr"
+      },
       "rangeNote": "start 5 mg/hr, ↑2.5 mg/hr q5–15 min, max 15 mg/hr (ordered in mg/hr)",
       "nursing": {
         "administration": "Ordered in mg/hr (not mcg/kg/min). Start 5 mg/hr, max 15 mg/hr.",
         "monitor": "BP and HR continuously; reflex tachycardia; rotate IV site per policy (phlebitis).",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -234,15 +346,25 @@
       "highAlert": true,
       "lasa": "nitroprusside vs nitroglycerin — verify carefully",
       "doseMode": "mcgKgMin",
-      "presets": [{ "label": "50 mg / 250 mL D5W (200 mcg/mL)", "totalDrugMg": 50, "totalVolumeMl": 250 }],
-      "doseRange": { "min": 0.3, "max": 10, "unit": "mcg/kg/min" },
+      "presets": [
+        {
+          "label": "50 mg / 250 mL D5W (200 mcg/mL)",
+          "totalDrugMg": 50,
+          "totalVolumeMl": 250
+        }
+      ],
+      "doseRange": {
+        "min": 0.3,
+        "max": 10,
+        "unit": "mcg/kg/min"
+      },
       "rangeNote": "start ~0.3 mcg/kg/min, titrate; do not hold max dose long; cyanide risk",
       "nursing": {
         "before": "Baseline BP, renal/hepatic function. ICU-level monitoring.",
         "administration": "Protect from light (wrap bag). D5W. Fast, reversible.",
         "monitor": "Continuous arterial BP; cyanide/thiocyanate toxicity — metabolic acidosis, AMS, dyspnea, bradycardia, seizures; thiocyanate level on/after day 3.",
         "holdNotify": "Toxicity signs; hypotension below target.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -252,8 +374,18 @@
       "category": "anticoagulant",
       "highAlert": true,
       "doseMode": "unitsHr",
-      "presets": [{ "label": "25,000 units / 250 mL (100 units/mL)", "totalUnits": 25000, "totalVolumeMl": 250 }],
-      "doseRange": { "min": 12, "max": 18, "unit": "units/kg/hr (per nomogram)" },
+      "presets": [
+        {
+          "label": "25,000 units / 250 mL (100 units/mL)",
+          "totalUnits": 25000,
+          "totalVolumeMl": 250
+        }
+      ],
+      "doseRange": {
+        "min": 12,
+        "max": 18,
+        "unit": "units/kg/hr (per nomogram)"
+      },
       "rangeNote": "weight-based per protocol/nomogram",
       "nursing": {
         "before": "Baseline aPTT/anti-Xa, CBC/platelets, weight. Never interchange flush vs infusion concentration — read the label.",
@@ -261,7 +393,7 @@
         "monitor": "aPTT or anti-Xa per protocol; platelets (HIT); bleeding (gums, urine, stool, IV sites, neuro changes).",
         "holdNotify": "Active bleeding, platelet drop, critical aPTT.",
         "antidote": "Protamine sulfate",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -271,15 +403,25 @@
       "category": "insulin",
       "highAlert": true,
       "doseMode": "unitsHr",
-      "presets": [{ "label": "100 units / 100 mL NS (1 unit/mL)", "totalUnits": 100, "totalVolumeMl": 100 }],
-      "doseRange": { "min": 0.1, "max": 0.1, "unit": "units/kg/hr (per DKA protocol)" },
+      "presets": [
+        {
+          "label": "100 units / 100 mL NS (1 unit/mL)",
+          "totalUnits": 100,
+          "totalVolumeMl": 100
+        }
+      ],
+      "doseRange": {
+        "min": 0.1,
+        "max": 0.1,
+        "unit": "units/kg/hr (per DKA protocol)"
+      },
       "rangeNote": "per DKA/glucose protocol; typically 0.1 unit/kg/hr",
       "nursing": {
         "before": "Baseline glucose, potassium. Dedicated line. Two-nurse check.",
         "administration": "1 unit/mL standard. Never confuse units with mL. Prime tubing (insulin adsorbs to plastic).",
         "monitor": "Finger-stick glucose q1h (q30min during titration); potassium (hypokalemia). Add dextrose per protocol when glucose <250 mg/dL.",
         "holdNotify": "Hypoglycemia, hypokalemia.",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     },
     {
@@ -289,14 +431,24 @@
       "category": "electrolyte",
       "highAlert": true,
       "doseMode": "mgHr",
-      "presets": [{ "label": "20 g / 500 mL", "totalDrugMg": 20000, "totalVolumeMl": 500 }],
-      "doseRange": { "min": 1000, "max": 2000, "unit": "mg/hr (1–2 g/hr)" },
+      "presets": [
+        {
+          "label": "20 g / 500 mL",
+          "totalDrugMg": 20000,
+          "totalVolumeMl": 500
+        }
+      ],
+      "doseRange": {
+        "min": 1000,
+        "max": 2000,
+        "unit": "mg/hr (1–2 g/hr)"
+      },
       "rangeNote": "OB/torsades per protocol",
       "nursing": {
         "monitor": "Deep tendon reflexes (loss = early toxicity), respiratory rate, BP, urine output, mag level.",
         "holdNotify": "Absent reflexes, RR <12, respiratory depression.",
         "antidote": "Calcium gluconate",
-        "source": "per Davis's Drug Guide"
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     }
   ]

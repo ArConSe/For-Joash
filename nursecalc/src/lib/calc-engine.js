@@ -5,9 +5,9 @@
  * Every function returns: { value, unit, steps: [], methods: {...} }
  * so the UI can render the answer AND the worked solution in all 3 methods.
  *
- * Formulas grounded in: Open RN / OpenStax dosage-calculation curriculum,
- * Gray Morris "Calculate with Confidence", Lippincott pocket card,
- * and the named nursing drug handbooks (see reference doc).
+ * Formulas grounded in open references: the Open RN / OpenStax
+ * dosage-calculation curriculum (CC BY) and standard dimensional-analysis
+ * method (D = Desired, H = on-Hand, Q = Quantity).
  *
  * Conventions:
  *   D = Desired dose (ordered)   H = on-Hand dose (available strength)

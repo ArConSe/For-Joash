@@ -47,10 +47,18 @@ npm run build    # production bundle in dist/
 
 ## Clinical sourcing
 
-Formulas trace to `NurseCalc_Formula_and_Drug_Reference.md` (Open RN / OpenStax curriculum,
-Gray Morris, and the named nursing drug handbooks). Drug data is paraphrased ("per Davis's
-Drug Guide") — never verbatim monograph text. Pediatric dosing defers to a pediatric
-reference and facility protocol.
+Open, freely available references only — knowledge that shouldn't be paywalled:
+
+- **Formulas** — Open RN / OpenStax dosage-calculation curriculum (CC BY), cross-checked against
+  the Gray Morris worked examples.
+- **Drug data** — paraphrased from U.S. FDA prescribing information (DailyMed / openFDA), Open RN
+  *Nursing Pharmacology* (CC BY), StatPearls, MedlinePlus, the WHO Model Formulary, and AHA ACLS
+  guidelines for the emergency/cardiac drugs. Each card carries its citation; dose ranges,
+  antidotes, and high-alert handling were spot-verified against these sources (2025–2026).
+
+No copyrighted monograph text (Davis's, Lippincott, Mosby's) is reproduced. Standard concentrations
+are institution-variable presets; the prescriber's order and facility policy always override.
+Pediatric dosing defers to a pediatric reference and facility protocol.
 
 ## Roadmap (per BUILD.md)
 

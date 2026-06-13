@@ -144,6 +144,8 @@ describe("App", () => {
     expect(screen.getByText(/Nursing Considerations — heparin/i)).toBeTruthy();
     expect(screen.getByText(/Protamine sulfate/i)).toBeTruthy();
     expect(screen.getByText(/25,000 units \/ 250 mL/i)).toBeTruthy();
+    // open-source citation (no proprietary handbook attribution)
+    expect(screen.getAllByText(/DailyMed/i).length).toBeGreaterThan(0);
   });
 
   it("drug guide: ward medication card shows dose summary and antidote", () => {

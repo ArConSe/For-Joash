@@ -92,8 +92,9 @@ export default function App() {
         <footer className="mt-8 border-t border-slate-200 pt-4 text-center text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
           <p className="font-semibold">⚕️ {DISCLAIMER}</p>
           <p className="no-print mt-1">
-            Formulas per Open RN / OpenStax dosage-calculation curriculum; drug data paraphrased per
-            Davis's Drug Guide and Mosby's. Offline — no data leaves this device.
+            Formulas per Open RN / OpenStax (CC BY) dosage-calculation curriculum; drug data
+            paraphrased from open references — FDA labeling (DailyMed), Open RN, StatPearls, WHO.
+            Offline — no data leaves this device.
           </p>
         </footer>
       </main>

@@ -7,8 +7,8 @@
  *   - warnings→ non-blocking. Show alongside the result.
  *   - banners → standing notices (e.g. high-alert 2-nurse check).
  *
- * Principles reflect ISMP high-alert medication handling as expressed
- * in the nursing drug handbooks (Davis's / Mosby's "High Alert").
+ * Principles reflect the ISMP List of High-Alert Medications
+ * (freely published by the Institute for Safe Medication Practices).
  * ------------------------------------------------------------------
  */
 
