@@ -85,6 +85,33 @@ describe("App", () => {
     expect(screen.getByText("134.25 mg").closest(".print-area")).toBeTruthy();
   });
 
+  it("drug guide: searches and opens a drip card", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Drug Guide/i }));
+    // both libraries listed initially
+    expect(screen.getByText(/norepinephrine/i)).toBeTruthy();
+    expect(screen.getByText(/salbutamol/i)).toBeTruthy();
+    // search narrows
+    fireEvent.change(screen.getByLabelText(/Search drugs/i), { target: { value: "heparin" } });
+    expect(screen.queryByText(/norepinephrine/i)).toBeNull();
+    // expanding shows banners + nursing card + concentrations
+    fireEvent.click(screen.getByRole("button", { name: /^heparin/i }));
+    expect(screen.getAllByText(/HIGH ALERT/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Nursing Considerations — heparin/i)).toBeTruthy();
+    expect(screen.getByText(/Protamine sulfate/i)).toBeTruthy();
+    expect(screen.getByText(/25,000 units \/ 250 mL/i)).toBeTruthy();
+  });
+
+  it("drug guide: ward medication card shows dose summary and antidote", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Drug Guide/i }));
+    fireEvent.change(screen.getByLabelText(/Search drugs/i), { target: { value: "paracetamol" } });
+    fireEvent.click(screen.getByRole("button", { name: /paracetamol/i }));
+    expect(screen.getByText(/Typical adult dosing/i)).toBeTruthy();
+    expect(screen.getByText(/N-acetylcysteine/i)).toBeTruthy();
+    expect(screen.getByText(/Nursing Considerations — paracetamol/i)).toBeTruthy();
+  });
+
   it("every remaining screen mounts without crashing", () => {
     render(<App />);
     for (const name of [

@@ -1,0 +1,434 @@
+{
+  "_meta": {
+    "purpose": "General drug-handbook cards for the Drug Guide screen (ward/emergency medications beyond the titration drips).",
+    "sourcing": "PARAPHRASED nursing implications grounded in Davis's Drug Guide, Mosby's Nursing Drug Reference, Lehne's, and Lilley — never verbatim monograph text. Dose summaries are typical adult references for learning; the prescriber's order and facility policy always override. Pediatric dosing defers to a pediatric reference.",
+    "selection": "High-yield medications for nursing students and ward nurses (Philippine context): ACLS adjuncts, cardiac, anticoagulation, analgesia/sedation + reversal, seizures, respiratory, steroids, antibiotics, GI, concentrated electrolytes, obstetrics."
+  },
+  "drugs": [
+    {
+      "id": "atropine",
+      "generic": "atropine",
+      "brand": "—",
+      "category": "anticholinergic",
+      "highAlert": false,
+      "doseSummary": "Symptomatic bradycardia: 0.5–1 mg IV q3–5 min, max 3 mg (ACLS)",
+      "nursing": {
+        "before": "Baseline HR, rhythm, BP. Continuous ECG during use.",
+        "administration": "Rapid IV push; doses under 0.5 mg in adults can cause paradoxical bradycardia.",
+        "monitor": "HR/rhythm response, anticholinergic effects — dry mouth, urinary retention, blurred vision, confusion (elderly).",
+        "holdNotify": "Tachydysrhythmias, chest pain, worsening rhythm.",
+        "contraindication": "Angle-closure glaucoma; use caution in MI (tachycardia raises O2 demand).",
+        "teaching": "Dry mouth and blurred vision are expected and transient.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "adenosine",
+      "generic": "adenosine",
+      "brand": "Adenocard",
+      "category": "antiarrhythmic",
+      "highAlert": false,
+      "doseSummary": "Stable SVT: 6 mg rapid IV push, then 12 mg if no conversion (ACLS)",
+      "nursing": {
+        "before": "Continuous ECG and emergency equipment at bedside. Large-bore IV as proximal as possible (antecubital).",
+        "administration": "Push over 1–2 seconds, immediately followed by a 20 mL NS flush; half-life is seconds.",
+        "monitor": "ECG during push — a brief pause/asystole is expected before conversion. BP, HR.",
+        "holdNotify": "Prolonged asystole, bronchospasm, persistent dysrhythmia.",
+        "teaching": "Warn the patient FIRST: brief chest pressure, flushing, and a frightening 'sinking' feeling lasting seconds are expected.",
+        "contraindication": "2nd/3rd-degree block or sick sinus without pacemaker; caution in asthma.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "digoxin",
+      "generic": "digoxin",
+      "brand": "Lanoxin",
+      "category": "cardiac glycoside",
+      "highAlert": false,
+      "doseSummary": "Maintenance 0.125–0.25 mg PO/IV daily; therapeutic level 0.5–2 ng/mL",
+      "nursing": {
+        "before": "Apical pulse for one FULL minute — hold and notify if <60/min in adults (peds threshold per pediatric reference). Check potassium: hypokalemia potentiates toxicity.",
+        "monitor": "Digoxin level, K+/Mg2+/Ca2+, renal function, HR and rhythm.",
+        "holdNotify": "HR below cutoff, or toxicity signs: anorexia, nausea/vomiting (earliest), visual changes — halos, yellow-green tint — confusion, new dysrhythmias.",
+        "antidote": "Digoxin immune Fab (DigiFab)",
+        "teaching": "Take the pulse before each dose; same time daily; report appetite loss or visual changes immediately.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "furosemide",
+      "generic": "furosemide",
+      "brand": "Lasix",
+      "category": "loop diuretic",
+      "highAlert": false,
+      "doseSummary": "20–80 mg PO/IV; IV push slowly (≤20 mg/min) — rapid push risks ototoxicity",
+      "nursing": {
+        "before": "Baseline BP, K+, renal function, weight.",
+        "administration": "Give in the morning (and early afternoon if BID) to avoid nocturia. Slow IV push.",
+        "monitor": "K+ (hypokalemia — watch with digoxin!), BP (orthostatic), strict I&O, daily weight, hearing (tinnitus = ototoxicity).",
+        "holdNotify": "SBP below ordered floor, K+ below normal, no urine response, hearing changes.",
+        "teaching": "Rise slowly; eat potassium-rich foods unless restricted; report ringing in ears; daily same-scale weights.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "metoprolol",
+      "generic": "metoprolol",
+      "brand": "Lopressor",
+      "category": "beta blocker",
+      "highAlert": false,
+      "doseSummary": "25–100 mg PO BID (tartrate); IV 5 mg slow push per protocol",
+      "nursing": {
+        "before": "Apical pulse and BP — hold and clarify if HR <60 or SBP <100 (or per order/policy).",
+        "monitor": "HR, BP, signs of HF (edema, dyspnea, weight gain), glucose in diabetics — beta blockade masks tachycardia of hypoglycemia.",
+        "holdNotify": "Bradycardia, hypotension, wheezing (bronchospasm), worsening HF.",
+        "teaching": "Never stop abruptly — taper (rebound hypertension/angina). Check pulse before doses. Diabetics: monitor glucose more closely.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "captopril",
+      "generic": "captopril",
+      "brand": "Capoten",
+      "category": "ACE inhibitor",
+      "highAlert": false,
+      "doseSummary": "12.5–50 mg PO BID–TID, 1 hour before meals",
+      "nursing": {
+        "before": "Baseline BP — first-dose hypotension is common; give the first dose with the patient lying down if possible.",
+        "administration": "Empty stomach (food reduces absorption).",
+        "monitor": "BP, K+ (hyperkalemia — no salt substitutes), renal function, persistent dry cough, angioedema (face/lip/tongue swelling = emergency).",
+        "holdNotify": "SBP below ordered floor, K+ elevated, any facial/airway swelling.",
+        "contraindication": "Pregnancy (fetal injury), history of ACE-inhibitor angioedema, bilateral renal artery stenosis.",
+        "teaching": "Report a nagging dry cough (may need switch), swelling of lips/face immediately; avoid potassium salt substitutes.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "amlodipine",
+      "generic": "amlodipine",
+      "brand": "Norvasc",
+      "category": "calcium channel blocker",
+      "highAlert": false,
+      "doseSummary": "2.5–10 mg PO once daily",
+      "nursing": {
+        "monitor": "BP and HR, peripheral edema (common, dose-related), dizziness, headache.",
+        "holdNotify": "Symptomatic hypotension, worsening edema with dyspnea.",
+        "teaching": "Edema of ankles is common — report if marked; rise slowly; do not stop abruptly; good oral hygiene (gingival hyperplasia is possible with CCBs).",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "aspirin",
+      "generic": "aspirin (acetylsalicylic acid)",
+      "brand": "Aspilets",
+      "category": "antiplatelet",
+      "highAlert": false,
+      "doseSummary": "ACS: 162–325 mg chewed (non–enteric-coated); prophylaxis 75–100 mg daily",
+      "nursing": {
+        "administration": "For suspected ACS, have the patient CHEW non–enteric-coated aspirin for fast absorption.",
+        "monitor": "Bleeding (gums, stool, urine, bruising), GI pain, tinnitus (salicylate toxicity sign).",
+        "holdNotify": "Active bleeding, melena, ringing in the ears.",
+        "contraindication": "Children/teens with viral illness (Reye's syndrome), active GI bleed, aspirin allergy/asthma triad.",
+        "teaching": "Take with food for daily use; report black stools; stop per surgeon's instruction before procedures.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "warfarin",
+      "generic": "warfarin",
+      "brand": "Coumadin",
+      "category": "anticoagulant",
+      "highAlert": true,
+      "doseSummary": "2–10 mg PO daily, individualized to INR (usual target 2–3)",
+      "nursing": {
+        "before": "Baseline PT/INR; review for interactions — warfarin interacts with very many drugs and foods.",
+        "monitor": "INR per protocol, bleeding precautions (soft toothbrush, electric razor), Hgb/Hct, occult blood.",
+        "holdNotify": "INR above target range, any active bleeding, falls/head injury.",
+        "antidote": "Vitamin K (phytonadione); severe bleeding per protocol (PCC/FFP)",
+        "contraindication": "Pregnancy (teratogenic), active bleeding.",
+        "teaching": "Keep vitamin K intake CONSISTENT (don't binge or eliminate leafy greens); same time daily; regular INR checks; medical-alert ID; report blood in urine/stool, unusual bruising.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "enoxaparin",
+      "generic": "enoxaparin",
+      "brand": "Clexane / Lovenox",
+      "category": "anticoagulant",
+      "highAlert": true,
+      "doseSummary": "Prophylaxis 40 mg subcut daily; treatment 1 mg/kg subcut q12h (renal-adjusted)",
+      "nursing": {
+        "administration": "Deep subcut into the abdominal 'love handles' (anterolateral wall), alternate sides; do NOT expel the prefilled air bubble; do NOT rub the site; do not aspirate.",
+        "monitor": "Bleeding, platelets (HIT), anti-Xa level if ordered (renal impairment, obesity, pregnancy); renal function.",
+        "holdNotify": "Active bleeding, platelet drop >50%, epidural catheter timing per policy (spinal hematoma risk).",
+        "antidote": "Protamine sulfate (partial reversal)",
+        "teaching": "Bruising at injection sites is common; report unusual bleeding; self-injection technique if going home on it.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "morphine",
+      "generic": "morphine sulfate",
+      "brand": "—",
+      "category": "opioid analgesic",
+      "highAlert": true,
+      "doseSummary": "2–10 mg IV slow push (over 4–5 min) q3–4h PRN, individualized",
+      "nursing": {
+        "before": "Pain score, respiratory rate and sedation level — hold and notify if RR <12 or oversedated; baseline BP.",
+        "administration": "Dilute and push slowly; have naloxone and resuscitation equipment available.",
+        "monitor": "RR, sedation scale (sedation precedes respiratory depression), BP (hypotension), pain relief, urinary retention, constipation (give prescribed bowel regimen).",
+        "holdNotify": "RR <12, difficult to rouse, SBP below ordered floor.",
+        "antidote": "Naloxone",
+        "teaching": "Call for help before getting up (dizziness/falls); report nausea or itching; constipation prevention.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "naloxone",
+      "generic": "naloxone",
+      "brand": "Narcan",
+      "category": "opioid antagonist",
+      "highAlert": false,
+      "doseSummary": "0.4–2 mg IV/IM/intranasal, repeat q2–3 min as needed",
+      "nursing": {
+        "administration": "Titrate to adequate breathing — full reversal also reverses analgesia and can precipitate acute withdrawal.",
+        "monitor": "RR and sedation CONTINUOUSLY after response — naloxone is shorter-acting than most opioids, so re-sedation is common; repeat dosing may be needed. BP, HR, withdrawal signs.",
+        "holdNotify": "Re-sedation, RR dropping again, agitation/withdrawal.",
+        "teaching": "Family/caregiver: the patient must still be observed after waking — the overdose can outlast the antidote.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "diazepam",
+      "generic": "diazepam",
+      "brand": "Valium",
+      "category": "benzodiazepine",
+      "highAlert": true,
+      "doseSummary": "Status epilepticus: 5–10 mg IV slow (≤5 mg/min), may repeat per protocol",
+      "nursing": {
+        "administration": "Inject slowly into a large vein (phlebitis/tissue irritation); do NOT mix with other drugs in the same syringe; IM absorption is erratic.",
+        "monitor": "RR and airway (respiratory depression, worse with opioids/alcohol), BP, sedation level, seizure activity.",
+        "holdNotify": "RR <12, hard to rouse, hypotension.",
+        "antidote": "Flumazenil (caution: can provoke seizures in dependent patients)",
+        "teaching": "No driving; avoid alcohol; fall precautions; do not stop long-term use abruptly.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "paracetamol",
+      "generic": "paracetamol (acetaminophen)",
+      "brand": "Biogesic / Tylenol",
+      "category": "analgesic-antipyretic",
+      "highAlert": false,
+      "doseSummary": "500 mg–1 g PO/IV q4–6h; max 4 g/day adult (lower with hepatic risk/alcohol use)",
+      "nursing": {
+        "administration": "COUNT ALL SOURCES — many combination cold/pain products contain paracetamol; the daily max is cumulative.",
+        "monitor": "Temperature/pain response; hepatic function with prolonged or high-dose use.",
+        "holdNotify": "Signs of hepatotoxicity: RUQ pain, jaundice, dark urine.",
+        "antidote": "N-acetylcysteine (for overdose, per protocol)",
+        "teaching": "Never exceed the daily maximum; check labels of other medicines for hidden paracetamol; limit alcohol.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "ibuprofen",
+      "generic": "ibuprofen",
+      "brand": "Advil / Medicol",
+      "category": "NSAID",
+      "highAlert": false,
+      "doseSummary": "200–400 mg PO q4–6h with food; max 1.2 g/day OTC (higher per prescriber)",
+      "nursing": {
+        "administration": "Give with food or milk to reduce GI upset.",
+        "monitor": "GI bleeding (black stools, epigastric pain), renal function/urine output (especially elderly, dehydrated, or on ACE inhibitors/diuretics), BP, edema.",
+        "holdNotify": "GI bleeding signs, oliguria, worsening BP control.",
+        "contraindication": "Active GI bleed/ulcer, third-trimester pregnancy, aspirin-sensitive asthma; caution in cardiac and renal disease.",
+        "teaching": "Take with food; report black stools; avoid stacking with other NSAIDs; hydrate.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "phenytoin",
+      "generic": "phenytoin",
+      "brand": "Dilantin",
+      "category": "anticonvulsant",
+      "highAlert": false,
+      "doseSummary": "Load per protocol; maintenance 300–400 mg/day; level 10–20 mcg/mL",
+      "nursing": {
+        "administration": "IV: NS ONLY (precipitates in dextrose), ≤50 mg/min, large vein with inline filter — extravasation causes severe injury (purple glove syndrome). Flush before/after.",
+        "monitor": "Phenytoin level, ECG/BP during IV loading, gait/nystagmus/ataxia (toxicity), gum changes, rash (stop if severe — SJS risk).",
+        "holdNotify": "Toxicity signs, bradycardia/hypotension during infusion, rash.",
+        "teaching": "Meticulous oral hygiene and dental visits (gingival hyperplasia); never stop abruptly (status epilepticus); reduces hormonal contraceptive effectiveness; same brand/timing daily.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "mannitol",
+      "generic": "mannitol",
+      "brand": "Osmitrol",
+      "category": "osmotic diuretic",
+      "highAlert": false,
+      "doseSummary": "0.25–1 g/kg IV over 30–60 min for raised ICP, per protocol",
+      "nursing": {
+        "before": "Inspect the solution — mannitol crystallizes; warm to dissolve and ALWAYS use an inline filter. Baseline neuro status, electrolytes, osmolality. Insert urinary catheter for strict I&O.",
+        "monitor": "Neuro status/ICP response, strict hourly I&O, serum osmolality and electrolytes, lungs — can precipitate pulmonary edema/HF as it pulls fluid intravascularly.",
+        "holdNotify": "Anuria/no diuretic response, crackles/dyspnea, osmolality above protocol ceiling.",
+        "contraindication": "Anuria, severe dehydration, active intracranial bleeding (relative, per order).",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "salbutamol",
+      "generic": "salbutamol (albuterol)",
+      "brand": "Ventolin",
+      "category": "bronchodilator",
+      "highAlert": false,
+      "doseSummary": "Neb 2.5 mg PRN/q4–6h; MDI 1–2 puffs q4–6h PRN (rescue)",
+      "nursing": {
+        "administration": "If used with an inhaled corticosteroid, give salbutamol FIRST (opens airways), wait, then the steroid. Use a spacer with MDIs.",
+        "monitor": "Lung sounds and peak flow before/after, HR (tachycardia), tremor, potassium with frequent/continuous nebs (drives K+ into cells).",
+        "holdNotify": "Paradoxical bronchospasm, chest pain, marked tachycardia.",
+        "teaching": "This is the RESCUE inhaler — carry it always; correct MDI-spacer technique; increasing use means worsening control — see the provider.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "hydrocortisone",
+      "generic": "hydrocortisone",
+      "brand": "Solu-Cortef",
+      "category": "corticosteroid",
+      "highAlert": false,
+      "doseSummary": "100 mg IV q8h (stress dosing/adrenal crisis per protocol); PO doses vary",
+      "nursing": {
+        "administration": "IV push slowly or infuse per label; give PO doses with food; morning dosing mimics diurnal rhythm.",
+        "monitor": "Blood glucose (hyperglycemia — including non-diabetics), BP, K+ (hypokalemia), signs of infection (may be MASKED — fever may be absent), GI bleeding, mood changes.",
+        "holdNotify": "Glucose persistently elevated, GI bleeding signs, signs of infection.",
+        "teaching": "NEVER stop long-term steroids abruptly (adrenal crisis) — always taper; take with food; report black stools; expect possible mood/sleep changes; medical-alert ID for chronic use.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "ceftriaxone",
+      "generic": "ceftriaxone",
+      "brand": "Rocephin",
+      "category": "antibiotic (3rd-gen cephalosporin)",
+      "highAlert": false,
+      "doseSummary": "1–2 g IV/IM q24h (q12h for meningitis per protocol)",
+      "nursing": {
+        "before": "Allergy history — cross-reactivity with penicillin allergy is low but real; clarify severe penicillin reactions. Obtain cultures before the first dose when ordered.",
+        "administration": "NEVER mix or co-infuse with calcium-containing solutions (fatal precipitates in neonates; separate lines/flush in others per policy). IM: dilute per policy (lidocaine diluent is common — verify).",
+        "monitor": "Hypersensitivity, IV site, diarrhea — watch for C. difficile (profuse/watery), superinfection (thrush).",
+        "holdNotify": "Rash/anaphylaxis, severe diarrhea.",
+        "teaching": "Complete the full course; report watery diarrhea even after finishing.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "vancomycin-iv",
+      "generic": "vancomycin",
+      "brand": "—",
+      "category": "antibiotic (glycopeptide)",
+      "highAlert": false,
+      "doseSummary": "15–20 mg/kg IV q8–12h, adjusted to levels (trough/AUC per policy)",
+      "nursing": {
+        "administration": "Infuse over AT LEAST 60 minutes — rapid infusion causes vancomycin flushing ('red man') syndrome: flushing, pruritus, hypotension. Slow the rate if it occurs.",
+        "monitor": "Trough level before the dose per policy, renal function (creatinine, urine output — nephrotoxic), hearing/tinnitus (ototoxic), IV site (irritant).",
+        "holdNotify": "Rising creatinine, hearing changes, trough above target.",
+        "teaching": "Report ringing in the ears or decreased hearing immediately.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "gentamicin",
+      "generic": "gentamicin",
+      "brand": "—",
+      "category": "antibiotic (aminoglycoside)",
+      "highAlert": false,
+      "doseSummary": "Conventional 1–2.5 mg/kg q8h or extended-interval 5–7 mg/kg q24h, by levels",
+      "nursing": {
+        "before": "Baseline renal function and hearing assessment; weight for dosing.",
+        "monitor": "Peak and trough levels per policy, creatinine and urine output (nephrotoxicity — usually reversible), tinnitus/vertigo/hearing loss (ototoxicity — often IRREVERSIBLE), vestibular signs.",
+        "holdNotify": "Trough elevated, creatinine rising, any hearing/balance changes.",
+        "teaching": "Report ringing ears, dizziness, or fullness in the head immediately; keep hydrated.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "metoclopramide",
+      "generic": "metoclopramide",
+      "brand": "Plasil / Reglan",
+      "category": "antiemetic / prokinetic",
+      "highAlert": false,
+      "doseSummary": "10 mg PO/IV q6–8h, 30 min before meals and at bedtime",
+      "nursing": {
+        "administration": "Give 30 minutes before meals (prokinetic effect). IV push slowly over 1–2 min (rapid push causes intense restlessness).",
+        "monitor": "Extrapyramidal symptoms — restlessness (akathisia), acute dystonia (face/neck spasms), and with use >12 weeks, tardive dyskinesia (boxed warning). Drowsiness.",
+        "holdNotify": "Any involuntary movements, severe restlessness.",
+        "contraindication": "GI obstruction, perforation, or hemorrhage; Parkinson's disease; seizure disorder.",
+        "teaching": "Report uncontrollable movements or restlessness immediately; avoid driving until effects known.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "omeprazole",
+      "generic": "omeprazole",
+      "brand": "Losec / Prilosec",
+      "category": "proton pump inhibitor",
+      "highAlert": false,
+      "doseSummary": "20–40 mg PO once daily, 30–60 min before breakfast",
+      "nursing": {
+        "administration": "Swallow delayed-release capsules whole — do not crush or chew (capsule contents may be sprinkled on soft food per label if needed).",
+        "monitor": "Symptom relief; with long-term use: magnesium level, B12, fracture risk, C. difficile-associated diarrhea.",
+        "holdNotify": "Severe diarrhea, signs of hypomagnesemia (tremor, cramps, dysrhythmia).",
+        "teaching": "Take before the first meal; long-term use only under provider guidance; report watery diarrhea.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "potassium-chloride",
+      "generic": "potassium chloride (KCl)",
+      "brand": "Kalium / K-Dur",
+      "category": "electrolyte",
+      "highAlert": true,
+      "doseSummary": "IV: diluted and pump-controlled ONLY, commonly ≤10 mEq/hr peripherally per policy; PO with food and a full glass of water",
+      "nursing": {
+        "before": "Verify urine output before giving (risk of hyperkalemia in oliguria/renal failure). Verify dilution and rate against policy.",
+        "administration": "NEVER IV push — fatal. Always diluted, always on an infusion pump; higher concentrations/rates need a central line and ECG monitoring per policy. KCl is a vesicant-like irritant — check the IV site frequently.",
+        "monitor": "Serum K+, ECG with higher rates, IV site (burning — slow the rate per policy), urine output.",
+        "holdNotify": "Oliguria, K+ above range, ECG changes (peaked T waves), site pain/infiltration.",
+        "teaching": "Take oral K+ with food and water, sitting upright; do not crush extended-release tablets; don't use salt substitutes on top of supplements.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "calcium-gluconate",
+      "generic": "calcium gluconate",
+      "brand": "—",
+      "category": "electrolyte",
+      "highAlert": false,
+      "doseSummary": "1–2 g (10–20 mL of 10%) IV slow, per protocol",
+      "nursing": {
+        "administration": "IV slowly (rapid push → bradycardia/arrest); preferably via large vein — extravasation causes tissue necrosis. Do NOT mix with ceftriaxone or phosphate-containing solutions (precipitates).",
+        "monitor": "ECG during IV administration, calcium level, IV site closely, BP.",
+        "holdNotify": "Bradycardia, dysrhythmia, site pain/swelling.",
+        "teaching": "Used as the antidote for magnesium sulfate toxicity and for cardiac protection in hyperkalemia — keep at bedside during mag infusions per protocol.",
+        "source": "per Davis's Drug Guide"
+      }
+    },
+    {
+      "id": "oxytocin",
+      "generic": "oxytocin",
+      "brand": "Syntocinon / Pitocin",
+      "category": "oxytocic",
+      "highAlert": true,
+      "doseSummary": "Induction: low-dose titration via pump per protocol; postpartum hemorrhage: 10–40 units in 1 L per protocol",
+      "nursing": {
+        "before": "Baseline maternal VS, fetal heart rate (FHR), contraction pattern. IV piggyback into a mainline, ALWAYS on an infusion pump.",
+        "administration": "Titrate per protocol to adequate labor; never leave unmonitored.",
+        "monitor": "Contractions — frequency, duration, intensity, and RESTING TONE — and continuous FHR. Watch for tachysystole (>5 contractions/10 min) and non-reassuring FHR. Prolonged use: water intoxication (oxytocin is antidiuretic) — headache, confusion, hyponatremia. Postpartum: fundus and lochia.",
+        "holdNotify": "STOP the infusion for tachysystole or non-reassuring FHR; reposition, fluids, O2 per protocol, notify provider immediately.",
+        "teaching": "Explain the goal contraction pattern and why continuous monitoring is needed.",
+        "source": "per Davis's Drug Guide"
+      }
+    }
+  ]
+}

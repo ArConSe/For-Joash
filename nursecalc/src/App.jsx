@@ -10,12 +10,14 @@ import InfusionTime from "./screens/InfusionTime.jsx";
 import Reconstitution from "./screens/Reconstitution.jsx";
 import SafeDoseRange from "./screens/SafeDoseRange.jsx";
 import BSA from "./screens/BSA.jsx";
+import DrugGuide from "./screens/DrugGuide.jsx";
 
 // IV Drip Rate first and prominent — the gravity-drip gap is the reason this app exists.
 const SCREENS = [
   { id: "drip", label: "IV Drip Rate (gtt/min)", icon: "💧", component: IVDripRate, featured: true },
   { id: "weight", label: "Weight-Based Dose", icon: "⚖️", component: WeightBased, featured: true },
   { id: "titration", label: "Titration Drips", icon: "🫀", component: Titration, featured: true },
+  { id: "drugs", label: "Drug Guide", icon: "📖", component: DrugGuide, featured: true },
   { id: "oral", label: "Oral / Tablet", icon: "💊", component: OralTablet },
   { id: "liquid", label: "Liquid / Injectable", icon: "🧪", component: LiquidOral },
   { id: "pump", label: "IV Pump Rate (mL/hr)", icon: "⏱", component: IVPumpRate },
