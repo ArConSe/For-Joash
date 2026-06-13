@@ -2,7 +2,7 @@
   "_meta": {
     "purpose": "General drug-handbook cards for the Drug Guide screen (ward/emergency medications beyond the titration drips).",
     "sourcing": "Grounded in OPEN, freely available references: U.S. FDA prescribing information (DailyMed / openFDA), Open RN 'Nursing Pharmacology' (CC BY), StatPearls, MedlinePlus, and the WHO Model Formulary; AHA ACLS guidelines for the emergency drugs. Dose summaries and antidotes spot-verified against these sources (2025-2026) and are typical adult references for learning. PARAPHRASED nursing implications — never verbatim monograph text. The prescriber's order and facility policy always override; pediatric dosing defers to a pediatric reference.",
-    "selection": "High-yield medications for nursing students and ward nurses (Philippine context): ACLS adjuncts, cardiac, anticoagulation, analgesia/sedation + reversal, seizures, respiratory, steroids, antibiotics, GI, concentrated electrolytes, obstetrics."
+    "selection": "High-yield medications for nursing students and ward nurses, organized by drug class. Spans ACLS/emergency, cardiovascular, antibiotics, endocrine/antidiabetics, anticoagulants, pain/sedation + reversal, respiratory, GI, CNS/seizure, fluids & electrolytes, and obstetrics."
   },
   "drugs": [
     {
@@ -10,6 +10,7 @@
       "generic": "atropine",
       "brand": "—",
       "category": "anticholinergic",
+      "group": "Emergency & antidotes",
       "highAlert": false,
       "doseSummary": "Symptomatic bradycardia: 0.5–1 mg IV q3–5 min, max 3 mg (ACLS)",
       "keyActions": [
@@ -32,6 +33,7 @@
       "generic": "adenosine",
       "brand": "Adenocard",
       "category": "antiarrhythmic",
+      "group": "Cardiovascular",
       "highAlert": false,
       "doseSummary": "Stable SVT: 6 mg rapid IV push, then 12 mg if no conversion (ACLS)",
       "keyActions": [
@@ -54,6 +56,7 @@
       "generic": "digoxin",
       "brand": "Lanoxin",
       "category": "cardiac glycoside",
+      "group": "Cardiovascular",
       "highAlert": false,
       "doseSummary": "Maintenance 0.125–0.25 mg PO/IV daily; therapeutic level 0.5–2 ng/mL",
       "keyActions": [
@@ -75,6 +78,7 @@
       "generic": "furosemide",
       "brand": "Lasix",
       "category": "loop diuretic",
+      "group": "Cardiovascular",
       "highAlert": false,
       "doseSummary": "20–80 mg PO/IV; IV push slowly (≤20 mg/min) — rapid push risks ototoxicity",
       "keyActions": [
@@ -96,6 +100,7 @@
       "generic": "metoprolol",
       "brand": "Lopressor",
       "category": "beta blocker",
+      "group": "Cardiovascular",
       "highAlert": false,
       "doseSummary": "25–100 mg PO BID (tartrate); IV 5 mg slow push per protocol",
       "keyActions": [
@@ -116,6 +121,7 @@
       "generic": "captopril",
       "brand": "Capoten",
       "category": "ACE inhibitor",
+      "group": "Cardiovascular",
       "highAlert": false,
       "doseSummary": "12.5–50 mg PO BID–TID, 1 hour before meals",
       "keyActions": [
@@ -138,6 +144,7 @@
       "generic": "amlodipine",
       "brand": "Norvasc",
       "category": "calcium channel blocker",
+      "group": "Cardiovascular",
       "highAlert": false,
       "doseSummary": "2.5–10 mg PO once daily",
       "keyActions": [
@@ -157,6 +164,7 @@
       "generic": "aspirin (acetylsalicylic acid)",
       "brand": "Aspilets",
       "category": "antiplatelet",
+      "group": "Anticoagulants & antiplatelets",
       "highAlert": false,
       "doseSummary": "ACS: 162–325 mg chewed (non–enteric-coated); prophylaxis 75–100 mg daily",
       "keyActions": [
@@ -178,6 +186,7 @@
       "generic": "warfarin",
       "brand": "Coumadin",
       "category": "anticoagulant",
+      "group": "Anticoagulants & antiplatelets",
       "highAlert": true,
       "doseSummary": "2–10 mg PO daily, individualized to INR (usual target 2–3)",
       "keyActions": [
@@ -200,6 +209,7 @@
       "generic": "enoxaparin",
       "brand": "Clexane / Lovenox",
       "category": "anticoagulant",
+      "group": "Anticoagulants & antiplatelets",
       "highAlert": true,
       "doseSummary": "Prophylaxis 40 mg subcut daily; treatment 1 mg/kg subcut q12h (renal-adjusted)",
       "keyActions": [
@@ -221,6 +231,7 @@
       "generic": "morphine sulfate",
       "brand": "—",
       "category": "opioid analgesic",
+      "group": "Pain, sedation & reversal",
       "highAlert": true,
       "doseSummary": "2–10 mg IV slow push (over 4–5 min) q3–4h PRN, individualized",
       "keyActions": [
@@ -243,6 +254,7 @@
       "generic": "naloxone",
       "brand": "Narcan",
       "category": "opioid antagonist",
+      "group": "Pain, sedation & reversal",
       "highAlert": false,
       "doseSummary": "0.4–2 mg IV/IM/intranasal, repeat q2–3 min as needed",
       "keyActions": [
@@ -263,6 +275,7 @@
       "generic": "diazepam",
       "brand": "Valium",
       "category": "benzodiazepine",
+      "group": "Pain, sedation & reversal",
       "highAlert": true,
       "doseSummary": "Status epilepticus: 5–10 mg IV slow (≤5 mg/min), may repeat per protocol",
       "keyActions": [
@@ -284,6 +297,7 @@
       "generic": "paracetamol (acetaminophen)",
       "brand": "Biogesic / Tylenol",
       "category": "analgesic-antipyretic",
+      "group": "Pain, sedation & reversal",
       "highAlert": false,
       "doseSummary": "500 mg–1 g PO/IV q4–6h; max 4 g/day adult (lower with hepatic risk/alcohol use)",
       "keyActions": [
@@ -305,6 +319,7 @@
       "generic": "ibuprofen",
       "brand": "Advil / Medicol",
       "category": "NSAID",
+      "group": "Pain, sedation & reversal",
       "highAlert": false,
       "doseSummary": "200–400 mg PO q4–6h with food; max 1.2 g/day OTC (higher per prescriber)",
       "keyActions": [
@@ -326,6 +341,7 @@
       "generic": "phenytoin",
       "brand": "Dilantin",
       "category": "anticonvulsant",
+      "group": "CNS & seizure",
       "highAlert": false,
       "doseSummary": "Load per protocol; maintenance 300–400 mg/day; level 10–20 mcg/mL",
       "keyActions": [
@@ -346,6 +362,7 @@
       "generic": "mannitol",
       "brand": "Osmitrol",
       "category": "osmotic diuretic",
+      "group": "CNS & seizure",
       "highAlert": false,
       "doseSummary": "0.25–1 g/kg IV over 30–60 min for raised ICP, per protocol",
       "keyActions": [
@@ -366,6 +383,7 @@
       "generic": "salbutamol (albuterol)",
       "brand": "Ventolin",
       "category": "bronchodilator",
+      "group": "Respiratory",
       "highAlert": false,
       "doseSummary": "Neb 2.5 mg PRN/q4–6h; MDI 1–2 puffs q4–6h PRN (rescue)",
       "keyActions": [
@@ -386,6 +404,7 @@
       "generic": "hydrocortisone",
       "brand": "Solu-Cortef",
       "category": "corticosteroid",
+      "group": "Endocrine & diabetes",
       "highAlert": false,
       "doseSummary": "100 mg IV q8h (stress dosing/adrenal crisis per protocol); PO doses vary",
       "keyActions": [
@@ -406,6 +425,7 @@
       "generic": "ceftriaxone",
       "brand": "Rocephin",
       "category": "antibiotic (3rd-gen cephalosporin)",
+      "group": "Antibiotics & antimicrobials",
       "highAlert": false,
       "doseSummary": "1–2 g IV/IM q24h (q12h for meningitis per protocol)",
       "keyActions": [
@@ -427,6 +447,7 @@
       "generic": "vancomycin",
       "brand": "—",
       "category": "antibiotic (glycopeptide)",
+      "group": "Antibiotics & antimicrobials",
       "highAlert": false,
       "doseSummary": "15–20 mg/kg IV q8–12h, adjusted to levels (trough/AUC per policy)",
       "keyActions": [
@@ -447,6 +468,7 @@
       "generic": "gentamicin",
       "brand": "—",
       "category": "antibiotic (aminoglycoside)",
+      "group": "Antibiotics & antimicrobials",
       "highAlert": false,
       "doseSummary": "Conventional 1–2.5 mg/kg q8h or extended-interval 5–7 mg/kg q24h, by levels",
       "keyActions": [
@@ -467,6 +489,7 @@
       "generic": "metoclopramide",
       "brand": "Plasil / Reglan",
       "category": "antiemetic / prokinetic",
+      "group": "Gastrointestinal",
       "highAlert": false,
       "doseSummary": "10 mg PO/IV q6–8h, 30 min before meals and at bedtime",
       "keyActions": [
@@ -488,6 +511,7 @@
       "generic": "omeprazole",
       "brand": "Losec / Prilosec",
       "category": "proton pump inhibitor",
+      "group": "Gastrointestinal",
       "highAlert": false,
       "doseSummary": "20–40 mg PO once daily, 30–60 min before breakfast",
       "keyActions": [
@@ -508,6 +532,7 @@
       "generic": "potassium chloride (KCl)",
       "brand": "Kalium / K-Dur",
       "category": "electrolyte",
+      "group": "Fluids & electrolytes",
       "highAlert": true,
       "doseSummary": "IV: diluted and pump-controlled ONLY, commonly ≤10 mEq/hr peripherally per policy; PO with food and a full glass of water",
       "keyActions": [
@@ -529,6 +554,7 @@
       "generic": "calcium gluconate",
       "brand": "—",
       "category": "electrolyte",
+      "group": "Fluids & electrolytes",
       "highAlert": false,
       "doseSummary": "1–2 g (10–20 mL of 10%) IV slow, per protocol",
       "keyActions": [
@@ -549,6 +575,7 @@
       "generic": "oxytocin",
       "brand": "Syntocinon / Pitocin",
       "category": "oxytocic",
+      "group": "Obstetric",
       "highAlert": true,
       "doseSummary": "Induction: low-dose titration via pump per protocol; postpartum hemorrhage: 10–40 units in 1 L per protocol",
       "keyActions": [
@@ -562,6 +589,544 @@
         "monitor": "Contractions — frequency, duration, intensity, and RESTING TONE — and continuous FHR. Watch for tachysystole (>5 contractions/10 min) and non-reassuring FHR. Prolonged use: water intoxication (oxytocin is antidiuretic) — headache, confusion, hyponatremia. Postpartum: fundus and lochia.",
         "holdNotify": "STOP the infusion for tachysystole or non-reassuring FHR; reposition, fluids, O2 per protocol, notify provider immediately.",
         "teaching": "Explain the goal contraction pattern and why continuous monitoring is needed.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "amoxicillin",
+      "generic": "amoxicillin",
+      "brand": "Amoxil",
+      "category": "antibiotic (penicillin)",
+      "group": "Antibiotics & antimicrobials",
+      "highAlert": false,
+      "doseSummary": "250–500 mg PO q8h (or 500–875 mg q12h)",
+      "keyActions": [
+        "Ask about penicillin allergy before the first dose",
+        "Give around the clock; finish the full course",
+        "Watch rash/anaphylaxis & diarrhea (C. difficile)"
+      ],
+      "nursing": {
+        "before": "Allergy history (penicillin/cephalosporin); obtain cultures before the first dose if ordered.",
+        "administration": "PO with or without food; space doses evenly.",
+        "monitor": "Hypersensitivity (rash, wheeze, anaphylaxis), diarrhea (C. difficile), superinfection (thrush).",
+        "holdNotify": "Rash, facial/airway swelling, severe watery diarrhea.",
+        "teaching": "Finish the entire course; report rash or watery diarrhea; take at evenly spaced times.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "co-amoxiclav",
+      "generic": "amoxicillin–clavulanate",
+      "brand": "Augmentin",
+      "category": "antibiotic (penicillin + β-lactamase inhibitor)",
+      "group": "Antibiotics & antimicrobials",
+      "highAlert": false,
+      "doseSummary": "625 mg PO q8h or 1 g q12h",
+      "keyActions": [
+        "Check penicillin allergy first",
+        "Give at the start of a meal to cut GI upset",
+        "Watch diarrhea (C. diff) & rash"
+      ],
+      "nursing": {
+        "administration": "Take at the start of a meal to reduce GI upset/diarrhea.",
+        "monitor": "GI upset/diarrhea (clavulanate), hypersensitivity, LFTs with prolonged use.",
+        "holdNotify": "Severe diarrhea, rash, jaundice.",
+        "teaching": "Take with food; finish the course; report watery diarrhea.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "azithromycin",
+      "generic": "azithromycin",
+      "brand": "Zithromax",
+      "category": "antibiotic (macrolide)",
+      "group": "Antibiotics & antimicrobials",
+      "highAlert": false,
+      "doseSummary": "500 mg PO day 1, then 250 mg daily ×4 (or 500 mg daily)",
+      "keyActions": [
+        "Monitor ECG — QT prolongation risk",
+        "Check other QT drugs / low K+/Mg",
+        "Expect GI upset"
+      ],
+      "nursing": {
+        "monitor": "QT prolongation/arrhythmia (esp. with other QT drugs, low K+/Mg), GI upset, LFTs.",
+        "holdNotify": "Palpitations/syncope, severe diarrhea.",
+        "teaching": "Report palpitations; finish the course; GI upset is common.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "ciprofloxacin",
+      "generic": "ciprofloxacin",
+      "brand": "Cipro",
+      "category": "antibiotic (fluoroquinolone)",
+      "group": "Antibiotics & antimicrobials",
+      "highAlert": false,
+      "doseSummary": "250–750 mg PO q12h; IV 400 mg q8–12h",
+      "keyActions": [
+        "Separate from dairy/antacids/iron by ≥2 h",
+        "Watch tendon pain (rupture) & QT",
+        "Encourage fluids; photosensitivity"
+      ],
+      "nursing": {
+        "administration": "Do NOT give with dairy, antacids, or iron/zinc (chelation) — separate ≥2 h. IV over 60 min.",
+        "monitor": "Tendon pain/rupture (elderly, steroids), QT prolongation, CNS effects, blood glucose, C. difficile.",
+        "holdNotify": "Tendon pain, palpitations, confusion/seizure, severe diarrhea.",
+        "teaching": "Avoid strong sun (photosensitivity); report tendon/joint pain; hydrate; separate from antacids/dairy.",
+        "contraindication": "Caution: pregnancy/children, myasthenia gravis, aortic aneurysm risk.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "metronidazole",
+      "generic": "metronidazole",
+      "brand": "Flagyl",
+      "category": "antibiotic / antiprotozoal (nitroimidazole)",
+      "group": "Antibiotics & antimicrobials",
+      "highAlert": false,
+      "doseSummary": "500 mg PO/IV q8h (anaerobes, C. difficile, protozoa)",
+      "keyActions": [
+        "NO alcohol during + 3 days after (disulfiram reaction)",
+        "Expect metallic taste; watch neuropathy",
+        "Give with food for GI upset"
+      ],
+      "nursing": {
+        "administration": "With food; IV over 30–60 min.",
+        "monitor": "GI upset, metallic taste, peripheral neuropathy/CNS with prolonged use, dark urine (harmless).",
+        "holdNotify": "Numbness/tingling, seizures, severe rash.",
+        "teaching": "Absolutely no alcohol during and 3 days after (severe flushing/vomiting); metallic taste and darker urine are expected.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "metformin",
+      "generic": "metformin",
+      "brand": "Glucophage",
+      "category": "antidiabetic (biguanide)",
+      "group": "Endocrine & diabetes",
+      "highAlert": false,
+      "doseSummary": "500 mg PO BID–TID with meals; max ~2–2.5 g/day",
+      "keyActions": [
+        "Give with meals (GI upset)",
+        "Hold 48 h around IV contrast (lactic acidosis/renal)",
+        "Monitor renal function; no hypoglycemia when used alone"
+      ],
+      "nursing": {
+        "monitor": "Renal function (eGFR), GI tolerance, rare lactic acidosis (malaise, myalgia, dyspnea), B12 with long-term use.",
+        "holdNotify": "Signs of lactic acidosis; falling eGFR.",
+        "teaching": "Take with food; limit alcohol; tell the team before any contrast scan or surgery.",
+        "contraindication": "Significant renal impairment, acute illness/dehydration, contrast procedures.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "insulin-glargine",
+      "generic": "insulin glargine",
+      "brand": "Lantus",
+      "category": "antidiabetic (long-acting insulin)",
+      "group": "Endocrine & diabetes",
+      "highAlert": true,
+      "doseSummary": "Subcut once daily, individualized basal dose — do NOT give IV",
+      "keyActions": [
+        "Subcut only — never IV; rotate sites",
+        "Do NOT mix with other insulins in a syringe",
+        "Independent double-check; watch hypoglycemia"
+      ],
+      "nursing": {
+        "administration": "Subcut at the same time daily; rotate sites; long-acting — never IV; do not mix with other insulins.",
+        "monitor": "Blood glucose, hypoglycemia (esp. missed meals), injection sites (lipohypertrophy).",
+        "holdNotify": "Hypoglycemia; NPO status without orders.",
+        "teaching": "Same time daily; recognize/treat hypoglycemia (15 g fast carbs); rotate sites; don't mix with other insulin.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "gliclazide",
+      "generic": "gliclazide",
+      "brand": "Diamicron",
+      "category": "antidiabetic (sulfonylurea)",
+      "group": "Endocrine & diabetes",
+      "highAlert": false,
+      "doseSummary": "40–320 mg PO daily with breakfast (MR forms once daily)",
+      "keyActions": [
+        "Give with breakfast — HYPOGLYCEMIA risk (skipped meals/elderly)",
+        "Teach hypoglycemia signs & treatment",
+        "Limit alcohol"
+      ],
+      "nursing": {
+        "monitor": "Blood glucose, hypoglycemia (unlike metformin, sulfonylureas can cause it), weight.",
+        "holdNotify": "Hypoglycemia; NPO without a coverage plan.",
+        "teaching": "Eat regular meals; carry fast sugar; recognize hypoglycemia; limit alcohol.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "levothyroxine",
+      "generic": "levothyroxine",
+      "brand": "Euthyrox / Synthroid",
+      "category": "thyroid hormone",
+      "group": "Endocrine & diabetes",
+      "highAlert": false,
+      "doseSummary": "Individualized PO once daily on an empty stomach",
+      "keyActions": [
+        "Empty stomach, same time AM; wait 30–60 min before food",
+        "Separate from calcium/iron/antacids by 4 h",
+        "Monitor TSH; watch over-replacement (palpitations)"
+      ],
+      "nursing": {
+        "administration": "Morning, empty stomach, 30–60 min before breakfast; keep the same brand.",
+        "monitor": "TSH/T4 per schedule, HR/weight, signs of over- (palpitations, heat intolerance) or under-replacement.",
+        "holdNotify": "Chest pain, palpitations, tremor.",
+        "teaching": "Lifelong, same time daily, empty stomach; separate from calcium/iron by 4 h; don't switch brands without checking.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "dexamethasone",
+      "generic": "dexamethasone",
+      "brand": "Decadron",
+      "category": "corticosteroid",
+      "group": "Endocrine & diabetes",
+      "highAlert": false,
+      "doseSummary": "Indication-specific (e.g., 4–10 mg IV/PO); taper if prolonged",
+      "keyActions": [
+        "Monitor glucose, BP, K+",
+        "Never stop a long course abruptly — taper",
+        "Infection signs may be masked; give with food"
+      ],
+      "nursing": {
+        "monitor": "Blood glucose (hyperglycemia even in non-diabetics), BP, K+, infection (masked), mood/sleep, GI bleeding with prolonged use.",
+        "holdNotify": "Persistent hyperglycemia, GI bleeding, signs of infection.",
+        "teaching": "Take with food; never stop long courses abruptly; report black stools or mood changes; medical-alert ID if chronic.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "losartan",
+      "generic": "losartan",
+      "brand": "Cozaar",
+      "category": "antihypertensive (ARB)",
+      "group": "Cardiovascular",
+      "highAlert": false,
+      "doseSummary": "25–100 mg PO daily",
+      "keyActions": [
+        "Monitor BP, K+, renal function",
+        "Watch angioedema (rare) — facial/lip swelling",
+        "No potassium salt substitutes"
+      ],
+      "nursing": {
+        "monitor": "BP, K+ (hyperkalemia), renal function, dizziness.",
+        "holdNotify": "Symptomatic hypotension, hyperkalemia, facial/airway swelling.",
+        "teaching": "Rise slowly; avoid potassium salt substitutes; pregnancy is contraindicated; don't stop abruptly.",
+        "contraindication": "Pregnancy (fetal injury).",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "atorvastatin",
+      "generic": "atorvastatin",
+      "brand": "Lipitor",
+      "category": "antilipemic (statin)",
+      "group": "Cardiovascular",
+      "highAlert": false,
+      "doseSummary": "10–80 mg PO once daily",
+      "keyActions": [
+        "Report muscle pain/weakness (rhabdomyolysis)",
+        "Monitor LFTs; avoid grapefruit",
+        "Continue diet & exercise"
+      ],
+      "nursing": {
+        "monitor": "Muscle pain/weakness (myopathy/rhabdo — check CK if symptomatic), LFTs, lipid panel.",
+        "holdNotify": "Unexplained muscle pain, dark urine, jaundice.",
+        "teaching": "Report muscle aches/dark urine; avoid grapefruit juice; pregnancy contraindicated.",
+        "contraindication": "Active liver disease, pregnancy.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "hydrochlorothiazide",
+      "generic": "hydrochlorothiazide",
+      "brand": "HCTZ / Microzide",
+      "category": "antihypertensive (thiazide diuretic)",
+      "group": "Cardiovascular",
+      "highAlert": false,
+      "doseSummary": "12.5–25 mg PO daily in the morning",
+      "keyActions": [
+        "Give in the morning; monitor K+ (low), glucose & uric acid",
+        "Watch BP & orthostasis",
+        "Photosensitivity"
+      ],
+      "nursing": {
+        "monitor": "K+ (hypokalemia), Na+, glucose, uric acid (gout), BP/orthostasis, renal function.",
+        "holdNotify": "Low K+, symptomatic hypotension, gout flare.",
+        "teaching": "Take in the morning; potassium-rich foods unless restricted; rise slowly; sun protection.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "isosorbide-dinitrate",
+      "generic": "isosorbide dinitrate",
+      "brand": "Isordil",
+      "category": "antianginal (nitrate)",
+      "group": "Cardiovascular",
+      "highAlert": false,
+      "doseSummary": "PO per order; sublingual for acute angina",
+      "keyActions": [
+        "Keep a daily nitrate-free interval (tolerance)",
+        "Headache common; check BP & hold if low",
+        "NO PDE-5 inhibitors (sildenafil) — severe hypotension"
+      ],
+      "nursing": {
+        "monitor": "BP, HR, headache (common), chest-pain relief.",
+        "holdNotify": "SBP below floor, worsening hypotension/syncope.",
+        "teaching": "Sit when taking; treat headache with acetaminophen; never combine with erectile-dysfunction drugs; keep a nitrate-free period.",
+        "contraindication": "Concurrent PDE-5 inhibitors (sildenafil/tadalafil).",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "clopidogrel",
+      "generic": "clopidogrel",
+      "brand": "Plavix",
+      "category": "antiplatelet",
+      "group": "Anticoagulants & antiplatelets",
+      "highAlert": false,
+      "doseSummary": "75 mg PO daily (300–600 mg loading per protocol)",
+      "keyActions": [
+        "Bleeding precautions",
+        "Do NOT stop before procedures without advice (stent thrombosis)",
+        "Watch bruising/bleeding"
+      ],
+      "nursing": {
+        "monitor": "Bleeding (stool, gums, bruising), Hgb/Hct.",
+        "holdNotify": "Active bleeding, melena.",
+        "teaching": "Don't stop abruptly — confirm with cardiology; report unusual bleeding; tell dentists/surgeons.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "rivaroxaban",
+      "generic": "rivaroxaban",
+      "brand": "Xarelto",
+      "category": "anticoagulant (DOAC, factor Xa inhibitor)",
+      "group": "Anticoagulants & antiplatelets",
+      "highAlert": true,
+      "doseSummary": "15–20 mg PO daily WITH food (indication-specific)",
+      "keyActions": [
+        "Take with food (20 mg) for absorption",
+        "Bleeding precautions; don't double up a missed dose",
+        "Antidote: andexanet alfa (where available)"
+      ],
+      "nursing": {
+        "monitor": "Bleeding (no routine level needed), renal function, Hgb.",
+        "holdNotify": "Active bleeding; spinal/epidural procedures (hematoma risk).",
+        "teaching": "Take with the evening meal; don't stop abruptly; report bleeding/black stools; carry an anticoagulant alert.",
+        "antidote": "Andexanet alfa (specific reversal, where available)",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "tramadol",
+      "generic": "tramadol",
+      "brand": "Ultram",
+      "category": "opioid analgesic (weak)",
+      "group": "Pain, sedation & reversal",
+      "highAlert": false,
+      "doseSummary": "50–100 mg PO q4–6h PRN; max 400 mg/day",
+      "keyActions": [
+        "Watch sedation/RR; lowers seizure threshold",
+        "Serotonin syndrome risk with SSRIs/SNRIs",
+        "Avoid alcohol; fall precautions"
+      ],
+      "nursing": {
+        "monitor": "Pain, RR/sedation, seizures (lowers threshold), serotonin syndrome (agitation, clonus, fever) with other serotonergics.",
+        "holdNotify": "Oversedation, RR<12, seizure, serotonin syndrome.",
+        "teaching": "No alcohol; caution driving; report tremor/agitation; don't exceed the max.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "ketorolac",
+      "generic": "ketorolac",
+      "brand": "Toradol",
+      "category": "NSAID (injectable analgesic)",
+      "group": "Pain, sedation & reversal",
+      "highAlert": false,
+      "doseSummary": "IV/IM 15–30 mg q6h; max 5 days total",
+      "keyActions": [
+        "Limit to ≤5 days (GI bleed, renal, bleeding)",
+        "Monitor renal/urine output & GI bleeding",
+        "Not with other NSAIDs"
+      ],
+      "nursing": {
+        "monitor": "GI bleeding (black stools), renal function/urine output, bleeding/bruising, BP.",
+        "holdNotify": "GI bleeding, oliguria, rising creatinine.",
+        "teaching": "Short-term only; report black stools or decreased urine; avoid other NSAIDs/alcohol.",
+        "contraindication": "Active GI bleed, renal impairment, bleeding risk, peri-op CABG.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "midazolam",
+      "generic": "midazolam",
+      "brand": "Versed",
+      "category": "benzodiazepine (sedation)",
+      "group": "Pain, sedation & reversal",
+      "highAlert": true,
+      "doseSummary": "Procedural sedation: titrate small IV doses per protocol",
+      "keyActions": [
+        "Continuous RR/SpO2/BP; flumazenil + airway ready",
+        "Titrate slowly — respiratory depression",
+        "Potentiates opioids — use lower doses"
+      ],
+      "nursing": {
+        "before": "Continuous SpO2, RR, BP; suction, oxygen, bag-valve-mask, and flumazenil available; verify NPO.",
+        "administration": "Titrate small IV increments slowly; potentiates opioids.",
+        "monitor": "Respiratory depression/apnea, sedation depth, BP.",
+        "holdNotify": "RR<12, apnea, hypotension, oversedation.",
+        "antidote": "Flumazenil (caution: seizures in dependence)",
+        "teaching": "Amnesia for the procedure is expected; no driving 24 h; arrange an escort.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "haloperidol",
+      "generic": "haloperidol",
+      "brand": "Haldol",
+      "category": "antipsychotic (typical)",
+      "group": "Pain, sedation & reversal",
+      "highAlert": false,
+      "doseSummary": "Agitation/delirium: 0.5–5 mg PO/IM per order",
+      "keyActions": [
+        "Monitor ECG (QT prolongation)",
+        "Watch extrapyramidal symptoms & NMS",
+        "Fall precautions; reassess agitation/safety"
+      ],
+      "nursing": {
+        "monitor": "QT/ECG, extrapyramidal symptoms (rigidity, dystonia, restlessness), neuroleptic malignant syndrome (fever, rigidity, altered mental status), sedation.",
+        "holdNotify": "QT prolongation, EPS, fever + rigidity (NMS).",
+        "teaching": "Report stiffness, restlessness, or fever; rise slowly; avoid alcohol.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "ipratropium",
+      "generic": "ipratropium",
+      "brand": "Atrovent",
+      "category": "bronchodilator (anticholinergic)",
+      "group": "Respiratory",
+      "highAlert": false,
+      "doseSummary": "Neb 500 mcg q6–8h; often combined with salbutamol",
+      "keyActions": [
+        "Often given WITH salbutamol (combo neb)",
+        "Keep mist out of the eyes (mydriasis)",
+        "Dry mouth — oral care"
+      ],
+      "nursing": {
+        "monitor": "Lung sounds, respiratory effort, HR; dry mouth.",
+        "holdNotify": "Paradoxical bronchospasm, eye pain/blurred vision.",
+        "teaching": "Rinse mouth; protect eyes from the mist (esp. glaucoma); it's maintenance, not the fastest rescue.",
+        "contraindication": "Caution in narrow-angle glaucoma, BPH/urinary retention.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "ondansetron",
+      "generic": "ondansetron",
+      "brand": "Zofran",
+      "category": "antiemetic (5-HT3 antagonist)",
+      "group": "Gastrointestinal",
+      "highAlert": false,
+      "doseSummary": "4–8 mg PO/IV q8h PRN nausea",
+      "keyActions": [
+        "Monitor ECG — QT prolongation (push IV slowly)",
+        "Watch constipation & headache",
+        "Check other QT drugs / low K+/Mg"
+      ],
+      "nursing": {
+        "monitor": "QT prolongation (dilute/push IV slowly), constipation, headache.",
+        "holdNotify": "Palpitations/syncope.",
+        "teaching": "Report palpitations; headache/constipation are common; ODT melts on the tongue.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "famotidine",
+      "generic": "famotidine",
+      "brand": "Pepcid",
+      "category": "H2 receptor antagonist",
+      "group": "Gastrointestinal",
+      "highAlert": false,
+      "doseSummary": "20–40 mg PO/IV daily–BID",
+      "keyActions": [
+        "Give before meals / at bedtime",
+        "Dose-adjust in renal impairment",
+        "Separate from antacids by ~1 h"
+      ],
+      "nursing": {
+        "monitor": "Symptom relief; renal function (dose-adjust); rare confusion in elderly/renal.",
+        "holdNotify": "Persistent symptoms, black/tarry stools (possible bleed).",
+        "teaching": "May take with or without food; report black stools; separate from antacids by ~1 h.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "levetiracetam",
+      "generic": "levetiracetam",
+      "brand": "Keppra",
+      "category": "anticonvulsant",
+      "group": "CNS & seizure",
+      "highAlert": false,
+      "doseSummary": "500 mg PO/IV BID, titrated (IV over 15 min)",
+      "keyActions": [
+        "Never stop abruptly (seizures)",
+        "Monitor mood/behavior changes",
+        "Renal dose adjustment"
+      ],
+      "nursing": {
+        "monitor": "Seizure frequency, mood/behavior changes (irritability, depression, rare suicidality), drowsiness, renal function.",
+        "holdNotify": "Mood/behavior change, increased seizures.",
+        "teaching": "Take consistently; never stop abruptly; report mood changes; caution driving until stable.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "sodium-bicarbonate",
+      "generic": "sodium bicarbonate",
+      "brand": "—",
+      "category": "alkalinizing agent / electrolyte",
+      "group": "Fluids & electrolytes",
+      "highAlert": false,
+      "doseSummary": "Severe metabolic acidosis / hyperkalemia / some overdoses: per ABG/protocol",
+      "keyActions": [
+        "Dose by ABG/protocol; flush line (precipitates with calcium)",
+        "Monitor ABG, K+, Na+",
+        "Watch fluid overload & extravasation (irritant)"
+      ],
+      "nursing": {
+        "monitor": "ABG/pH, K+ (falls as acidosis corrects), Na+, fluid overload/hypernatremia, IV site (irritant).",
+        "holdNotify": "Overcorrection (alkalosis), low K+, infiltration.",
+        "teaching": "Used for specific emergencies; flush the line separately from calcium-containing drugs.",
+        "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
+      }
+    },
+    {
+      "id": "glucagon",
+      "generic": "glucagon",
+      "brand": "GlucaGen",
+      "category": "antihypoglycemic / antidote",
+      "group": "Emergency & antidotes",
+      "highAlert": false,
+      "doseSummary": "Severe hypoglycemia: 1 mg IM/SC/IV; beta-blocker overdose per protocol",
+      "keyActions": [
+        "Give IM/SC when no IV access for hypoglycemia",
+        "Turn patient on the side (vomiting); recheck glucose",
+        "Give carbs once awake — effect is brief"
+      ],
+      "nursing": {
+        "monitor": "Blood glucose, level of consciousness, nausea/vomiting.",
+        "holdNotify": "No response in ~15 min (needs IV dextrose).",
+        "teaching": "Position on the side (may vomit); eat carbs once alert; teach family to use the home kit.",
         "source": "per FDA labeling (DailyMed) & Open RN Nursing Pharmacology (CC BY)"
       }
     }

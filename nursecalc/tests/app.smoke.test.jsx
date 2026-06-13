@@ -138,7 +138,7 @@ describe("App", () => {
     render(<App />);
     openDrugGuide();
     expect(screen.getByText(/norepinephrine/i)).toBeTruthy();
-    expect(screen.getByText(/salbutamol/i)).toBeTruthy();
+    expect(screen.getAllByText(/salbutamol/i).length).toBeGreaterThan(0);
     fireEvent.change(screen.getByLabelText(/Search drugs/i), { target: { value: "heparin" } });
     expect(screen.queryByText(/norepinephrine/i)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /^heparin/i }));
@@ -159,6 +159,24 @@ describe("App", () => {
     expect(screen.getAllByText(/N-acetylcysteine/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Nursing Considerations — paracetamol/i)).toBeTruthy();
     expect(screen.getByText(/Key nursing actions/i)).toBeTruthy();
+  });
+
+  it("drug guide groups by therapeutic class and filters by class", () => {
+    render(<App />);
+    openDrugGuide();
+    // class section headers render (heading role avoids the <select> options)
+    expect(screen.getByRole("heading", { name: "Antibiotics & antimicrobials" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "Endocrine & diabetes" })).toBeTruthy();
+    // newly added meds are present (unique names)
+    expect(screen.getByRole("button", { name: /metformin/i })).toBeTruthy();
+    expect(screen.getByRole("button", { name: /ciprofloxacin/i })).toBeTruthy();
+    // filtering to one class hides drugs from other classes
+    fireEvent.change(screen.getByLabelText(/Filter by drug class/i), {
+      target: { value: "Antibiotics & antimicrobials" },
+    });
+    expect(screen.getByRole("button", { name: /ciprofloxacin/i })).toBeTruthy();
+    expect(screen.queryByRole("button", { name: /metformin/i })).toBeNull();
+    expect(screen.queryByRole("button", { name: /digoxin/i })).toBeNull();
   });
 
   it("every remaining calculator mounts without crashing", () => {

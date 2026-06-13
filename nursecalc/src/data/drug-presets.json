@@ -16,6 +16,7 @@
       "generic": "dopamine",
       "brand": "Intropin",
       "category": "inotrope",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "vesicant": true,
       "lasa": "do NOT confuse dopamine with DOBUTamine",
@@ -59,6 +60,7 @@
       "generic": "dobutamine",
       "brand": "Dobutrex",
       "category": "inotrope",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "vesicant": true,
       "lasa": "do NOT confuse DOBUTamine with DOPamine",
@@ -103,6 +105,7 @@
       "generic": "norepinephrine",
       "brand": "Levophed",
       "category": "pressor",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "vesicant": true,
       "doseMode": "mcgMin",
@@ -146,6 +149,7 @@
       "generic": "epinephrine",
       "brand": "Adrenalin",
       "category": "pressor",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "vesicant": true,
       "doseMode": "mcgMin",
@@ -189,6 +193,7 @@
       "generic": "phenylephrine",
       "brand": "Neo-Synephrine",
       "category": "pressor",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "doseMode": "mcgMin",
       "presets": [
@@ -222,6 +227,7 @@
       "generic": "vasopressin",
       "brand": "Pitressin",
       "category": "pressor",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "doseMode": "unitsHr",
       "presets": [
@@ -253,6 +259,7 @@
       "generic": "amiodarone",
       "brand": "Cordarone / Nexterone",
       "category": "antiarrhythmic",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "doseMode": "mgMin",
       "presets": [
@@ -292,6 +299,7 @@
       "generic": "lidocaine",
       "brand": "Xylocaine",
       "category": "antiarrhythmic",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "doseMode": "mgMin",
       "presets": [
@@ -328,6 +336,7 @@
       "generic": "nitroglycerin",
       "brand": "Tridil / Nitro-Bid",
       "category": "vasodilator",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "lasa": "nitroglycerin vs nitroprusside — verify carefully",
       "doseMode": "mcgMin",
@@ -362,6 +371,7 @@
       "generic": "nicardipine",
       "brand": "Cardene",
       "category": "vasodilator",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "doseMode": "mgHr",
       "presets": [
@@ -393,6 +403,7 @@
       "generic": "sodium nitroprusside",
       "brand": "Nipride / Nitropress",
       "category": "vasodilator",
+      "group": "Critical-care drips (vasoactive)",
       "highAlert": true,
       "lasa": "nitroprusside vs nitroglycerin — verify carefully",
       "doseMode": "mcgKgMin",
@@ -427,6 +438,7 @@
       "generic": "heparin",
       "brand": "—",
       "category": "anticoagulant",
+      "group": "Anticoagulants & antiplatelets",
       "highAlert": true,
       "doseMode": "unitsHr",
       "presets": [
@@ -461,6 +473,7 @@
       "generic": "regular insulin",
       "brand": "Humulin R / Novolin R",
       "category": "insulin",
+      "group": "Endocrine & diabetes",
       "highAlert": true,
       "doseMode": "unitsHr",
       "presets": [
@@ -494,6 +507,7 @@
       "generic": "magnesium sulfate",
       "brand": "—",
       "category": "electrolyte",
+      "group": "Fluids & electrolytes",
       "highAlert": true,
       "doseMode": "mgHr",
       "presets": [
