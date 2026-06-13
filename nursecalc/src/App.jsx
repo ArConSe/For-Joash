@@ -1,90 +1,123 @@
 import { useEffect, useState } from "react";
 import { DISCLAIMER } from "./lib/validation.js";
-import IVDripRate from "./screens/IVDripRate.jsx";
-import WeightBased from "./screens/WeightBased.jsx";
-import Titration from "./screens/Titration.jsx";
-import OralTablet from "./screens/OralTablet.jsx";
-import LiquidOral from "./screens/LiquidOral.jsx";
-import IVPumpRate from "./screens/IVPumpRate.jsx";
-import InfusionTime from "./screens/InfusionTime.jsx";
-import Reconstitution from "./screens/Reconstitution.jsx";
-import SafeDoseRange from "./screens/SafeDoseRange.jsx";
-import BSA from "./screens/BSA.jsx";
+import { BY_ID } from "./catalog.js";
+import Icon from "./components/Icon.jsx";
+import Home from "./screens/Home.jsx";
 import DrugGuide from "./screens/DrugGuide.jsx";
 
-// IV Drip Rate first and prominent — the gravity-drip gap is the reason this app exists.
-const SCREENS = [
-  { id: "drip", label: "IV Drip Rate (gtt/min)", icon: "💧", component: IVDripRate, featured: true },
-  { id: "weight", label: "Weight-Based Dose", icon: "⚖️", component: WeightBased, featured: true },
-  { id: "titration", label: "Titration Drips", icon: "🫀", component: Titration, featured: true },
-  { id: "drugs", label: "Drug Guide", icon: "📖", component: DrugGuide, featured: true },
-  { id: "oral", label: "Oral / Tablet", icon: "💊", component: OralTablet },
-  { id: "liquid", label: "Liquid / Injectable", icon: "🧪", component: LiquidOral },
-  { id: "pump", label: "IV Pump Rate (mL/hr)", icon: "⏱", component: IVPumpRate },
-  { id: "time", label: "Infusion Time", icon: "🕐", component: InfusionTime },
-  { id: "recon", label: "Reconstitution", icon: "💉", component: Reconstitution },
-  { id: "sdr", label: "Safe Dose Range", icon: "🛡", component: SafeDoseRange },
-  { id: "bsa", label: "BSA (Mosteller)", icon: "📐", component: BSA },
-];
-
 export default function App() {
-  const [screenId, setScreenId] = useState("drip");
+  const [tab, setTab] = useState("calc"); // "calc" | "drugs"
+  const [toolId, setToolId] = useState(null); // null = home grid
+  const [drugFocus, setDrugFocus] = useState(null); // deep-linked drug id
   const [dark, setDark] = useState(true);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const screen = SCREENS.find((s) => s.id === screenId);
-  const Active = screen.component;
+  const inTool = tab === "calc" && toolId;
+
+  const scrollTop = () => {
+    try {
+      window.scrollTo(0, 0);
+    } catch {
+      /* jsdom / unsupported environments */
+    }
+  };
+  const openTool = (id) => {
+    setTab("calc");
+    setToolId(id);
+    scrollTop();
+  };
+  const openDrug = (id) => {
+    setDrugFocus(id);
+    setTab("drugs");
+    scrollTop();
+  };
+  const goCalculators = () => {
+    setTab("calc");
+    setToolId(null);
+  };
+  const goDrugs = () => {
+    setDrugFocus(null);
+    setToolId(null); // "Calculators" always returns to the grid, never a stale tool
+    setTab("drugs");
+  };
+
+  // Escape backs out of an open tool to the grid.
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape" && inTool) setToolId(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [inTool]);
+
+  const ToolComponent = toolId ? BY_ID[toolId]?.Component : null;
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="no-print sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-          <h1 className="text-xl font-extrabold tracking-tight">
+    <div className="min-h-screen pb-24">
+      <header className="no-print sticky top-0 z-20 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/85">
+        <div className="mx-auto flex h-14 max-w-3xl items-center gap-1 px-3">
+          {inTool && (
+            <button onClick={goCalculators} className="icon-btn" aria-label="Back">
+              <Icon name="chevronLeft" size={22} />
+            </button>
+          )}
+          <span className={`text-lg font-extrabold tracking-tight ${inTool ? "" : "pl-1"}`}>
             <span className="text-cyan-600 dark:text-cyan-400">Nurse</span>Calc
-          </h1>
+          </span>
           <button
             onClick={() => setDark(!dark)}
-            className="nc-btn-ghost text-sm"
-            aria-label="Toggle dark mode"
+            className="icon-btn ml-auto"
+            aria-label="Toggle theme"
           >
-            {dark ? "☀️ Light" : "🌙 Dark"}
+            <Icon name={dark ? "sun" : "moon"} size={20} />
           </button>
         </div>
-        <nav className="mx-auto max-w-3xl overflow-x-auto px-4 pb-3">
-          <div className="flex gap-2">
-            {SCREENS.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => setScreenId(s.id)}
-                className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium transition ${
-                  s.id === screenId
-                    ? "bg-cyan-600 text-white"
-                    : "bg-slate-200 text-slate-600 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
-                } ${s.featured && s.id !== screenId ? "ring-1 ring-cyan-500/40" : ""}`}
-              >
-                {s.icon} {s.label}
-              </button>
-            ))}
-          </div>
-        </nav>
       </header>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-6">
-        <Active key={screenId} />
-      </main>
+      <main className="mx-auto max-w-3xl px-4 py-5">
+        {tab === "drugs" ? (
+          // key resets the guide between a focused drug and the full list
+          <DrugGuide key={drugFocus || "all"} focusDrugId={drugFocus} />
+        ) : ToolComponent ? (
+          <ToolComponent key={toolId} />
+        ) : (
+          <div className="no-print">
+            <Home onOpenTool={openTool} onOpenDrug={openDrug} />
+          </div>
+        )}
 
-      <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
-        <div className="mx-auto max-w-3xl px-4 py-3 text-center text-xs text-slate-500 dark:text-slate-400">
+        <footer className="mt-8 border-t border-slate-200 pt-4 text-center text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
           <p className="font-semibold">⚕️ {DISCLAIMER}</p>
           <p className="no-print mt-1">
             Formulas per Open RN / OpenStax dosage-calculation curriculum; drug data paraphrased per
             Davis's Drug Guide and Mosby's. Offline — no data leaves this device.
           </p>
+        </footer>
+      </main>
+
+      <nav className="no-print fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+        <div className="mx-auto grid max-w-3xl grid-cols-2">
+          <button
+            onClick={goCalculators}
+            className={`nav-item ${tab === "calc" ? "nav-item-active" : ""}`}
+            aria-current={tab === "calc" ? "page" : undefined}
+          >
+            <Icon name="grid" size={22} />
+            Calculators
+          </button>
+          <button
+            onClick={goDrugs}
+            className={`nav-item ${tab === "drugs" ? "nav-item-active" : ""}`}
+            aria-current={tab === "drugs" ? "page" : undefined}
+          >
+            <Icon name="book" size={22} />
+            Drug Guide
+          </button>
         </div>
-      </footer>
+      </nav>
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
 import { highAlertBanners } from "../lib/validation.js";
+import { ALL_DRUGS, matchesDrug } from "../lib/drugs.js";
 import SafetyBanner from "../components/SafetyBanner.jsx";
 import NursingConsiderations from "../components/NursingConsiderations.jsx";
-import drips from "../data/drug-presets.json";
-import wardMeds from "../data/drug-guide.json";
 
 const FLAG_BADGES = [
   ["highAlert", "HIGH ALERT", "bg-red-600/20 text-red-700 dark:text-red-300 ring-red-500/50"],
@@ -11,28 +10,17 @@ const FLAG_BADGES = [
   ["lasa", "LASA", "bg-amber-600/20 text-amber-700 dark:text-amber-300 ring-amber-500/50"],
 ];
 
-// one merged handbook: titration drips + general ward/emergency medications
-const ALL_DRUGS = [
-  ...drips.drugs.map((d) => ({ ...d, section: "Critical-care drip" })),
-  ...wardMeds.drugs.map((d) => ({ ...d, section: "Ward / emergency" })),
-].sort((a, b) => a.generic.localeCompare(b.generic));
-
 /**
  * Drug handbook: browse/search every drug card without running a
  * calculation. Expanding a drug shows its safety banners, dose
  * range/summary, standard concentrations, and the nursing card.
+ * focusDrugId opens a specific card on mount (deep-link from Home search).
  */
-export default function DrugGuide() {
+export default function DrugGuide({ focusDrugId = null }) {
   const [query, setQuery] = useState("");
-  const [openId, setOpenId] = useState(null);
+  const [openId, setOpenId] = useState(focusDrugId);
 
-  const drugs = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return ALL_DRUGS;
-    return ALL_DRUGS.filter((d) =>
-      [d.generic, d.brand, d.category, d.section].some((s) => s && s.toLowerCase().includes(q))
-    );
-  }, [query]);
+  const drugs = useMemo(() => ALL_DRUGS.filter((d) => matchesDrug(d, query)), [query]);
 
   return (
     <div className="space-y-4">
