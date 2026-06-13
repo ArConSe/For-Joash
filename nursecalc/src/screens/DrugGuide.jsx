@@ -24,7 +24,7 @@ export default function DrugGuide({ focusDrugId = null }) {
 
   return (
     <div className="space-y-4">
-      <header className="no-print">
+      <header>
         <h2 className="text-2xl font-bold">Drug Guide</h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           {ALL_DRUGS.length} handbook cards — critical-care drips plus high-yield ward and
@@ -34,7 +34,7 @@ export default function DrugGuide({ focusDrugId = null }) {
         </p>
       </header>
 
-      <label className="no-print block">
+      <label className="block">
         <span className="nc-label">Search drugs</span>
         <input
           type="search"
@@ -56,11 +56,11 @@ export default function DrugGuide({ focusDrugId = null }) {
         {drugs.map((d) => {
           const open = openId === d.id;
           return (
-            <li key={d.id} className={open ? "print-area" : "no-print"}>
+            <li key={d.id}>
               <button
                 type="button"
                 onClick={() => setOpenId(open ? null : d.id)}
-                className="nc-card no-print w-full text-left transition hover:border-cyan-500/60"
+                className="nc-card w-full text-left transition hover:border-teal-500/60"
                 aria-expanded={open}
               >
                 <div className="flex flex-wrap items-center gap-2">
@@ -85,7 +85,7 @@ export default function DrugGuide({ focusDrugId = null }) {
                       ? `${d.doseRange.min}–${d.doseRange.max} ${d.doseRange.unit}`
                       : d.doseSummary}
                   </span>
-                  <span className="ml-auto text-xs text-cyan-700 dark:text-cyan-400">
+                  <span className="ml-auto text-xs text-teal-700 dark:text-teal-400">
                     {open ? "▲ close" : "▼ open"}
                   </span>
                 </div>
@@ -93,12 +93,9 @@ export default function DrugGuide({ focusDrugId = null }) {
 
               {open && (
                 <div className="mt-2 space-y-3">
-                  <div className="hidden print:block">
-                    <h2 className="text-xl font-bold">NurseCalc Drug Guide — {d.generic}</h2>
-                  </div>
                   <SafetyBanner banners={highAlertBanners({ drug: d, category: d.category })} />
                   <div className="nc-card">
-                    <h4 className="text-sm font-bold uppercase tracking-wide text-cyan-700 dark:text-cyan-400">
+                    <h4 className="text-sm font-bold uppercase tracking-wide text-teal-700 dark:text-teal-400">
                       {d.presets ? "Standard concentrations" : "Typical adult dosing"}
                     </h4>
                     {d.presets ? (
@@ -117,9 +114,6 @@ export default function DrugGuide({ focusDrugId = null }) {
                     )}
                   </div>
                   <NursingConsiderations drug={d} />
-                  <button onClick={() => window.print()} className="nc-btn-ghost no-print">
-                    🖨 Print / Save as PDF
-                  </button>
                 </div>
               )}
             </li>

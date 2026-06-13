@@ -27,14 +27,16 @@ checks on every input**, and surfaces **handbook-based nursing considerations**.
 
 - **All math** lives in `src/lib/calc-engine.js`; **all checks** in `src/lib/validation.js`;
   rounding/display rules in `src/lib/format.js`. Screens are thin UI wrappers — no inline formulas.
-- Drug presets + nursing cards: `src/data/drug-presets.json` (institution-variable; the order
-  and facility policy override).
+- Drug data + nursing cards: `src/data/drug-presets.json` (titration drips) and
+  `src/data/drug-guide.json` (ward/emergency meds), merged via `src/lib/drugs.js`
+  (institution-variable; the order and facility policy override).
+- Each nursing card leads with a **Key nursing actions** checklist (the at-a-glance "what to do"),
+  then detailed sections with safety items (hold/notify, extravasation, antidote) gently color-cued.
 - gtt/min always rounds to whole drops; mL/hr has a pump-precision toggle; high-alert doses
   are never silently rounded (unrounded value shown).
 - High-alert / vesicant / LASA / pediatric banners fire automatically from the presets.
-- Offline-first: no network calls at runtime; no browser storage. Dark theme default.
-- Every result prints cleanly (result + worked solution + nursing card) via the browser
-  print dialog.
+- Offline-first: no network calls at runtime; no browser storage.
+- Soft, low-glare visual system (light theme default, dark toggle) tuned for long sessions.
 
 ## Develop
 

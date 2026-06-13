@@ -10,9 +10,9 @@ export default function ResultCard({ result, highAlert = false, subline }) {
     result.rawValue != null &&
     Math.abs(result.rawValue - result.value) > 1e-9;
   return (
-    <div className="nc-card border-2 border-cyan-500/60 text-center">
+    <div className="nc-card border-2 border-teal-500/60 text-center">
       <p className="text-sm uppercase tracking-wide text-slate-500 dark:text-slate-400">Result</p>
-      <p className="mt-1 text-4xl font-extrabold text-cyan-700 dark:text-cyan-300">{display}</p>
+      <p className="mt-1 text-4xl font-extrabold text-teal-700 dark:text-teal-300">{display}</p>
       {showRaw && (
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Unrounded: {result.rawValue} {result.unit}

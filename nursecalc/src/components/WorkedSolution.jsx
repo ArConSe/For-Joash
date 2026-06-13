@@ -27,7 +27,7 @@ export default function WorkedSolution({ result }) {
       <div className="space-y-3">
         {Object.entries(methods).map(([key, text]) => (
           <div key={key}>
-            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-400">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-700 dark:text-teal-400">
               {METHOD_LABELS[key] || key}
             </p>
             <p className="mt-0.5 overflow-x-auto rounded bg-slate-100 p-2 font-mono text-sm dark:bg-slate-800">
@@ -38,7 +38,7 @@ export default function WorkedSolution({ result }) {
       </div>
 
       {result.note && (
-        <p className="rounded bg-cyan-50 p-2 text-sm text-cyan-800 dark:bg-cyan-950/50 dark:text-cyan-200">
+        <p className="rounded bg-teal-50 p-2 text-sm text-teal-800 dark:bg-teal-950/50 dark:text-teal-200">
           💡 {result.note}
         </p>
       )}

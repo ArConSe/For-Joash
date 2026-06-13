@@ -95,7 +95,7 @@ export default function SafeDoseRange() {
           type="checkbox"
           checked={isPediatric}
           onChange={(e) => setIsPediatric(e.target.checked)}
-          className="h-4 w-4 accent-cyan-600"
+          className="h-4 w-4 accent-teal-600"
         />
         Pediatric patient
       </label>

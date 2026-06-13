@@ -9,7 +9,7 @@ export default function App() {
   const [tab, setTab] = useState("calc"); // "calc" | "drugs"
   const [toolId, setToolId] = useState(null); // null = home grid
   const [drugFocus, setDrugFocus] = useState(null); // deep-linked drug id
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false); // light is gentler by default; toggle persists in-session
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
@@ -57,7 +57,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen pb-24">
-      <header className="no-print sticky top-0 z-20 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/85">
+      <header className="sticky top-0 z-20 border-b border-slate-200/70 bg-white/80 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/80">
         <div className="mx-auto flex h-14 max-w-3xl items-center gap-1 px-3">
           {inTool && (
             <button onClick={goCalculators} className="icon-btn" aria-label="Back">
@@ -65,7 +65,7 @@ export default function App() {
             </button>
           )}
           <span className={`text-lg font-extrabold tracking-tight ${inTool ? "" : "pl-1"}`}>
-            <span className="text-cyan-600 dark:text-cyan-400">Nurse</span>Calc
+            <span className="text-teal-600 dark:text-teal-400">Nurse</span>Calc
           </span>
           <button
             onClick={() => setDark(!dark)}
@@ -84,14 +84,12 @@ export default function App() {
         ) : ToolComponent ? (
           <ToolComponent key={toolId} />
         ) : (
-          <div className="no-print">
-            <Home onOpenTool={openTool} onOpenDrug={openDrug} />
-          </div>
+          <Home onOpenTool={openTool} onOpenDrug={openDrug} />
         )}
 
-        <footer className="mt-8 border-t border-slate-200 pt-4 text-center text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
+        <footer className="mt-8 border-t border-slate-200 pt-4 text-center text-xs text-slate-400 dark:border-slate-800 dark:text-slate-500">
           <p className="font-semibold">⚕️ {DISCLAIMER}</p>
-          <p className="no-print mt-1">
+          <p className="mt-1">
             Formulas per Open RN / OpenStax (CC BY) dosage-calculation curriculum; drug data
             paraphrased from open references — FDA labeling (DailyMed), Open RN, StatPearls, WHO.
             Offline — no data leaves this device.
@@ -99,7 +97,7 @@ export default function App() {
         </footer>
       </main>
 
-      <nav className="no-print fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+      <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
         <div className="mx-auto grid max-w-3xl grid-cols-2">
           <button
             onClick={goCalculators}

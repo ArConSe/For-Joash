@@ -12,6 +12,11 @@
       "category": "anticholinergic",
       "highAlert": false,
       "doseSummary": "Symptomatic bradycardia: 0.5–1 mg IV q3–5 min, max 3 mg (ACLS)",
+      "keyActions": [
+        "Rapid IV push (≥0.5 mg to avoid paradoxical bradycardia)",
+        "Continuous ECG; watch HR response",
+        "Expect dry mouth, blurred vision, urinary retention"
+      ],
       "nursing": {
         "before": "Baseline HR, rhythm, BP. Continuous ECG during use.",
         "administration": "Rapid IV push; doses under 0.5 mg in adults can cause paradoxical bradycardia.",
@@ -29,6 +34,11 @@
       "category": "antiarrhythmic",
       "highAlert": false,
       "doseSummary": "Stable SVT: 6 mg rapid IV push, then 12 mg if no conversion (ACLS)",
+      "keyActions": [
+        "Push fast over 1–2 s, then immediate 20 mL NS flush",
+        "Warn patient first: brief chest pressure/flushing",
+        "Continuous ECG — a brief pause is expected"
+      ],
       "nursing": {
         "before": "Continuous ECG and emergency equipment at bedside. Large-bore IV as proximal as possible (antecubital).",
         "administration": "Push over 1–2 seconds, immediately followed by a 20 mL NS flush; half-life is seconds.",
@@ -46,6 +56,11 @@
       "category": "cardiac glycoside",
       "highAlert": false,
       "doseSummary": "Maintenance 0.125–0.25 mg PO/IV daily; therapeutic level 0.5–2 ng/mL",
+      "keyActions": [
+        "Apical pulse 1 full minute — hold if <60 (adult)",
+        "Check K+ (low K+ → toxicity) & dig level",
+        "Watch toxicity: nausea, visual halos; antidote DigiFab"
+      ],
       "nursing": {
         "before": "Apical pulse for one FULL minute — hold and notify if <60/min in adults (peds threshold per pediatric reference). Check potassium: hypokalemia potentiates toxicity.",
         "monitor": "Digoxin level, K+/Mg2+/Ca2+, renal function, HR and rhythm.",
@@ -62,6 +77,11 @@
       "category": "loop diuretic",
       "highAlert": false,
       "doseSummary": "20–80 mg PO/IV; IV push slowly (≤20 mg/min) — rapid push risks ototoxicity",
+      "keyActions": [
+        "Slow IV push (≤20 mg/min)",
+        "Monitor K+, BP, strict I&O, daily weight",
+        "Watch hearing (ototoxicity); dose in the morning"
+      ],
       "nursing": {
         "before": "Baseline BP, K+, renal function, weight.",
         "administration": "Give in the morning (and early afternoon if BID) to avoid nocturia. Slow IV push.",
@@ -78,6 +98,11 @@
       "category": "beta blocker",
       "highAlert": false,
       "doseSummary": "25–100 mg PO BID (tartrate); IV 5 mg slow push per protocol",
+      "keyActions": [
+        "Apical pulse & BP — hold if HR<60 or SBP<100",
+        "Never stop abruptly (taper)",
+        "Diabetics: masks hypoglycemia tachycardia"
+      ],
       "nursing": {
         "before": "Apical pulse and BP — hold and clarify if HR <60 or SBP <100 (or per order/policy).",
         "monitor": "HR, BP, signs of HF (edema, dyspnea, weight gain), glucose in diabetics — beta blockade masks tachycardia of hypoglycemia.",
@@ -93,6 +118,11 @@
       "category": "ACE inhibitor",
       "highAlert": false,
       "doseSummary": "12.5–50 mg PO BID–TID, 1 hour before meals",
+      "keyActions": [
+        "Empty stomach; give first dose lying down",
+        "Monitor BP, K+, renal function",
+        "Watch angioedema (face/lip swelling) — emergency"
+      ],
       "nursing": {
         "before": "Baseline BP — first-dose hypotension is common; give the first dose with the patient lying down if possible.",
         "administration": "Empty stomach (food reduces absorption).",
@@ -110,6 +140,11 @@
       "category": "calcium channel blocker",
       "highAlert": false,
       "doseSummary": "2.5–10 mg PO once daily",
+      "keyActions": [
+        "Monitor BP, HR, ankle edema",
+        "Rise slowly; do not stop abruptly",
+        "Oral hygiene (gingival hyperplasia)"
+      ],
       "nursing": {
         "monitor": "BP and HR, peripheral edema (common, dose-related), dizziness, headache.",
         "holdNotify": "Symptomatic hypotension, worsening edema with dyspnea.",
@@ -124,6 +159,11 @@
       "category": "antiplatelet",
       "highAlert": false,
       "doseSummary": "ACS: 162–325 mg chewed (non–enteric-coated); prophylaxis 75–100 mg daily",
+      "keyActions": [
+        "Suspected ACS: have patient CHEW non–enteric-coated",
+        "Watch bleeding (stool, gums) & tinnitus",
+        "Take the daily dose with food"
+      ],
       "nursing": {
         "administration": "For suspected ACS, have the patient CHEW non–enteric-coated aspirin for fast absorption.",
         "monitor": "Bleeding (gums, stool, urine, bruising), GI pain, tinnitus (salicylate toxicity sign).",
@@ -140,6 +180,11 @@
       "category": "anticoagulant",
       "highAlert": true,
       "doseSummary": "2–10 mg PO daily, individualized to INR (usual target 2–3)",
+      "keyActions": [
+        "Monitor INR (usual target 2–3)",
+        "Bleeding precautions; keep vitamin K intake consistent",
+        "Antidote: vitamin K"
+      ],
       "nursing": {
         "before": "Baseline PT/INR; review for interactions — warfarin interacts with very many drugs and foods.",
         "monitor": "INR per protocol, bleeding precautions (soft toothbrush, electric razor), Hgb/Hct, occult blood.",
@@ -157,6 +202,11 @@
       "category": "anticoagulant",
       "highAlert": true,
       "doseSummary": "Prophylaxis 40 mg subcut daily; treatment 1 mg/kg subcut q12h (renal-adjusted)",
+      "keyActions": [
+        "Deep subcut in abdomen — don't expel air bubble or rub",
+        "Monitor platelets (HIT) & bleeding",
+        "Antidote: protamine (partial)"
+      ],
       "nursing": {
         "administration": "Deep subcut into the abdominal 'love handles' (anterolateral wall), alternate sides; do NOT expel the prefilled air bubble; do NOT rub the site; do not aspirate.",
         "monitor": "Bleeding, platelets (HIT), anti-Xa level if ordered (renal impairment, obesity, pregnancy); renal function.",
@@ -173,6 +223,11 @@
       "category": "opioid analgesic",
       "highAlert": true,
       "doseSummary": "2–10 mg IV slow push (over 4–5 min) q3–4h PRN, individualized",
+      "keyActions": [
+        "Check RR & sedation — hold if RR<12 or oversedated",
+        "Push slowly; keep naloxone available",
+        "Prevent constipation; fall precautions"
+      ],
       "nursing": {
         "before": "Pain score, respiratory rate and sedation level — hold and notify if RR <12 or oversedated; baseline BP.",
         "administration": "Dilute and push slowly; have naloxone and resuscitation equipment available.",
@@ -190,6 +245,11 @@
       "category": "opioid antagonist",
       "highAlert": false,
       "doseSummary": "0.4–2 mg IV/IM/intranasal, repeat q2–3 min as needed",
+      "keyActions": [
+        "Titrate to breathing, not full arousal",
+        "Watch re-sedation — shorter-acting than opioids",
+        "Reassess RR continuously; repeat PRN"
+      ],
       "nursing": {
         "administration": "Titrate to adequate breathing — full reversal also reverses analgesia and can precipitate acute withdrawal.",
         "monitor": "RR and sedation CONTINUOUSLY after response — naloxone is shorter-acting than most opioids, so re-sedation is common; repeat dosing may be needed. BP, HR, withdrawal signs.",
@@ -205,6 +265,11 @@
       "category": "benzodiazepine",
       "highAlert": true,
       "doseSummary": "Status epilepticus: 5–10 mg IV slow (≤5 mg/min), may repeat per protocol",
+      "keyActions": [
+        "Slow IV into a large vein; don't mix in the syringe",
+        "Monitor RR/airway & BP",
+        "Antidote: flumazenil (seizure risk)"
+      ],
       "nursing": {
         "administration": "Inject slowly into a large vein (phlebitis/tissue irritation); do NOT mix with other drugs in the same syringe; IM absorption is erratic.",
         "monitor": "RR and airway (respiratory depression, worse with opioids/alcohol), BP, sedation level, seizure activity.",
@@ -221,6 +286,11 @@
       "category": "analgesic-antipyretic",
       "highAlert": false,
       "doseSummary": "500 mg–1 g PO/IV q4–6h; max 4 g/day adult (lower with hepatic risk/alcohol use)",
+      "keyActions": [
+        "Count ALL sources — max 4 g/day adult",
+        "Watch hepatotoxicity (RUQ pain, jaundice)",
+        "Antidote: N-acetylcysteine"
+      ],
       "nursing": {
         "administration": "COUNT ALL SOURCES — many combination cold/pain products contain paracetamol; the daily max is cumulative.",
         "monitor": "Temperature/pain response; hepatic function with prolonged or high-dose use.",
@@ -237,6 +307,11 @@
       "category": "NSAID",
       "highAlert": false,
       "doseSummary": "200–400 mg PO q4–6h with food; max 1.2 g/day OTC (higher per prescriber)",
+      "keyActions": [
+        "Give with food",
+        "Watch GI bleeding (black stools) & urine output",
+        "Avoid stacking NSAIDs; keep hydrated"
+      ],
       "nursing": {
         "administration": "Give with food or milk to reduce GI upset.",
         "monitor": "GI bleeding (black stools, epigastric pain), renal function/urine output (especially elderly, dehydrated, or on ACE inhibitors/diuretics), BP, edema.",
@@ -253,6 +328,11 @@
       "category": "anticonvulsant",
       "highAlert": false,
       "doseSummary": "Load per protocol; maintenance 300–400 mg/day; level 10–20 mcg/mL",
+      "keyActions": [
+        "IV in NS only, ≤50 mg/min, with inline filter",
+        "Continuous ECG/BP during loading",
+        "Oral hygiene; never stop abruptly; monitor level"
+      ],
       "nursing": {
         "administration": "IV: NS ONLY (precipitates in dextrose), ≤50 mg/min, large vein with inline filter — extravasation causes severe injury (purple glove syndrome). Flush before/after.",
         "monitor": "Phenytoin level, ECG/BP during IV loading, gait/nystagmus/ataxia (toxicity), gum changes, rash (stop if severe — SJS risk).",
@@ -268,6 +348,11 @@
       "category": "osmotic diuretic",
       "highAlert": false,
       "doseSummary": "0.25–1 g/kg IV over 30–60 min for raised ICP, per protocol",
+      "keyActions": [
+        "Use an inline filter (crystallizes); strict I&O",
+        "Monitor neuro/ICP, osmolality, electrolytes",
+        "Watch pulmonary edema/HF (crackles)"
+      ],
       "nursing": {
         "before": "Inspect the solution — mannitol crystallizes; warm to dissolve and ALWAYS use an inline filter. Baseline neuro status, electrolytes, osmolality. Insert urinary catheter for strict I&O.",
         "monitor": "Neuro status/ICP response, strict hourly I&O, serum osmolality and electrolytes, lungs — can precipitate pulmonary edema/HF as it pulls fluid intravascularly.",
@@ -283,6 +368,11 @@
       "category": "bronchodilator",
       "highAlert": false,
       "doseSummary": "Neb 2.5 mg PRN/q4–6h; MDI 1–2 puffs q4–6h PRN (rescue)",
+      "keyActions": [
+        "Give before an inhaled steroid; use a spacer",
+        "Assess lung sounds/peak flow before & after",
+        "Watch HR, tremor, K+ with frequent nebs"
+      ],
       "nursing": {
         "administration": "If used with an inhaled corticosteroid, give salbutamol FIRST (opens airways), wait, then the steroid. Use a spacer with MDIs.",
         "monitor": "Lung sounds and peak flow before/after, HR (tachycardia), tremor, potassium with frequent/continuous nebs (drives K+ into cells).",
@@ -298,6 +388,11 @@
       "category": "corticosteroid",
       "highAlert": false,
       "doseSummary": "100 mg IV q8h (stress dosing/adrenal crisis per protocol); PO doses vary",
+      "keyActions": [
+        "Monitor glucose, BP, K+",
+        "Never stop long-term steroids abruptly — taper",
+        "Infection signs may be masked"
+      ],
       "nursing": {
         "administration": "IV push slowly or infuse per label; give PO doses with food; morning dosing mimics diurnal rhythm.",
         "monitor": "Blood glucose (hyperglycemia — including non-diabetics), BP, K+ (hypokalemia), signs of infection (may be MASKED — fever may be absent), GI bleeding, mood changes.",
@@ -313,6 +408,11 @@
       "category": "antibiotic (3rd-gen cephalosporin)",
       "highAlert": false,
       "doseSummary": "1–2 g IV/IM q24h (q12h for meningitis per protocol)",
+      "keyActions": [
+        "Check allergy (penicillin cross-reactivity)",
+        "Never co-infuse with calcium-containing solutions",
+        "Watch for C. difficile diarrhea"
+      ],
       "nursing": {
         "before": "Allergy history — cross-reactivity with penicillin allergy is low but real; clarify severe penicillin reactions. Obtain cultures before the first dose when ordered.",
         "administration": "NEVER mix or co-infuse with calcium-containing solutions (fatal precipitates in neonates; separate lines/flush in others per policy). IM: dilute per policy (lidocaine diluent is common — verify).",
@@ -329,6 +429,11 @@
       "category": "antibiotic (glycopeptide)",
       "highAlert": false,
       "doseSummary": "15–20 mg/kg IV q8–12h, adjusted to levels (trough/AUC per policy)",
+      "keyActions": [
+        "Infuse over ≥60 min (slow for red-man flushing)",
+        "Monitor trough, renal function, hearing",
+        "Watch the IV site (irritant)"
+      ],
       "nursing": {
         "administration": "Infuse over AT LEAST 60 minutes — rapid infusion causes vancomycin flushing ('red man') syndrome: flushing, pruritus, hypotension. Slow the rate if it occurs.",
         "monitor": "Trough level before the dose per policy, renal function (creatinine, urine output — nephrotoxic), hearing/tinnitus (ototoxic), IV site (irritant).",
@@ -344,6 +449,11 @@
       "category": "antibiotic (aminoglycoside)",
       "highAlert": false,
       "doseSummary": "Conventional 1–2.5 mg/kg q8h or extended-interval 5–7 mg/kg q24h, by levels",
+      "keyActions": [
+        "Monitor peak/trough levels",
+        "Watch nephrotoxicity (creatinine, urine output)",
+        "Watch ototoxicity (tinnitus, vertigo) — may be permanent"
+      ],
       "nursing": {
         "before": "Baseline renal function and hearing assessment; weight for dosing.",
         "monitor": "Peak and trough levels per policy, creatinine and urine output (nephrotoxicity — usually reversible), tinnitus/vertigo/hearing loss (ototoxicity — often IRREVERSIBLE), vestibular signs.",
@@ -359,6 +469,11 @@
       "category": "antiemetic / prokinetic",
       "highAlert": false,
       "doseSummary": "10 mg PO/IV q6–8h, 30 min before meals and at bedtime",
+      "keyActions": [
+        "Give 30 min before meals; slow IV push",
+        "Watch extrapyramidal signs (restlessness, dystonia)",
+        "Avoid in GI obstruction / Parkinson's"
+      ],
       "nursing": {
         "administration": "Give 30 minutes before meals (prokinetic effect). IV push slowly over 1–2 min (rapid push causes intense restlessness).",
         "monitor": "Extrapyramidal symptoms — restlessness (akathisia), acute dystonia (face/neck spasms), and with use >12 weeks, tardive dyskinesia (boxed warning). Drowsiness.",
@@ -375,6 +490,11 @@
       "category": "proton pump inhibitor",
       "highAlert": false,
       "doseSummary": "20–40 mg PO once daily, 30–60 min before breakfast",
+      "keyActions": [
+        "Swallow capsule whole, before breakfast",
+        "Long-term: monitor Mg/B12; watch C. diff diarrhea",
+        "Report watery diarrhea"
+      ],
       "nursing": {
         "administration": "Swallow delayed-release capsules whole — do not crush or chew (capsule contents may be sprinkled on soft food per label if needed).",
         "monitor": "Symptom relief; with long-term use: magnesium level, B12, fracture risk, C. difficile-associated diarrhea.",
@@ -390,6 +510,11 @@
       "category": "electrolyte",
       "highAlert": true,
       "doseSummary": "IV: diluted and pump-controlled ONLY, commonly ≤10 mEq/hr peripherally per policy; PO with food and a full glass of water",
+      "keyActions": [
+        "NEVER IV push — always diluted on a pump",
+        "Verify urine output first; ≤10 mEq/hr peripheral per policy",
+        "Monitor K+, ECG, IV site (burning)"
+      ],
       "nursing": {
         "before": "Verify urine output before giving (risk of hyperkalemia in oliguria/renal failure). Verify dilution and rate against policy.",
         "administration": "NEVER IV push — fatal. Always diluted, always on an infusion pump; higher concentrations/rates need a central line and ECG monitoring per policy. KCl is a vesicant-like irritant — check the IV site frequently.",
@@ -406,6 +531,11 @@
       "category": "electrolyte",
       "highAlert": false,
       "doseSummary": "1–2 g (10–20 mL of 10%) IV slow, per protocol",
+      "keyActions": [
+        "Slow IV via a large vein; ECG during",
+        "Don't mix with ceftriaxone/phosphate",
+        "Antidote for magnesium toxicity — keep at bedside"
+      ],
       "nursing": {
         "administration": "IV slowly (rapid push → bradycardia/arrest); preferably via large vein — extravasation causes tissue necrosis. Do NOT mix with ceftriaxone or phosphate-containing solutions (precipitates).",
         "monitor": "ECG during IV administration, calcium level, IV site closely, BP.",
@@ -421,6 +551,11 @@
       "category": "oxytocic",
       "highAlert": true,
       "doseSummary": "Induction: low-dose titration via pump per protocol; postpartum hemorrhage: 10–40 units in 1 L per protocol",
+      "keyActions": [
+        "IV piggyback on a pump; never leave unmonitored",
+        "Continuous FHR + contraction pattern & resting tone",
+        "STOP for tachysystole or non-reassuring FHR"
+      ],
       "nursing": {
         "before": "Baseline maternal VS, fetal heart rate (FHR), contraction pattern. IV piggyback into a mainline, ALWAYS on an infusion pump.",
         "administration": "Titrate per protocol to adequate labor; never leave unmonitored.",

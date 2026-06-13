@@ -38,6 +38,11 @@
         "unit": "mcg/kg/min"
       },
       "rangeNote": "low/renal 2–5; cardiac/beta 5–10; vasopressor/alpha 10–20",
+      "keyActions": [
+        "Central line + infusion pump; correct hypovolemia first",
+        "Continuous BP & ECG; titrate to ordered MAP",
+        "Check site often — extravasation antidote is phentolamine"
+      ],
       "nursing": {
         "before": "Correct hypovolemia (fluids before pressors). Baseline BP, HR, ECG, urine output, IV site.",
         "administration": "Central line preferred; if no pump, use 60-gtt microdrip. Dose-dependent effects.",
@@ -76,6 +81,11 @@
         "unit": "mcg/kg/min"
       },
       "rangeNote": "primarily inotrope (β1); may lower BP via vasodilation",
+      "keyActions": [
+        "Large vein/central line via pump",
+        "Monitor BP (may drop), HR, ECG for dysrhythmias",
+        "Extravasation antidote: phentolamine"
+      ],
       "nursing": {
         "before": "Correct hypovolemia with volume expanders. Baseline VS, ECG.",
         "administration": "Large vein/central; dilute before use.",
@@ -115,6 +125,11 @@
         "unit": "mcg/min"
       },
       "rangeNote": "first-line in septic shock; also dosed 0.01–1 mcg/kg/min",
+      "keyActions": [
+        "Central/large-bore line — avoid lower-extremity veins",
+        "BP q2–5 min during titration (arterial ideal)",
+        "Assess site q5–15 min; extravasation → phentolamine"
+      ],
       "nursing": {
         "before": "Ensure adequate volume. Baseline BP/HR. Central or large-bore antecubital line; avoid lower-extremity veins.",
         "administration": "Have cardiac monitor and resuscitation cart nearby.",
@@ -153,6 +168,11 @@
         "unit": "mcg/min"
       },
       "rangeNote": "infusion ≠ arrest push dose; also 0.01–0.08 mcg/kg/min",
+      "keyActions": [
+        "Verify infusion vs arrest dose before giving",
+        "Continuous BP, HR, ECG; watch blood glucose",
+        "Extravasation antidote: phentolamine"
+      ],
       "nursing": {
         "before": "Baseline VS, ECG, glucose (esp. diabetics).",
         "administration": "Verify infusion vs arrest dose. Titrate to response.",
@@ -184,6 +204,11 @@
         "unit": "mcg/min"
       },
       "rangeNote": "pure alpha; watch reflex bradycardia",
+      "keyActions": [
+        "Titrate to ordered BP",
+        "Watch reflex bradycardia as BP rises",
+        "Vasoconstrictor — site precautions; phentolamine"
+      ],
       "nursing": {
         "before": "Correct volume. Baseline VS.",
         "monitor": "BP and HR — reflex bradycardia as BP rises; urine output/perfusion.",
@@ -212,6 +237,11 @@
         "unit": "units/min"
       },
       "rangeNote": "fixed dose, NOT titrated; adjunct to norepinephrine",
+      "keyActions": [
+        "Fixed dose — do NOT titrate",
+        "Adjunct to norepinephrine",
+        "Watch peripheral/mesenteric ischemia"
+      ],
       "nursing": {
         "administration": "Fixed dose; adjunct in septic shock.",
         "monitor": "BP, perfusion, urine output; watch for peripheral/mesenteric ischemia.",
@@ -243,6 +273,11 @@
         "unit": "mg/min"
       },
       "rangeNote": "stable VT: 150 mg over 10 min, then 1 mg/min ×6 hr, then 0.5 mg/min ×18 hr. Use D5W.",
+      "keyActions": [
+        "Use D5W with inline filter; central line preferred",
+        "Continuous ECG (QT, bradycardia) & BP",
+        "Slow the rate for hypotension"
+      ],
       "nursing": {
         "before": "Baseline BP, HR, continuous ECG.",
         "administration": "Use D5W; inline filter; central line preferred for prolonged use.",
@@ -277,6 +312,11 @@
         "unit": "mg/min"
       },
       "rangeNote": "bolus 1–1.5 mg/kg; antiarrhythmic alternative to amiodarone",
+      "keyActions": [
+        "Continuous ECG & BP",
+        "Watch CNS toxicity: confusion, slurred speech, perioral numbness, seizures",
+        "Stop & notify for any neuro signs"
+      ],
       "nursing": {
         "monitor": "ECG, BP; watch CNS toxicity — confusion, slurred speech, perioral numbness, tremor, seizures.",
         "holdNotify": "Any neuro toxicity signs.",
@@ -304,6 +344,11 @@
         "unit": "mcg/min"
       },
       "rangeNote": "start 5 mcg/min, titrate; non-PVC tubing ideal",
+      "keyActions": [
+        "Non-PVC tubing; ordered in mcg/min",
+        "BP continuously; hold if SBP below floor (often <90)",
+        "Ask about PDE-5 inhibitors (sildenafil) — profound hypotension"
+      ],
       "nursing": {
         "before": "Baseline BP/HR; confirm SBP adequate. Ask about PDE inhibitors (sildenafil/tadalafil) — combination causes profound hypotension.",
         "administration": "Non-PVC tubing (drug adsorbs to PVC). Ordered in mcg/min.",
@@ -332,6 +377,11 @@
         "unit": "mg/hr"
       },
       "rangeNote": "start 5 mg/hr, ↑2.5 mg/hr q5–15 min, max 15 mg/hr (ordered in mg/hr)",
+      "keyActions": [
+        "Ordered in mg/hr (not mcg/kg/min)",
+        "Continuous BP & HR; start 5, max 15 mg/hr",
+        "Rotate IV site (phlebitis)"
+      ],
       "nursing": {
         "administration": "Ordered in mg/hr (not mcg/kg/min). Start 5 mg/hr, max 15 mg/hr.",
         "monitor": "BP and HR continuously; reflex tachycardia; rotate IV site per policy (phlebitis).",
@@ -359,6 +409,11 @@
         "unit": "mcg/kg/min"
       },
       "rangeNote": "start ~0.3 mcg/kg/min, titrate; do not hold max dose long; cyanide risk",
+      "keyActions": [
+        "Protect bag from light; use D5W",
+        "Continuous arterial BP",
+        "Watch cyanide/thiocyanate toxicity (AMS, acidosis)"
+      ],
       "nursing": {
         "before": "Baseline BP, renal/hepatic function. ICU-level monitoring.",
         "administration": "Protect from light (wrap bag). D5W. Fast, reversible.",
@@ -387,6 +442,11 @@
         "unit": "units/kg/hr (per nomogram)"
       },
       "rangeNote": "weight-based per protocol/nomogram",
+      "keyActions": [
+        "Two-nurse independent check; dose per nomogram",
+        "Monitor aPTT/anti-Xa + platelets (HIT)",
+        "Bleeding precautions; antidote protamine"
+      ],
       "nursing": {
         "before": "Baseline aPTT/anti-Xa, CBC/platelets, weight. Never interchange flush vs infusion concentration — read the label.",
         "administration": "Two-nurse independent check. Per nomogram/protocol.",
@@ -416,6 +476,11 @@
         "unit": "units/kg/hr (per DKA protocol)"
       },
       "rangeNote": "per DKA/glucose protocol; typically 0.1 unit/kg/hr",
+      "keyActions": [
+        "Two-nurse check; dedicated line, prime tubing",
+        "Glucose q1h (q30min titrating) + potassium",
+        "Add dextrose per protocol when glucose <250"
+      ],
       "nursing": {
         "before": "Baseline glucose, potassium. Dedicated line. Two-nurse check.",
         "administration": "1 unit/mL standard. Never confuse units with mL. Prime tubing (insulin adsorbs to plastic).",
@@ -444,6 +509,11 @@
         "unit": "mg/hr (1–2 g/hr)"
       },
       "rangeNote": "OB/torsades per protocol",
+      "keyActions": [
+        "Pump-controlled; keep calcium gluconate ready",
+        "Check deep tendon reflexes, RR, BP, urine output",
+        "Stop & notify: absent reflexes or RR <12"
+      ],
       "nursing": {
         "monitor": "Deep tendon reflexes (loss = early toxicity), respiratory rate, BP, urine output, mag level.",
         "holdNotify": "Absent reflexes, RR <12, respiratory depression.",

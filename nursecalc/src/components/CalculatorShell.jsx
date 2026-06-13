@@ -5,7 +5,7 @@ import NursingConsiderations from "./NursingConsiderations.jsx";
 
 /**
  * Shared screen layout: title + inputs → safety banners → ResultCard →
- * WorkedSolution → optional NursingConsiderations → print button.
+ * WorkedSolution → optional NursingConsiderations.
  *
  * Screens stay thin: they own inputs + call the engine/validation, then
  * hand everything here. Blocking errors suppress the result entirely.
@@ -23,17 +23,17 @@ export default function CalculatorShell({
   showResult = true,
 }) {
   const blocked = validation.errors.length > 0;
-  const canPrint = showResult && !blocked && result;
+  const hasResult = showResult && !blocked && result;
   return (
     <div className="space-y-4">
-      <header className="no-print">
+      <header>
         <h2 className="text-2xl font-bold">{title}</h2>
         {description && (
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{description}</p>
         )}
       </header>
 
-      <div className="nc-card no-print space-y-4">{children}</div>
+      <div className="nc-card space-y-4">{children}</div>
 
       <SafetyBanner
         banners={validation.banners}
@@ -41,18 +41,12 @@ export default function CalculatorShell({
         errors={validation.errors}
       />
 
-      {canPrint && (
-        <div className="print-area space-y-4">
-          <div className="hidden print:block">
-            <h2 className="text-xl font-bold">NurseCalc — {title}</h2>
-          </div>
+      {hasResult && (
+        <div className="space-y-4">
           <ResultCard result={result} highAlert={highAlert} subline={resultSubline} />
           <WorkedSolution result={result} />
           {extra}
           {drug && <NursingConsiderations drug={drug} />}
-          <button onClick={() => window.print()} className="nc-btn-ghost no-print">
-            🖨 Print / Save as PDF
-          </button>
         </div>
       )}
     </div>

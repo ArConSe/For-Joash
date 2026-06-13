@@ -94,6 +94,9 @@ describe("App", () => {
     type("Patient weight", "86");
     expect(screen.getByText("16.1 mL/hr")).toBeTruthy();
     expect(screen.getByText(/Nursing Considerations — dopamine/i)).toBeTruthy();
+    // quick at-a-glance nursing actions
+    expect(screen.getByText(/Key nursing actions/i)).toBeTruthy();
+    expect(screen.getByText(/extravasation antidote is phentolamine/i)).toBeTruthy();
   });
 
   it("titration reverse: rate → dose", () => {
@@ -129,7 +132,6 @@ describe("App", () => {
     type("Patient weight", "70");
     type("Ordered dose per m", "75");
     expect(screen.getByText("134.25 mg")).toBeTruthy();
-    expect(screen.getByText("134.25 mg").closest(".print-area")).toBeTruthy();
   });
 
   it("drug guide: searches and opens a drip card", () => {
@@ -154,8 +156,9 @@ describe("App", () => {
     fireEvent.change(screen.getByLabelText(/Search drugs/i), { target: { value: "paracetamol" } });
     fireEvent.click(screen.getByRole("button", { name: /paracetamol/i }));
     expect(screen.getByText(/Typical adult dosing/i)).toBeTruthy();
-    expect(screen.getByText(/N-acetylcysteine/i)).toBeTruthy();
+    expect(screen.getAllByText(/N-acetylcysteine/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Nursing Considerations — paracetamol/i)).toBeTruthy();
+    expect(screen.getByText(/Key nursing actions/i)).toBeTruthy();
   });
 
   it("every remaining calculator mounts without crashing", () => {
