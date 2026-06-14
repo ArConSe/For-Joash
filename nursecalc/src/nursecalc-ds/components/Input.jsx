@@ -1,61 +1,27 @@
-import { useId } from "react";
-
-/**
- * Input — labeled text/number field with an optional right-hand unit badge,
- * hint, and error states.
- *
- * Props:
- *   label    field label (wraps the control for accessibility)
- *   unit     short unit string rendered as a right badge (e.g. "mg", "mL")
- *   hint     helper text below the field
- *   error    error string — switches the border to the high-alert color
- *   numeric  mono font + decimal inputMode for dose/weight/volume entry
- */
-export default function Input({
-  label,
-  unit,
-  hint,
-  error,
-  numeric = false,
-  className = "",
-  id,
-  ...rest
-}) {
-  const autoId = useId();
-  const inputId = id || autoId;
-
-  const inputCls = [
-    "ncds-input",
-    numeric ? "ncds-input--numeric" : "",
-    unit ? "ncds-input--has-unit" : "",
-    error ? "ncds-input--error" : "",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
+import React from 'react';
+export function Input({ label, unit=null, hint=null, error=null, numeric=false, id, style={}, ...rest }) {
+  const fid = id||(label?`nc-${String(label).toLowerCase().replace(/\s+/g,'-')}`:undefined);
+  const [focused,setFocused] = React.useState(false);
+  const bc = error?'var(--nc-high)':focused?'var(--nc-blue)':'var(--nc-border)';
   return (
-    <div className="ncds-field">
-      {label && (
-        <label className="ncds-field__label" htmlFor={inputId}>
-          {label}
-        </label>
-      )}
-      <div className="ncds-field__control">
-        <input
-          id={inputId}
-          className={inputCls}
-          inputMode={numeric ? "decimal" : undefined}
-          aria-invalid={error ? true : undefined}
+    <div style={{display:'flex',flexDirection:'column',gap:6,...style}}>
+      {label&&<label htmlFor={fid} style={{fontFamily:'var(--font-body)',fontWeight:700,fontSize:'var(--text-sm)',color:'var(--nc-ink)'}}>{label}</label>}
+      <div style={{display:'flex',alignItems:'center',height:'var(--control-md)',background:'var(--nc-white)',
+        border:`1.5px solid ${bc}`,borderRadius:'var(--radius-md)',
+        boxShadow:focused?'var(--focus-shadow)':'none',overflow:'hidden',
+        transition:'border-color var(--dur-base),box-shadow var(--dur-base)'}}>
+        <input id={fid} inputMode={numeric?'decimal':undefined}
+          onFocus={e=>{setFocused(true);rest.onFocus&&rest.onFocus(e);}}
+          onBlur={e=>{setFocused(false);rest.onBlur&&rest.onBlur(e);}}
           {...rest}
-        />
-        {unit && <span className="ncds-field__unit">{unit}</span>}
+          style={{flex:1,minWidth:0,height:'100%',border:'none',outline:'none',background:'transparent',
+            padding:'0 14px',fontFamily:numeric?'var(--font-mono)':'var(--font-body)',
+            fontWeight:numeric?600:500,fontSize:'var(--text-base)',color:'var(--nc-ink)'}}/>
+        {unit&&<span style={{padding:'0 14px',height:'100%',display:'flex',alignItems:'center',
+          background:'var(--nc-wash)',borderLeft:'1px solid var(--nc-border)',
+          fontFamily:'var(--font-body)',fontWeight:700,fontSize:'var(--text-sm)',color:'var(--nc-muted)',whiteSpace:'nowrap'}}>{unit}</span>}
       </div>
-      {error ? (
-        <p className="ncds-field__error">{error}</p>
-      ) : hint ? (
-        <p className="ncds-field__hint">{hint}</p>
-      ) : null}
+      {(hint||error)&&<span style={{fontFamily:'var(--font-body)',fontWeight:600,fontSize:'var(--text-xs)',color:error?'var(--nc-high)':'var(--nc-muted)'}}>{error||hint}</span>}
     </div>
   );
 }

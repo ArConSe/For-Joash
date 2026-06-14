@@ -4,16 +4,31 @@ import { BY_ID } from "./catalog.js";
 import Icon from "./components/Icon.jsx";
 import Home from "./screens/Home.jsx";
 import DrugGuide from "./screens/DrugGuide.jsx";
+import DesignShowcase from "./screens/DesignShowcase.jsx";
+import logoFull from "./nursecalc-ds/assets/logo-full.png";
 
 export default function App() {
   const [tab, setTab] = useState("calc"); // "calc" | "drugs"
   const [toolId, setToolId] = useState(null); // null = home grid
   const [drugFocus, setDrugFocus] = useState(null); // deep-linked drug id
   const [dark, setDark] = useState(false); // light is gentler by default; toggle persists in-session
+  const [showDesign, setShowDesign] = useState(
+    () => typeof window !== "undefined" && window.location.hash === "#design"
+  );
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
+
+  // The living style guide is reached via the "#design" URL hash.
+  useEffect(() => {
+    const onHash = () => setShowDesign(window.location.hash === "#design");
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+  const closeDesign = () => {
+    window.location.hash = "";
+  };
 
   const inTool = tab === "calc" && toolId;
 
@@ -35,10 +50,12 @@ export default function App() {
     scrollTop();
   };
   const goCalculators = () => {
+    closeDesign();
     setTab("calc");
     setToolId(null);
   };
   const goDrugs = () => {
+    closeDesign();
     setDrugFocus(null);
     setToolId(null); // "Calculators" always returns to the grid, never a stale tool
     setTab("drugs");
@@ -67,13 +84,8 @@ export default function App() {
               <Icon name="chevronLeft" size={22} />
             </button>
           )}
-          <span className={`flex items-center gap-2 ${inTool ? "" : "pl-1"}`}>
-            <span className="nc-logo" aria-hidden="true">
-              <Icon name="droplet" size={20} />
-            </span>
-            <span className="nc-wordmark">
-              <b>Nurse</b>Calc
-            </span>
+          <span className={`flex items-center ${inTool ? "" : "pl-1"}`}>
+            <img src={logoFull} alt="NurseCalc" style={{ height: 40 }} />
           </span>
           <button
             onClick={() => setDark(!dark)}
@@ -86,7 +98,9 @@ export default function App() {
       </header>
 
       <main className="mx-auto px-4 py-5" style={{ maxWidth: "var(--container-app)" }}>
-        {tab === "drugs" ? (
+        {showDesign ? (
+          <DesignShowcase onClose={closeDesign} />
+        ) : tab === "drugs" ? (
           // key resets the guide between a focused drug and the full list
           <DrugGuide key={drugFocus || "all"} focusDrugId={drugFocus} />
         ) : ToolComponent ? (
@@ -101,6 +115,17 @@ export default function App() {
             Formulas per Open RN / OpenStax (CC BY) dosage-calculation curriculum; drug data
             paraphrased from open references — FDA labeling (DailyMed), Open RN, StatPearls, WHO.
             Offline — no data leaves this device.
+          </p>
+          <p className="mt-2">
+            <button
+              type="button"
+              onClick={() => {
+                window.location.hash = "design";
+              }}
+              className="underline transition hover:text-teal-600"
+            >
+              View the full design system
+            </button>
           </p>
         </footer>
       </main>

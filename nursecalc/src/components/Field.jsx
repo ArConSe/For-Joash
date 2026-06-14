@@ -46,12 +46,30 @@ export function WeightField({ weight, setWeight, weightUnit, setWeightUnit }) {
   );
 }
 
-/** Select dropdown — design-system select shell. */
+/** Select dropdown — styled to match the design-system Input control. */
 export function SelectField({ label, value, onChange, children }) {
   return (
-    <label className="ncds-field block">
-      <span className="ncds-field__label">{label}</span>
-      <select className="ncds-select" value={value} onChange={(e) => onChange(e.target.value)}>
+    <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "var(--text-sm)", color: "var(--nc-ink)" }}>
+        {label}
+      </span>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={{
+          width: "100%",
+          height: "var(--control-md)",
+          padding: "0 14px",
+          background: "var(--nc-white)",
+          border: "1.5px solid var(--nc-border)",
+          borderRadius: "var(--radius-md)",
+          fontFamily: "var(--font-body)",
+          fontWeight: 500,
+          fontSize: "var(--text-base)",
+          color: "var(--nc-ink)",
+          cursor: "pointer",
+        }}
+      >
         {children}
       </select>
     </label>

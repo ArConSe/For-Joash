@@ -83,7 +83,7 @@ describe("App", () => {
     openTool(/Weight-Based/i);
     type("Ordered dose", "5");
     type("Patient weight", "154");
-    fireEvent.click(screen.getByRole("button", { name: /^lb$/i }));
+    fireEvent.click(screen.getByRole("tab", { name: /^lb$/i }));
     expect(screen.getByText("350")).toBeTruthy();
     expect(screen.getByText(/154 lb ÷ 2.2 = 70 kg/i)).toBeTruthy();
   });
@@ -105,7 +105,7 @@ describe("App", () => {
   it("titration reverse: rate → dose", () => {
     render(<App />);
     openTool(/Titration/i);
-    fireEvent.click(screen.getByRole("button", { name: /mL\/hr → Dose/i }));
+    fireEvent.click(screen.getByRole("tab", { name: /mL\/hr → Dose/i }));
     type("Current pump rate", "16.1");
     type("Patient weight", "86");
     expect(screen.getAllByText(/^(4\.99|5)$/).length).toBeGreaterThan(0);
