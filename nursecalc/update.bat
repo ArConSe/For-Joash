@@ -13,7 +13,12 @@ echo   NurseCalc - getting the latest version
 echo ============================================
 echo.
 
-git pull
+REM Always track the development branch so a plain pull can't miss the work.
+set NC_BRANCH=claude/modest-brahmagupta-hp9hko
+
+git fetch origin
+git checkout %NC_BRANCH%
+git pull origin %NC_BRANCH%
 if errorlevel 1 (
   echo.
   echo [!] Could not download updates.

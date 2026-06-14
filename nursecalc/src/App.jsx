@@ -67,8 +67,13 @@ export default function App() {
               <Icon name="chevronLeft" size={22} />
             </button>
           )}
-          <span className={`text-lg font-extrabold tracking-tight ${inTool ? "" : "pl-1"}`}>
-            <span className="text-teal-600 dark:text-teal-400">Nurse</span>Calc
+          <span className={`flex items-center gap-2 ${inTool ? "" : "pl-1"}`}>
+            <span className="nc-logo" aria-hidden="true">
+              <Icon name="droplet" size={20} />
+            </span>
+            <span className="nc-wordmark">
+              <b>Nurse</b>Calc
+            </span>
           </span>
           <button
             onClick={() => setDark(!dark)}

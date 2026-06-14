@@ -650,3 +650,31 @@ button {
   font-size: var(--text-sm);
   color: var(--text-body);
 }
+
+/* ============================================================================
+   Brand mark — app header logo + wordmark
+   ========================================================================== */
+
+.nc-logo {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--nc-grad-signature);
+  color: var(--nc-white);
+  box-shadow: var(--shadow-blue);
+  flex: none;
+}
+.nc-wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--text-strong);
+}
+.nc-wordmark b {
+  color: var(--nc-blue-deep);
+  font-weight: 800;
+}

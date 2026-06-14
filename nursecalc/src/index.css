@@ -83,3 +83,34 @@
     @apply text-teal-600 dark:text-teal-300;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Harmonize the remaining Tailwind-styled surfaces (Home grid, Drug Guide,
+   bottom nav) with the NurseCalc design system. Unlayered so these win over
+   the Tailwind component layer above.
+   ------------------------------------------------------------------------- */
+.nc-input:focus {
+  border-color: var(--nc-blue);
+  box-shadow: var(--focus-shadow);
+}
+.section-label {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  color: var(--nc-muted);
+}
+.tool-card {
+  border-color: var(--nc-border);
+  border-radius: var(--radius-lg);
+}
+.tool-card:hover {
+  border-color: var(--nc-blue);
+  box-shadow: var(--shadow-md);
+}
+.tool-card-icon {
+  background: var(--nc-blue-soft);
+  color: var(--nc-blue-deep);
+  border-radius: var(--radius-md);
+}
+.nav-item-active {
+  color: var(--nc-blue-deep);
+}
