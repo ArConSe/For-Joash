@@ -58,7 +58,10 @@ export default function App() {
   return (
     <div className="min-h-screen pb-24">
       <header className="sticky top-0 z-20 border-b border-slate-200/70 bg-white/80 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/80">
-        <div className="mx-auto flex h-14 max-w-3xl items-center gap-1 px-3">
+        <div
+          className="mx-auto flex h-14 items-center gap-1 px-3"
+          style={{ maxWidth: "var(--container-app)" }}
+        >
           {inTool && (
             <button onClick={goCalculators} className="icon-btn" aria-label="Back">
               <Icon name="chevronLeft" size={22} />
@@ -77,7 +80,7 @@ export default function App() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-4 py-5">
+      <main className="mx-auto px-4 py-5" style={{ maxWidth: "var(--container-app)" }}>
         {tab === "drugs" ? (
           // key resets the guide between a focused drug and the full list
           <DrugGuide key={drugFocus || "all"} focusDrugId={drugFocus} />
@@ -98,7 +101,7 @@ export default function App() {
       </main>
 
       <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-        <div className="mx-auto grid max-w-3xl grid-cols-2">
+        <div className="mx-auto grid grid-cols-2" style={{ maxWidth: "var(--container-app)" }}>
           <button
             onClick={goCalculators}
             className={`nav-item ${tab === "calc" ? "nav-item-active" : ""}`}

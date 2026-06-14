@@ -1,44 +1,28 @@
-/** Labeled numeric input. Keeps screens terse. */
+import { Input, Segmented } from "../nursecalc-ds/components/index.js";
+
+/** Labeled numeric input — design-system Input with the unit badge + mono face. */
 export function NumField({ label, value, onChange, placeholder, suffix, step = "any" }) {
   return (
-    <label className="block">
-      <span className="nc-label">{label}</span>
-      <div className="flex items-center gap-2">
-        <input
-          type="number"
-          inputMode="decimal"
-          step={step}
-          min="0"
-          className="nc-input"
-          value={value}
-          placeholder={placeholder}
-          onChange={(e) => onChange(e.target.value)}
-        />
-        {suffix && (
-          <span className="shrink-0 text-sm text-slate-500 dark:text-slate-400">{suffix}</span>
-        )}
-      </div>
-    </label>
+    <Input
+      label={label}
+      numeric
+      unit={suffix}
+      type="number"
+      step={step}
+      min="0"
+      value={value}
+      placeholder={placeholder}
+      onChange={(e) => onChange(e.target.value)}
+    />
   );
 }
 
-/** Two-state toggle (e.g. kg/lb, whole/tenths). */
+/** Two-state (or N-state) toggle — design-system Segmented pill switcher. */
 export function Toggle({ label, options, value, onChange }) {
   return (
     <div>
       {label && <span className="nc-label">{label}</span>}
-      <div className="inline-flex gap-1 rounded-lg bg-slate-200 p-1 dark:bg-slate-800">
-        {options.map((opt) => (
-          <button
-            key={opt.value}
-            type="button"
-            onClick={() => onChange(opt.value)}
-            className={`nc-toggle ${value === opt.value ? "nc-toggle-on" : "nc-toggle-off"}`}
-          >
-            {opt.label}
-          </button>
-        ))}
-      </div>
+      <Segmented options={options} value={value} onChange={onChange} aria-label={label} />
     </div>
   );
 }
@@ -62,12 +46,12 @@ export function WeightField({ weight, setWeight, weightUnit, setWeightUnit }) {
   );
 }
 
-/** Select dropdown. */
+/** Select dropdown — design-system select shell. */
 export function SelectField({ label, value, onChange, children }) {
   return (
-    <label className="block">
-      <span className="nc-label">{label}</span>
-      <select className="nc-input" value={value} onChange={(e) => onChange(e.target.value)}>
+    <label className="ncds-field block">
+      <span className="ncds-field__label">{label}</span>
+      <select className="ncds-select" value={value} onChange={(e) => onChange(e.target.value)}>
         {children}
       </select>
     </label>

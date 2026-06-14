@@ -53,8 +53,27 @@ export default function SafeDoseRange() {
         ...result,
         display: `${result.min}–${result.max} ${result.unit}`,
         value: result.max,
+        statValue: `${result.min}–${result.max}`,
+        statUnit: result.unit,
       }
     : null;
+
+  // When an ordered dose is supplied, let the SAFE/BELOW/EXCEEDS verdict drive
+  // the clinical state pill on the readout.
+  let doseState;
+  let doseStateLabel;
+  if (result && orderedDose !== "") {
+    if (result.classification.startsWith("SAFE")) {
+      doseState = "safe";
+      doseStateLabel = "Within safe range";
+    } else if (result.classification.includes("EXCEEDS")) {
+      doseState = "alert";
+      doseStateLabel = "Exceeds safe limit";
+    } else {
+      doseState = "verify";
+      doseStateLabel = "Below range — clarify";
+    }
+  }
 
   return (
     <CalculatorShell
@@ -62,6 +81,9 @@ export default function SafeDoseRange() {
       description="Safe range = reference min/max per kg × weight. Classifies the ordered dose as SAFE, BELOW, or EXCEEDS."
       validation={validation}
       result={shellResult}
+      resultLabel="Safe dose range"
+      state={doseState}
+      stateLabel={doseStateLabel}
       resultSubline={
         result && orderedDose !== ""
           ? `Ordered ${orderedDose} ${result.unit}: ${result.classification}`

@@ -71,7 +71,9 @@ describe("App", () => {
     openTool(/IV Drip Rate/i);
     type("Total volume", "1000");
     type("Infusion time", "8");
-    expect(screen.getByText("31 gtt/min")).toBeTruthy();
+    // ResultStat splits the value and unit into separate elements
+    expect(screen.getByText("31")).toBeTruthy();
+    expect(screen.getByText("gtt/min")).toBeTruthy();
     expect(screen.getAllByText(/Worked Solution/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Dimensional Analysis/i)).toBeTruthy();
   });
@@ -82,7 +84,7 @@ describe("App", () => {
     type("Ordered dose", "5");
     type("Patient weight", "154");
     fireEvent.click(screen.getByRole("button", { name: /^lb$/i }));
-    expect(screen.getByText("350 mg")).toBeTruthy();
+    expect(screen.getByText("350")).toBeTruthy();
     expect(screen.getByText(/154 lb ÷ 2.2 = 70 kg/i)).toBeTruthy();
   });
 
@@ -92,7 +94,8 @@ describe("App", () => {
     expect(screen.getAllByText(/HIGH ALERT/i).length).toBeGreaterThan(0);
     type("Ordered dose", "5");
     type("Patient weight", "86");
-    expect(screen.getByText("16.1 mL/hr")).toBeTruthy();
+    expect(screen.getByText("16.1")).toBeTruthy();
+    expect(screen.getAllByText(/mL\/hr/).length).toBeGreaterThan(0);
     expect(screen.getByText(/Nursing Considerations — dopamine/i)).toBeTruthy();
     // quick at-a-glance nursing actions
     expect(screen.getByText(/Key nursing actions/i)).toBeTruthy();
@@ -105,7 +108,8 @@ describe("App", () => {
     fireEvent.click(screen.getByRole("button", { name: /mL\/hr → Dose/i }));
     type("Current pump rate", "16.1");
     type("Patient weight", "86");
-    expect(screen.getAllByText(/(4\.99|5) mcg\/kg\/min/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/^(4\.99|5)$/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/mcg\/kg\/min/).length).toBeGreaterThan(0);
   });
 
   it("blocking validation suppresses the result", () => {
