@@ -85,6 +85,12 @@ const PATHS = {
   moon: <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8z" />,
   chevronLeft: <path d="M15 5l-7 7 7 7" />,
   chevronRight: <path d="M9 5l7 7-7 7" />,
+  swap: (
+    <>
+      <path d="M4 9h13l-3.5-3.5" />
+      <path d="M20 15H7l3.5 3.5" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 22, strokeWidth = 1.75, className = "" }) {

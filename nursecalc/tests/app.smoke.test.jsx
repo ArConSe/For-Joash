@@ -183,6 +183,26 @@ describe("App", () => {
     expect(screen.queryByRole("button", { name: /digoxin/i })).toBeNull();
   });
 
+  it("conversions: default mass converts 1 mg → 1000 mcg", () => {
+    render(<App />);
+    openTool(/Unit Conversions/i);
+    type("Value", "1");
+    // ResultStat splits value/unit; default category mass is mg → mcg
+    expect(screen.getByText("1000")).toBeTruthy();
+    expect(screen.getAllByText(/mcg/).length).toBeGreaterThan(0);
+    // worked solution renders the conversion factor
+    expect(screen.getAllByText(/Worked Solution/i).length).toBeGreaterThan(0);
+  });
+
+  it("conversions: temperature allows a negative value (−40 °C = −40 °F)", () => {
+    render(<App />);
+    openTool(/Unit Conversions/i);
+    fireEvent.click(screen.getByRole("tab", { name: /^Temp$/i }));
+    type("Value", "-40");
+    expect(screen.getAllByText("-40").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/°F/).length).toBeGreaterThan(0);
+  });
+
   it("every remaining calculator mounts without crashing", () => {
     render(<App />);
     const tools = [

@@ -14,6 +14,7 @@ import WeightBased from "./screens/WeightBased.jsx";
 import SafeDoseRange from "./screens/SafeDoseRange.jsx";
 import Reconstitution from "./screens/Reconstitution.jsx";
 import BSA from "./screens/BSA.jsx";
+import Conversions from "./screens/Conversions.jsx";
 
 export const CATEGORIES = [
   {
@@ -87,6 +88,14 @@ export const CATEGORIES = [
         keywords: "safe range min max verify exceeds below pediatric mg/kg",
         icon: "shield",
         Component: SafeDoseRange,
+      },
+      {
+        id: "convert",
+        label: "Unit Conversions",
+        short: "mcg ⇄ mg, kg ⇄ lb, °C ⇄ °F…",
+        keywords: "convert conversion mcg mg g kg gram milligram microgram pound lb ounce mL L liter teaspoon tablespoon tsp tbsp cup fluid ounce celsius fahrenheit temperature household metric apothecary",
+        icon: "swap",
+        Component: Conversions,
       },
     ],
   },

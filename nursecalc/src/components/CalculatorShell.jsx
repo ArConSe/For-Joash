@@ -34,6 +34,7 @@ export default function CalculatorShell({
   resultLabel = "Result",
   state,
   stateLabel,
+  showState = true,
   highAlert = false,
   drug,
   extra,
@@ -42,7 +43,7 @@ export default function CalculatorShell({
   const blocked = validation.errors.length > 0;
   const hasResult = showResult && !blocked && result;
 
-  const clinicalState = hasResult ? state || deriveState(validation) : null;
+  const clinicalState = hasResult && showState ? state || deriveState(validation) : null;
   const clinicalLabel = stateLabel || (clinicalState ? STATE_LABELS[clinicalState] : undefined);
 
   const statValue = result ? (result.statValue ?? result.value) : null;

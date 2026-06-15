@@ -441,3 +441,114 @@ export function rateToDoseMgMin({ rateMlHr, totalDrugMg, totalVolumeMl }) {
 }
 
 export const _round = round; // exported for tests
+
+// =====================================================================
+// PART 4 — UNIT CONVERSIONS
+// =====================================================================
+
+/**
+ * Conversion catalog. `factor` = number of base units in 1 of this unit,
+ * so converting is value × (fromFactor / toFactor). Metric mass and
+ * household volume are exact; kg⇄lb uses the nursing 2.2 convention so it
+ * matches the weight-based calculators. Temperature is an offset, not a
+ * ratio, so it's handled separately.
+ */
+export const CONVERSIONS = {
+  mass: {
+    label: "Mass",
+    base: "mg",
+    defaultFrom: "mg",
+    defaultTo: "mcg",
+    units: [
+      { value: "mcg", label: "mcg", factor: 0.001 },
+      { value: "mg", label: "mg", factor: 1 },
+      { value: "g", label: "g", factor: 1000 },
+      { value: "kg", label: "kg", factor: 1000000 },
+    ],
+  },
+  weight: {
+    label: "Weight",
+    base: "kg",
+    defaultFrom: "kg",
+    defaultTo: "lb",
+    units: [
+      { value: "kg", label: "kg", factor: 1 },
+      { value: "lb", label: "lb", factor: 1 / 2.2 },
+    ],
+  },
+  volume: {
+    label: "Volume",
+    base: "mL",
+    defaultFrom: "tbsp",
+    defaultTo: "mL",
+    units: [
+      { value: "mL", label: "mL", factor: 1 },
+      { value: "L", label: "L", factor: 1000 },
+      { value: "tsp", label: "tsp", factor: 5 },
+      { value: "tbsp", label: "tbsp", factor: 15 },
+      { value: "floz", label: "fl oz", factor: 30 },
+      { value: "cup", label: "cup", factor: 240 },
+    ],
+  },
+  temp: {
+    label: "Temp",
+    defaultFrom: "C",
+    defaultTo: "F",
+    units: [
+      { value: "C", label: "°C" },
+      { value: "F", label: "°F" },
+    ],
+  },
+};
+
+function tempLabel(u) {
+  return u === "C" ? "°C" : "°F";
+}
+
+function convertTemp(v, from, to) {
+  let result = v;
+  let formula = `${v} ${tempLabel(from)} (same unit)`;
+  if (from !== to) {
+    if (from === "C") {
+      result = (v * 9) / 5 + 32;
+      formula = `(${v} × 9/5) + 32 = ${round(result, 1)} °F`;
+    } else {
+      result = ((v - 32) * 5) / 9;
+      formula = `(${v} − 32) × 5/9 = ${round(result, 1)} °C`;
+    }
+  }
+  return {
+    value: round(result, 1),
+    unit: tempLabel(to),
+    methods: { formula },
+    steps: [formula],
+  };
+}
+
+/**
+ * 4.1 Convert a value between two units of the same category.
+ * Returns the standard engine shape { value, unit, methods, steps }.
+ */
+export function convertUnit({ category, value, from, to }) {
+  const v = Number(value);
+  if (category === "temp") return convertTemp(v, from, to);
+
+  const cat = CONVERSIONS[category];
+  const f = cat.units.find((u) => u.value === from);
+  const t = cat.units.find((u) => u.value === to);
+  const perFrom = round(f.factor / t.factor, 6); // how many `to` units are in 1 `from`
+  const result = v * (f.factor / t.factor);
+
+  return {
+    value: round(result, 4),
+    unit: t.label,
+    methods: {
+      formula: `${v} ${f.label} × ${perFrom} = ${round(result, 4)} ${t.label}`,
+      dimensionalAnalysis: `${v} ${f.label} × (${perFrom} ${t.label} / 1 ${f.label}) = ${round(result, 4)} ${t.label}`,
+    },
+    steps: [
+      `1 ${f.label} = ${perFrom} ${t.label}`,
+      `${v} ${f.label} × ${perFrom} = ${round(result, 4)} ${t.label}`,
+    ],
+  };
+}
