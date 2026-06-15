@@ -30,6 +30,16 @@ export default function App() {
     window.location.hash = "";
   };
 
+  // Best-effort anonymous usage event (Umami). Never blocks the UI and is a
+  // no-op when the script isn't loaded (offline, tests).
+  const track = (event, data) => {
+    try {
+      window.umami?.track(event, data);
+    } catch {
+      /* analytics is optional */
+    }
+  };
+
   const inTool = tab === "calc" && toolId;
 
   const scrollTop = () => {
@@ -42,11 +52,13 @@ export default function App() {
   const openTool = (id) => {
     setTab("calc");
     setToolId(id);
+    track("open-calculator", { tool: id });
     scrollTop();
   };
   const openDrug = (id) => {
     setDrugFocus(id);
     setTab("drugs");
+    track("open-drug", { drug: id });
     scrollTop();
   };
   const goCalculators = () => {
@@ -59,6 +71,7 @@ export default function App() {
     setDrugFocus(null);
     setToolId(null); // "Calculators" always returns to the grid, never a stale tool
     setTab("drugs");
+    track("open-drug-guide");
   };
 
   // Escape backs out of an open tool to the grid.
@@ -114,7 +127,8 @@ export default function App() {
           <p className="mt-1">
             Formulas per Open RN / OpenStax (CC BY) dosage-calculation curriculum; drug data
             paraphrased from open references — FDA labeling (DailyMed), Open RN, StatPearls, WHO.
-            Offline — no data leaves this device.
+            Runs in your browser — no patient data leaves this device; anonymous, aggregate usage
+            counts only.
           </p>
         </footer>
       </main>
