@@ -116,17 +116,6 @@ export default function App() {
             paraphrased from open references — FDA labeling (DailyMed), Open RN, StatPearls, WHO.
             Offline — no data leaves this device.
           </p>
-          <p className="mt-2">
-            <button
-              type="button"
-              onClick={() => {
-                window.location.hash = "design";
-              }}
-              className="underline transition hover:text-teal-600"
-            >
-              View the full design system
-            </button>
-          </p>
         </footer>
       </main>
 
