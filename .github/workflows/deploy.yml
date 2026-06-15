@@ -1,0 +1,57 @@
+name: Deploy NurseCalc to GitHub Pages
+
+# Builds the Vite app in nursecalc/ and publishes it to GitHub Pages on
+# every push to the development branch. The site is served from a repo
+# subpath, so we build with a relative base (--base=./) which works under
+# any path (and on a custom domain later) with no extra config.
+
+on:
+  push:
+    branches:
+      - claude/modest-brahmagupta-hp9hko
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deploy at a time; newer pushes supersede older runs.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: nursecalc
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: nursecalc/package-lock.json
+
+      - run: npm ci
+
+      - name: Build (relative base so it works under the repo subpath)
+        run: npm run build -- --base=./
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: nursecalc/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

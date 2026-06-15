@@ -1,0 +1,15 @@
+{
+  "name": "NurseCalc — Nursing Medication Calculator",
+  "short_name": "NurseCalc",
+  "description": "Offline nursing medication calculator with full worked solutions. A reference and learning tool.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EDF8FB",
+  "theme_color": "#76C3E1",
+  "icons": [
+    { "src": "./app-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./app-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
