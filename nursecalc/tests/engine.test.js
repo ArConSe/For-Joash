@@ -21,6 +21,9 @@ import {
   doseToRateMgMin,
   unitsToRate,
   rateToUnits,
+  cockcroftGault,
+  idealBodyWeightKg,
+  pediatricMaintenanceFluid,
 } from "../src/lib/calc-engine.js";
 
 describe("general dosing", () => {
@@ -100,5 +103,31 @@ describe("titration (bidirectional)", () => {
   it("heparin 1100 units/hr at 100 units/mL = 11 mL/hr; reverse checks", () => {
     expect(unitsToRate({ unitsPerHr: 1100, totalUnits: 25000, totalVolumeMl: 250 }).value).toBe(11);
     expect(rateToUnits({ rateMlHr: 11, totalUnits: 25000, totalVolumeMl: 250 }).value).toBe(1100);
+  });
+});
+
+describe("renal & pediatric", () => {
+  it("Cockcroft-Gault: 60y, 70kg, male, SCr 1.0 mg/dL ≈ 77.8 mL/min", () => {
+    expect(cockcroftGault({ age: 60, weightKg: 70, sex: "male", scr: 1.0 }).value).toBeCloseTo(77.8, 1);
+  });
+  it("Cockcroft-Gault: female applies the 0.85 factor", () => {
+    expect(cockcroftGault({ age: 60, weightKg: 70, sex: "female", scr: 1.0 }).value).toBeCloseTo(66.1, 1);
+  });
+  it("Cockcroft-Gault: 88.4 µmol/L equals 1.0 mg/dL (SI conversion)", () => {
+    const si = cockcroftGault({ age: 60, weightKg: 70, sex: "male", scr: 88.4, scrUnit: "umol/L" }).value;
+    const us = cockcroftGault({ age: 60, weightKg: 70, sex: "male", scr: 1.0 }).value;
+    expect(si).toBeCloseTo(us, 1);
+  });
+  it("Devine ideal body weight: 175 cm male ≈ 70.5 kg", () => {
+    expect(idealBodyWeightKg({ heightCm: 175, sex: "male" })).toBeCloseTo(70.5, 1);
+  });
+  it("pediatric 4-2-1: 35 kg → 75 mL/hr and 1800 mL/day", () => {
+    const r = pediatricMaintenanceFluid({ weightKg: 35 });
+    expect(r.value).toBe(75);
+    expect(r.perDay).toBe(1800);
+  });
+  it("pediatric 4-2-1: band boundaries 10 kg → 40, 20 kg → 60 mL/hr", () => {
+    expect(pediatricMaintenanceFluid({ weightKg: 10 }).value).toBe(40);
+    expect(pediatricMaintenanceFluid({ weightKg: 20 }).value).toBe(60);
   });
 });

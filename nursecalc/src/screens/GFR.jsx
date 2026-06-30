@@ -45,6 +45,7 @@ export default function GFR() {
     const needHeight = basis !== "actual";
 
     if (age === "" || !(a > 0)) validation.errors.push("Enter the patient's age in years.");
+    else if (a > 120) validation.errors.push("Check the age — Cockcroft-Gault expects adult years (≤ 120).");
     if (weight === "" || !(w > 0)) validation.errors.push("Enter weight in kg.");
     if (scr === "" || !(s > 0)) validation.errors.push("Enter serum creatinine.");
     if (needHeight && (height === "" || !(h > 0)))
@@ -71,6 +72,10 @@ export default function GFR() {
         validation.warnings.push(
           "Weight is >30% over ideal body weight — many references switch to ideal or adjusted weight here."
         );
+      if (ibw != null && basis !== "actual" && w < ibw)
+        validation.warnings.push(
+          "Actual weight is below ideal — use actual weight; ideal / adjusted would overestimate CrCl here."
+        );
     }
     return { result, validation, ibw };
   }, [age, sex, scr, scrUnit, weight, height, basis, pristine]);
@@ -92,10 +97,7 @@ export default function GFR() {
       <div className="grid grid-cols-2 gap-3">
         <NumField label="Age" value={age} onChange={setAge} suffix="years" placeholder="e.g. 65" />
         <div>
-          <span className="nc-label">Sex</span>
-          <div className="overflow-x-auto pb-1">
-            <Toggle options={SEX} value={sex} onChange={setSex} />
-          </div>
+          <Toggle label="Sex" options={SEX} value={sex} onChange={setSex} />
         </div>
       </div>
 
@@ -103,9 +105,7 @@ export default function GFR() {
         <div className="flex-1">
           <NumField label="Serum creatinine" value={scr} onChange={setScr} placeholder="e.g. 1.0" />
         </div>
-        <div className="overflow-x-auto pb-1">
-          <Toggle options={SCR_UNITS} value={scrUnit} onChange={setScrUnit} />
-        </div>
+        <Toggle label="Unit" options={SCR_UNITS} value={scrUnit} onChange={setScrUnit} />
       </div>
 
       <div className="grid grid-cols-2 gap-3">
@@ -114,9 +114,8 @@ export default function GFR() {
       </div>
 
       <div>
-        <span className="nc-label">Weight basis</span>
         <div className="overflow-x-auto pb-1">
-          <Toggle options={BASIS} value={basis} onChange={setBasis} />
+          <Toggle label="Weight basis" options={BASIS} value={basis} onChange={setBasis} />
         </div>
         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
           Use <b>Actual</b> normally; switch to <b>Ideal</b> or <b>Adjusted</b> if the patient is

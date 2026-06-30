@@ -208,11 +208,21 @@ describe("App", () => {
     openTool(/Creatinine Clearance/i);
     type("Age", "60");
     type("Serum creatinine", "1.0");
-    type("Weight", "70");
+    type("^Weight$", "70"); // anchored: avoid the "Weight basis" group label
     // default: male, mg/dL, actual weight → (140-60)*70 / (72*1.0) = 77.8
     expect(screen.getByText("77.8")).toBeTruthy();
     expect(screen.getAllByText(/mL\/min/).length).toBeGreaterThan(0);
     expect(screen.getByText(/Estimated category/i)).toBeTruthy();
+  });
+
+  it("creatinine clearance blocks an implausible age instead of showing a negative result", () => {
+    render(<App />);
+    openTool(/Creatinine Clearance/i);
+    type("Age", "150");
+    type("Serum creatinine", "1.0");
+    type("^Weight$", "70");
+    expect(screen.getByText(/Check the age/i)).toBeTruthy();
+    expect(screen.queryByText("mL/min")).toBeNull();
   });
 
   it("pediatric maintenance fluids: 22 kg → 62 mL/hr (1540 mL/day)", () => {
