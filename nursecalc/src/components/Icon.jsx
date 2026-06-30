@@ -91,6 +91,13 @@ const PATHS = {
       <path d="M20 15H7l3.5 3.5" />
     </>
   ),
+  filter: <path d="M4 5h16l-6 7v6l-4 2v-8z" />,
+  child: (
+    <>
+      <circle cx="12" cy="5" r="2.5" />
+      <path d="M12 8v7M8.5 11h7M9.5 21l2.5-6 2.5 6" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 22, strokeWidth = 1.75, className = "" }) {

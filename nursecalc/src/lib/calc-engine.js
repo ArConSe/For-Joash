@@ -552,3 +552,96 @@ export function convertUnit({ category, value, from, to }) {
     ],
   };
 }
+
+// =====================================================================
+// PART 5 — RENAL & PEDIATRIC
+// =====================================================================
+
+/** Devine ideal body weight (kg). Men 50 + 2.3/inch over 5 ft; women 45.5 + 2.3/inch. */
+export function idealBodyWeightKg({ heightCm, sex }) {
+  const inchesOver60 = Math.max(0, heightCm / 2.54 - 60);
+  return (sex === "female" ? 45.5 : 50) + 2.3 * inchesOver60;
+}
+
+/** Adjusted body weight (kg) = IBW + 0.4 × (actual − IBW). */
+export function adjustedBodyWeightKg({ actualKg, ibwKg }) {
+  return ibwKg + 0.4 * (actualKg - ibwKg);
+}
+
+/** General (non-staging) interpretation band for an estimated CrCl in mL/min. */
+function crClCategory(value) {
+  if (value >= 90) return "≥90 — normal / high";
+  if (value >= 60) return "60–89 — mildly decreased";
+  if (value >= 30) return "30–59 — moderately decreased";
+  if (value >= 15) return "15–29 — severely decreased";
+  return "<15 — kidney-failure range";
+}
+
+/**
+ * 5.1 Estimated creatinine clearance (Cockcroft-Gault).
+ * CrCl (mL/min) = ((140 − age) × weight × sexFactor) ÷ (72 × SCr[mg/dL]).
+ * µmol/L input is converted to mg/dL (÷ 88.4) so one canonical formula is used
+ * (the published SI constants 1.23/1.04 are just 88.4/72 and ×0.85).
+ */
+export function cockcroftGault({ age, weightKg, sex, scr, scrUnit = "mg/dL" }) {
+  const scrMgDl = scrUnit === "umol/L" ? scr / 88.4 : scr;
+  const sexFactor = sex === "female" ? 0.85 : 1;
+  const value = ((140 - age) * weightKg * sexFactor) / (72 * scrMgDl);
+  const scrShown =
+    scrUnit === "umol/L" ? `${scr} µmol/L (= ${round(scrMgDl, 2)} mg/dL)` : `${scr} mg/dL`;
+  const femalePart = sex === "female" ? " × 0.85" : "";
+  return {
+    value: round(value, 1),
+    unit: "mL/min",
+    category: crClCategory(value),
+    methods: {
+      formula: `CrCl = ((140 − ${age}) × ${round(weightKg, 1)} kg${femalePart}) ÷ (72 × ${round(scrMgDl, 2)}) = ${round(value, 1)} mL/min`,
+    },
+    steps: [
+      `Serum creatinine: ${scrShown}`,
+      sex === "female" ? "Female → multiply by 0.85" : "Male → no sex correction",
+      `CrCl = ((140 − ${age}) × ${round(weightKg, 1)}${femalePart}) ÷ (72 × ${round(scrMgDl, 2)}) = ${round(value, 1)} mL/min`,
+    ],
+    note: "Estimate only — Cockcroft-Gault assumes stable kidney function. Verify against the lab's reported eGFR and your facility's renal-dosing policy.",
+  };
+}
+
+/**
+ * 5.2 Pediatric maintenance IV fluids — 4-2-1 rule (hourly) with the
+ * equivalent Holliday-Segar daily total.
+ */
+export function pediatricMaintenanceFluid({ weightKg }) {
+  let perHr;
+  let band;
+  if (weightKg <= 10) {
+    perHr = 4 * weightKg;
+    band = `4 mL/kg/h × ${round(weightKg, 1)} kg`;
+  } else if (weightKg <= 20) {
+    perHr = 40 + 2 * (weightKg - 10);
+    band = `40 + 2 mL/kg/h × ${round(weightKg - 10, 1)} kg`;
+  } else {
+    perHr = 60 + (weightKg - 20);
+    band = `60 + 1 mL/kg/h × ${round(weightKg - 20, 1)} kg`;
+  }
+
+  let perDay;
+  if (weightKg <= 10) perDay = 100 * weightKg;
+  else if (weightKg <= 20) perDay = 1000 + 50 * (weightKg - 10);
+  else perDay = 1500 + 20 * (weightKg - 20);
+
+  return {
+    value: round(perHr, 1),
+    unit: "mL/hr",
+    perDay: round(perDay),
+    methods: {
+      formula: `4-2-1 rule: ${band} = ${round(perHr, 1)} mL/hr  (≈ ${round(perDay)} mL/day)`,
+    },
+    steps: [
+      "First 10 kg: 4 mL/kg/h",
+      "Next 10 kg (10–20): 2 mL/kg/h",
+      "Each kg over 20: 1 mL/kg/h",
+      `Rate = ${round(perHr, 1)} mL/hr  →  Holliday-Segar daily = ${round(perDay)} mL/day`,
+    ],
+    note: "Routine maintenance rate only. Not for neonates < 14 days or < 3 kg. Current guidance favors isotonic maintenance fluids; fluid type and any deficit / ongoing losses are the prescriber's decision.",
+  };
+}

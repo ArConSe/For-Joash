@@ -15,6 +15,8 @@ import SafeDoseRange from "./screens/SafeDoseRange.jsx";
 import Reconstitution from "./screens/Reconstitution.jsx";
 import BSA from "./screens/BSA.jsx";
 import Conversions from "./screens/Conversions.jsx";
+import GFR from "./screens/GFR.jsx";
+import PediatricFluids from "./screens/PediatricFluids.jsx";
 
 export const CATEGORIES = [
   {
@@ -51,6 +53,14 @@ export const CATEGORIES = [
         keywords: "dopamine norepinephrine heparin insulin pressor mcg/kg/min units/hr critical care vasopressor",
         icon: "pulse",
         Component: Titration,
+      },
+      {
+        id: "pedfluids",
+        label: "Pediatric Maintenance Fluids",
+        short: "4-2-1 hourly IV rate for kids",
+        keywords: "pediatric paediatric child kids maintenance fluid 4-2-1 421 holliday segar mL/hr weight",
+        icon: "child",
+        Component: PediatricFluids,
       },
     ],
   },
@@ -96,6 +106,14 @@ export const CATEGORIES = [
         keywords: "convert conversion mcg mg g kg gram milligram microgram pound lb ounce mL L liter teaspoon tablespoon tsp tbsp cup fluid ounce celsius fahrenheit temperature household metric apothecary",
         icon: "swap",
         Component: Conversions,
+      },
+      {
+        id: "gfr",
+        label: "Creatinine Clearance (GFR)",
+        short: "Cockcroft-Gault kidney function",
+        keywords: "gfr crcl creatinine clearance cockcroft gault renal kidney function dose adjust egfr umol mg/dl",
+        icon: "filter",
+        Component: GFR,
       },
     ],
   },

@@ -203,6 +203,27 @@ describe("App", () => {
     expect(screen.getAllByText(/°F/).length).toBeGreaterThan(0);
   });
 
+  it("creatinine clearance: Cockcroft-Gault computes from age/weight/SCr", () => {
+    render(<App />);
+    openTool(/Creatinine Clearance/i);
+    type("Age", "60");
+    type("Serum creatinine", "1.0");
+    type("Weight", "70");
+    // default: male, mg/dL, actual weight → (140-60)*70 / (72*1.0) = 77.8
+    expect(screen.getByText("77.8")).toBeTruthy();
+    expect(screen.getAllByText(/mL\/min/).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Estimated category/i)).toBeTruthy();
+  });
+
+  it("pediatric maintenance fluids: 22 kg → 62 mL/hr (1540 mL/day)", () => {
+    render(<App />);
+    openTool(/Pediatric Maintenance/i);
+    type("Child's weight", "22");
+    expect(screen.getByText("62")).toBeTruthy();
+    expect(screen.getAllByText(/mL\/hr/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/1540 mL\/day/).length).toBeGreaterThan(0);
+  });
+
   it("every remaining calculator mounts without crashing", () => {
     render(<App />);
     const tools = [
