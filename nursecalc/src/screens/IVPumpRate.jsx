@@ -40,6 +40,13 @@ export default function IVPumpRate() {
       description="Rate = Volume ÷ Time in hours. For electronic infusion pumps."
       validation={validation}
       result={displayResult}
+      howTo={[
+        "Enter the total volume to infuse, in mL.",
+        "Enter the infusion time as hours and/or minutes.",
+        "Pick whether the pump accepts a decimal (0.1 mL/hr) or whole-number rate only.",
+        "Program the pump with the mL/hr result.",
+      ]}
+      howToExample="1000 mL over 8 hours → 125 mL/hr."
     >
       <NumField label="Total volume to infuse" value={volumeMl} onChange={setVolumeMl} suffix="mL" placeholder="e.g. 1000" />
       <div className="grid grid-cols-2 gap-3">

@@ -41,6 +41,12 @@ export default function BSA() {
       validation={validation}
       result={result}
       resultSubline={result && weightUnit === "lb" ? `Weight converted: ${weight} lb ÷ 2.2 = ${lbToKg(Number(weight)).toFixed(2)} kg` : null}
+      howTo={[
+        "Enter the patient's height in cm and weight (kg or lb — lb is auto-converted).",
+        "Read the BSA in m².",
+        "Optionally enter an ordered dose per m² (e.g. for a chemotherapy protocol) to also see the total dose.",
+      ]}
+      howToExample="Height 165 cm, weight 70 kg → BSA 1.79 m²; at 75 mg/m² → 134.25 mg."
       extra={
         doseResult && (
           <>

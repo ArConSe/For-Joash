@@ -1,6 +1,7 @@
 import WorkedSolution from "./WorkedSolution.jsx";
 import SafetyBanner from "./SafetyBanner.jsx";
 import NursingConsiderations from "./NursingConsiderations.jsx";
+import HowToUse from "./HowToUse.jsx";
 import { Card, ResultStat } from "../nursecalc-ds/components/index.js";
 
 const STATE_LABELS = {
@@ -39,6 +40,8 @@ export default function CalculatorShell({
   drug,
   extra,
   showResult = true,
+  howTo,
+  howToExample,
 }) {
   const blocked = validation.errors.length > 0;
   const hasResult = showResult && !blocked && result;
@@ -61,6 +64,8 @@ export default function CalculatorShell({
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{description}</p>
         )}
       </header>
+
+      {howTo?.length > 0 && <HowToUse steps={howTo} example={howToExample} />}
 
       <Card accent elevation="md" padding="md" className="space-y-4">
         {children}

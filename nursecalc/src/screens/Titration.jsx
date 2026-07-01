@@ -144,6 +144,13 @@ export default function Titration() {
       resultSubline={concLabel}
       highAlert={drug.highAlert}
       drug={drug}
+      howTo={[
+        "Select the drug, then the bag concentration (or enter a custom total drug amount and bag volume).",
+        "Choose a direction: Dose → mL/hr to find the pump rate for an ordered dose, or mL/hr → Dose to check what dose a running rate is delivering.",
+        "Enter the dose (or the current pump rate) and, for weight-based drips, the patient's weight.",
+        "Check the result against the drug's usual range and read the nursing considerations for high-alert / vesicant warnings before acting.",
+      ]}
+      howToExample="Dopamine 5 mcg/kg/min at 86 kg, 400 mg/250 mL bag → 16.1 mL/hr."
     >
       <SelectField label="Drug" value={drugId} onChange={(v) => { setDrugId(v); setPresetIdx("0"); }}>
         {presets.drugs.map((d) => (

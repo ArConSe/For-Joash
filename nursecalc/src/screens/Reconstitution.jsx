@@ -26,6 +26,12 @@ export default function Reconstitution() {
       description="mL to draw up = Ordered dose ÷ reconstituted concentration. The concentration AFTER adding diluent is on the vial label — read it, don't assume."
       validation={validation}
       result={result}
+      howTo={[
+        "Enter the ordered dose, in mg.",
+        "Read the vial label for the concentration AFTER reconstitution (e.g. “yields 200 mg/mL”) and enter that — not the diluent volume.",
+        "Read the number of mL to draw up into the syringe.",
+      ]}
+      howToExample="Label: “Add 4.8 mL diluent to yield 200 mg/mL”, ordered 1000 mg → draw up 5 mL."
     >
       <NumField label="Ordered dose" value={desired} onChange={setDesired} suffix="mg" placeholder="e.g. 1000" />
       <NumField

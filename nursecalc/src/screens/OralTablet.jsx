@@ -31,6 +31,12 @@ export default function OralTablet() {
       description="Tablets = Desired (D) ÷ on Hand (H)."
       validation={validation}
       result={result}
+      howTo={[
+        "Enter the ordered dose (D) — what the prescriber wrote, in mg.",
+        "Enter the strength on hand (H) — the mg per tablet, from the label.",
+        "Read the number of tablets to give.",
+      ]}
+      howToExample="Ordered 500 mg, tablets on hand are 250 mg each → give 2 tablets."
     >
       <NumField label="Ordered dose (D)" value={desired} onChange={setDesired} suffix="mg" placeholder="e.g. 500" />
       <NumField label="Tablet strength on hand (H)" value={onHand} onChange={setOnHand} suffix="mg/tab" placeholder="e.g. 250" />

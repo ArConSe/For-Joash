@@ -43,6 +43,13 @@ export default function IVDripRate() {
       validation={validation}
       result={result}
       resultSubline={result ? `Count drops for 1 full minute and adjust the roller clamp.` : null}
+      howTo={[
+        "Enter the total volume to infuse, in mL.",
+        "Enter the infusion time and pick hours or minutes.",
+        "Select the drop factor printed on the IV tubing package (e.g. 15 or 20 gtt/mL for macrodrip, 60 for microdrip).",
+        "Read the gtt/min result, then count drops for a full minute and adjust the roller clamp to match.",
+      ]}
+      howToExample="1000 mL over 8 hours with 15 gtt/mL tubing → 31 gtt/min."
     >
       <NumField label="Total volume to infuse" value={volumeMl} onChange={setVolumeMl} suffix="mL" placeholder="e.g. 1000" />
       <div className="flex items-end gap-3">

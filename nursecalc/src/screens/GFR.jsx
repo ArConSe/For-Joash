@@ -93,6 +93,13 @@ export default function GFR() {
       resultLabel="Estimated CrCl"
       showState={false}
       resultSubline={subline}
+      howTo={[
+        "Enter the patient's age, sex, and serum creatinine (pick mg/dL or µmol/L to match the lab report).",
+        "Enter the patient's actual weight — and height, if you plan to use ideal or adjusted weight.",
+        "Choose the weight basis: Actual normally; switch to Ideal or Adjusted if the patient is >30% over ideal body weight.",
+        "Read the estimated CrCl and its rough interpretation band, then verify against the lab's eGFR and facility renal-dosing policy.",
+      ]}
+      howToExample="60-year-old male, 70 kg, SCr 1.0 mg/dL → CrCl ≈ 77.8 mL/min."
     >
       <div className="grid grid-cols-2 gap-3">
         <NumField label="Age" value={age} onChange={setAge} suffix="years" placeholder="e.g. 65" />

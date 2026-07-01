@@ -61,6 +61,13 @@ export default function Conversions() {
       resultLabel="Converted value"
       showState={false}
       resultSubline={result ? `${value} ${fromLabel} = ${result.value} ${toLabel}` : null}
+      howTo={[
+        "Pick a category: mass, weight, volume, or temperature.",
+        "Enter the value to convert.",
+        "Pick the From and To units — tap the swap icon to flip them.",
+        "Read the converted value and the worked-out conversion factor.",
+      ]}
+      howToExample="Mass: 1 mg → 1000 mcg."
     >
       <div>
         <span className="nc-label">Category</span>

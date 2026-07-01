@@ -35,6 +35,12 @@ export default function LiquidOral() {
       description="mL = (Desired ÷ on Hand) × Quantity. Works for oral liquids and parenteral solutions."
       validation={validation}
       result={result}
+      howTo={[
+        "Enter the ordered dose (D) — what the prescriber wrote, in mg.",
+        "Enter the strength on hand (H) and the volume it's dissolved in (Q), both from the label.",
+        "Read the number of mL to give.",
+      ]}
+      howToExample="Label reads 100 mg / 5 mL, ordered 160 mg → give 8 mL."
     >
       <NumField label="Ordered dose (D)" value={desired} onChange={setDesired} suffix="mg" placeholder="e.g. 160" />
       <div className="grid grid-cols-2 gap-3">

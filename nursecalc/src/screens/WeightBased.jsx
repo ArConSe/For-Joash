@@ -41,6 +41,13 @@ export default function WeightBased() {
       validation={validation}
       result={result}
       resultSubline={result ? `Weight used: ${result.weightKg} kg` : null}
+      howTo={[
+        "Enter the ordered dose per kg (mg/kg or mcg/kg) from the order.",
+        "Enter the patient's weight and pick kg or lb — lb is auto-converted to kg.",
+        "Check the pediatric box if relevant, for pediatric-specific warnings.",
+        "Read the total dose to give.",
+      ]}
+      howToExample="Ordered 5 mg/kg, patient weighs 154 lb (70 kg) → 350 mg."
     >
       <div className="flex items-end gap-3">
         <div className="flex-1">

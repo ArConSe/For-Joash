@@ -47,6 +47,12 @@ export default function PediatricFluids() {
       resultLabel="Maintenance rate"
       showState={false}
       resultSubline={result ? `Holliday-Segar daily total ≈ ${result.perDay} mL/day` : null}
+      howTo={[
+        "Enter the child's current weight in kg.",
+        "Read the hourly maintenance rate for the pump, and the equivalent daily total.",
+        "Remember this is routine maintenance only — not for neonates under 14 days or under 3 kg, and not a substitute for fluid-type or deficit orders.",
+      ]}
+      howToExample="22 kg child → 62 mL/hr (≈1540 mL/day)."
     >
       <NumField label="Child's weight" value={weight} onChange={setWeight} suffix="kg" placeholder="e.g. 22" />
     </CalculatorShell>

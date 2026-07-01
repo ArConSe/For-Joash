@@ -28,6 +28,12 @@ export default function InfusionTime() {
       validation={validation}
       result={result}
       resultSubline={result ? `If started now, finishes around ${completionTime(result.value)}.` : null}
+      howTo={[
+        "Enter the volume remaining in the bag, in mL.",
+        "Enter the current pump rate, in mL/hr.",
+        "Read how long the bag will last, and the estimated finish clock time if it started now.",
+      ]}
+      howToExample="1000 mL remaining at 125 mL/hr → 8 hours left."
     >
       <NumField label="Volume remaining in bag" value={volumeMl} onChange={setVolumeMl} suffix="mL" placeholder="e.g. 1000" />
       <NumField label="Current rate" value={rateMlHr} onChange={setRateMlHr} suffix="mL/hr" placeholder="e.g. 125" />

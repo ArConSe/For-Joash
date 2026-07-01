@@ -66,6 +66,17 @@ describe("App", () => {
     expect(screen.getByPlaceholderText(/Search calculators/i)).toBeTruthy();
   });
 
+  it("How to use panel is collapsed by default and expands on tap", () => {
+    render(<App />);
+    openTool(/IV Drip Rate/i);
+    const toggle = screen.getByRole("button", { name: /How to use this calculator/i });
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(screen.queryByText(/count drops for a full minute/i)).toBeNull();
+    fireEvent.click(toggle);
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    expect(screen.getByText(/count drops for a full minute/i)).toBeTruthy();
+  });
+
   it("drip rate end-to-end: 1000 mL / 8 hr / 15 gtt = 31 gtt/min", () => {
     render(<App />);
     openTool(/IV Drip Rate/i);

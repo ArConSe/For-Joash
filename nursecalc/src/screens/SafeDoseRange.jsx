@@ -91,6 +91,13 @@ export default function SafeDoseRange() {
             ? "Enter the ordered dose to classify it."
             : null
       }
+      howTo={[
+        "Enter the reference minimum and maximum dose per kg (from a drug reference), and pick mg or mcg.",
+        "Enter the patient's weight to compute the safe dose range for this patient.",
+        "Optionally enter the ordered dose to see whether it's classified SAFE, BELOW, or EXCEEDS the range.",
+        "Check the pediatric box if relevant, for pediatric-specific warnings.",
+      ]}
+      howToExample="Reference 5–10 mg/kg, patient 20 kg → safe range 100–200 mg."
     >
       <div className="grid grid-cols-2 gap-3">
         <NumField label={`Reference min`} value={minPerKg} onChange={setMinPerKg} suffix={`${unitLabel}/kg`} placeholder="e.g. 5" />
