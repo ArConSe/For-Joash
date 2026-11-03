@@ -25,6 +25,16 @@ Every coding task: apply the `ponytail` skill at `full` level, always on.
   features beyond the ask.
 
 
+## Workflow: how the tools fit (one owner per job)
+
+- **Every task:** `ponytail` sets scope (smallest complete change).
+- **Before calling it done:** run the affected tests. Risky or multi-file change:
+  `ponytail-review` (one review; don't stack reviews).
+- **Occasionally:** `claude-automation-recommender` for setup ideas,
+  `/ponytail-audit` for the whole repo.
+- **Outside Claude (laptop):** `snip` filters shell output, always on. Compression
+  of everything else: use **one** of `headroom` or `token-optimizer`, never both.
+
 ## NurseCalc (medication calculator): accuracy is non-negotiable
 
 - Any change to dose, unit, rate or formula logic (`nursecalc/src/lib`,
