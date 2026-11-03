@@ -2,6 +2,9 @@
 
 ## Token Budget (MANDATORY)
 
+**Accuracy first:** never trade correctness for brevity. Verify risky changes.
+Save tokens on output, reads and noise, not on reasoning or checks.
+
 Every coding task: apply the `ponytail` skill at `full` level, always on.
 
 - **Replies:** terse. No restating the task, no recap of the diff, no

@@ -14,7 +14,6 @@
     ]
   },
   "env": {
-    "MAX_THINKING_TOKENS": "8000",
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1"
   }
 }
