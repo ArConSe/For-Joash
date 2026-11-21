@@ -29,7 +29,6 @@ more specific and more recent rule wins — and say so out loud.
    `learnings.md` beside this file). Honor its lessons.
 2. Read the project's `CLAUDE.md` if present.
 3. Building ArConSe client-facing UI? Read `brand-kit.md` beside this file.
-4. Owner's active projects / local tooling: `~/.claude/skills/coding-brain/context.md`.
 
 ## 1. Core mindset
 
