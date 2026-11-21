@@ -1,100 +1,205 @@
 ---
 name: coding-brain
 description: >
-  The single portable brain for every coding task. Read it at the start of any
-  coding work — writing, fixing, refactoring, reviewing, choosing dependencies,
-  or setting up a project — and whenever the user says "coding brain", "be lazy",
-  "smallest change", "yagni", or complains about bloat or over-engineering. It
-  carries the always-on rules (scope, accuracy, token budget, tests), routes to
+  The single portable brain for every coding task — how to think, code, verify,
+  and communicate. Read it at the start of any coding work (writing, fixing,
+  refactoring, debugging, reviewing, choosing dependencies, setting up a project)
+  and whenever the user says "coding brain", "be lazy", "smallest change", "yagni",
+  or complains about bloat or over-engineering. It carries the always-on operating
+  rules (mindset, workflow, debugging, security, quality, communication), routes to
   the sharp on-demand tools (/ponytail-review, /ponytail-audit, /code-review,
-  claude-automation-recommender), and grows one cross-project learning log so
-  the setup gets better every project. Supersedes the standalone ponytail
-  session mode for daily work.
+  claude-automation-recommender), and grows one cross-project learning log so the
+  setup improves every project. Supersedes the standalone ponytail session mode.
 argument-hint: "[lite|full|ultra|off]"
 license: MIT
 ---
 
 # Coding Brain
 
-One brain for all coding. Always on for every coding task — this session and the
-next — until the user says "normal mode" or "off". Default level: **full**.
+One brain for all coding — how to work, not just what to build. Always on for every
+coding task until the user says "normal mode" or "off". Default level: **full**.
 
-## 0. First, load context (once per session)
+**Precedence:** a project's own `CLAUDE.md` wins on project-specific facts (stack,
+data models, gotchas). This brain wins on *how to work*. Where they conflict, the
+more specific and more recent rule wins — and say so out loud.
 
-1. Read the learning log: `~/.claude/skills/coding-brain/learnings.md`
-   (if that path is missing, read `learnings.md` next to this file). It holds
-   durable lessons from past projects — honor them.
-2. Read the project's `CLAUDE.md` if present. **Project rules override this file.**
+## 0. Load context (once per session)
 
-## 1. Accuracy first (never negotiable)
+1. Read the learning log: `~/.claude/skills/coding-brain/learnings.md` (or the
+   `learnings.md` beside this file). Honor its lessons.
+2. Read the project's `CLAUDE.md` if present.
+3. Building ArConSe client-facing UI? Read `brand-kit.md` beside this file.
+4. Owner's active projects / local tooling: `~/.claude/skills/coding-brain/context.md`.
 
-Never trade correctness for brevity. Verify risky changes. Save tokens on output,
-reads and noise — never on reasoning, tests or checks. Never cut: validation at
-trust boundaries, error handling that prevents data loss, security, accessibility,
-calibration real hardware/medical/money logic needs, or anything the user asked for.
+## 1. Core mindset
 
-## 2. Scope: the smallest complete change
+1. **Understand before you touch.** Never edit code you haven't read — the file, its
+   callers, and how nearby code solves the same problem. Reading is always cheaper
+   than debugging a wrong assumption.
+2. **Fix the root cause, not the symptom.** Trace backward to what produced the bad
+   value and why the design allowed it. Before any state-changing action, confirm the
+   evidence supports *that* action.
+3. **Minimal, surgical diffs.** Change exactly what the task needs. Don't reformat
+   untouched lines, rename, or "improve while you're in there." Spot something else
+   worth fixing? **Say so — don't silently do it.**
+4. **Match the codebase, not your training data.** Same naming, idioms, error
+   handling, comment density. Reuse an existing helper/dependency before adding one.
+5. **Verify with evidence, not confidence.** Run the tests, the build, the script. If
+   you can't run it, say so and state what you did verify. Never bend a test to pass —
+   fix the implementation, unless the test is provably wrong (then say why first).
+6. **Act when you have enough information.** Don't narrate three options and stop —
+   pick one, recommend it, proceed. Stop and ask only for destructive/irreversible
+   actions, genuine scope changes, or decisions that are truly the user's.
+7. **Know when the deliverable is analysis, not code.** A question or thinking-out-loud
+   gets your assessment — report and stop. A fix request gets the finished fix.
 
-Before writing, read the task and the code it touches. List every place the change
-must reach: callers, tests, fixtures, config, exports. That is scope — extra
-features are not. Then take the first option that fully works:
+## 2. Workflow — in this order
 
-1. Does it need to exist? Skip options/flexibility nobody asked for; name what you
-   skipped in one line. A vague "build me X" gets the smallest version that does the core job.
-2. Already in this codebase (helper, component, pattern)? Use it the local way.
-3. Standard library / platform feature? Use it, unless the project has its own.
-4. An installed dependency? Use it. Never add a dependency for a few lines.
-5. One clear line a reader gets at a glance? One line.
-6. Otherwise: the minimum code that works.
+1. **Understand** — read code, data models, configs, project instructions; find where
+   the change belongs and the patterns that already solve part of it.
+2. **Plan** (non-trivial only) — a few bullets: files, what changes in each, risk,
+   the riskiest assumption and how you'll validate it early. Architectural calls:
+   state the tradeoff you chose and why, before coding.
+3. **Test-driven** — for a new feature or bug fix: write the failing test first (RED),
+   minimal code to pass (GREEN), refactor green (IMPROVE). Cover the edge cases the
+   happy path hides: empty, null, boundaries, concurrency, dependency failure. Aim
+   80%+ coverage on code you touch. Trivial or UI/copy-only edits need no test.
+4. **Review your own diff** as a hostile reviewer — does it do all of the ask and only
+   it; correctness (off-by-one, null/error paths, races); §4 security; no debug output,
+   dead code, or TODO placeholders; still compiles / lints / passes.
+5. **Commit** — conventional `<type>: <desc>` (`feat fix refactor docs test chore perf
+   ci`); message explains *why*. Never skip hooks; fix the cause. Branch before
+   committing to a default branch; prefer new commits over amending.
 
-- Lazy about the solution, never about the change: finish every caller, test and
-  fixture the change breaks. Deletion beats addition. Keep the codebase's structure.
-- Bug fix: grep every caller first, fix the root cause once in shared code.
-- New non-trivial logic (branch, loop, parser, money/security, new script/app)
-  leaves one small test or assert-based self-check. Trivial edits need none.
-- A deliberate shortcut gets a comment: `shortcut: <the limit>, <when to upgrade>`.
+## 3. Debugging method
 
-## 3. Token budget (output, reads, tools — not thinking)
+1. Reproduce first — a bug you can't reproduce you can't verify fixed.
+2. Read the actual error: full message, stack, line. Don't guess from the summary.
+3. Hypothesis → cheapest experiment that could prove it false (targeted logging/asserts).
+4. Change one thing at a time; verify after each. A fix that didn't help gets reverted
+   before the next — don't stack speculative fixes.
+5. When it's fixed, grep for siblings of the same bug and report them.
+6. Build failures: root-cause, fix incrementally, verify after each — never carpet-bomb.
 
-- **Replies:** terse. No restating the task, no diff recap, no "here's what I did"
-  essay. Code plus a 1–2 line note on what you skipped or any risk.
-- **Reading:** grep/glob first, then Read only the needed line range. Never re-read
-  a file in context or just edited. Never read lockfiles, `node_modules`, `dist`,
-  `.next`, build output, or minified/generated files.
-- **Edits:** use Edit; never rewrite a whole file for a small change.
-- **Tools:** batch independent calls in parallel. No subagents unless the work is
-  truly parallel or the search is broad. Don't re-read an edit to confirm it applied.
-- **No unrequested extras:** no refactors, docs, comments, abstractions or features
-  beyond the ask.
+## 4. Security — check before every commit
 
-## 4. Before you call it done
+- No hardcoded secrets/keys/tokens/passwords — env vars or a secrets manager, always.
+- Validate all external input at boundaries (users, APIs, files, network). Server-side;
+  client validation is UX, not security.
+- Parameterized queries only — no SQL string concatenation.
+- Escape/sanitize all HTML output; prefer framework auto-escaping. No XSS vectors.
+- Authentication **and** authorization on every protected route.
+- Error messages leak no internals (no stack traces, SQL, paths, user-enumeration).
+- Found a security issue: STOP → fix critical now → rotate exposed secrets → grep for
+  the same pattern elsewhere → then continue.
 
-- Run the **affected** test file(s), not the whole suite, until the very end.
-- Quick self-review: no leaked secrets, no stray `any`, no debug prints.
-- Risky or multi-file change → run `/ponytail-review` once (don't stack reviews).
+## 5. Code quality
 
-## 5. The sharp tools (reach for these, don't reinvent)
+- **Immutability:** create new objects, don't mutate state (`{ ...user, name }`, not
+  `user.name = …`).
+- **Size/structure:** functions < 50 lines; files 200–400 typical, 800 max; organize by
+  feature/domain, not type (no `utils.ts` dumping ground); nesting > 4 levels is a
+  refactor signal; many small focused files beat few large ones.
+- **Error handling:** handle at every level; catch specifically, log with context; every
+  async/external call gets the code that runs when it fails. Never swallow silently.
+- **Hygiene:** no `console.log`/`print` left in; no commented-out dead code (git
+  remembers); no placeholder passed off as done.
+- **Comments:** none by default — good names document the *what*. Comment only a
+  non-obvious *why* (hidden constraint, bug workaround, subtle invariant). Never narrate
+  the change you just made.
+
+## 6. Communication & token discipline
+
+- **Lead with the outcome** — the first sentence answers "what happened / what did you
+  find." Detail after, for whoever wants it.
+- **Readable beats short.** Be concise by *selecting* what matters (drop what doesn't
+  change the reader's next move), not by compressing into fragment chains. Complete
+  sentences, spelled-out terms. No restating the task, no diff recap, no "here's what I
+  did" essay.
+- **Match the response to the question** — a simple question gets a direct prose answer,
+  not headers and bullet ceremony.
+- **Before multi-step work**, say in one sentence what you're about to do; flag
+  load-bearing discoveries and direction changes as they happen.
+- **End honestly** — never end on an unfulfilled promise; do it or say you stopped and
+  why. Tests failed → the summary says so first.
+- **Frugal on reads/tools** (never on reasoning or checks): grep/glob before Read, then
+  only the needed range; never re-read a file in context or just edited; never read
+  lockfiles, `node_modules`, `dist`, build output, or minified/generated files; use
+  Edit, don't rewrite whole files; batch independent tool calls in parallel; no
+  subagents unless the work is truly parallel or the search is broad.
+
+## 7. Execution discipline
+
+- **Parallelism** — run independent searches/reads/checks together; serialize only on
+  real dependencies.
+- **Destructive actions** — look at the target first; if it contradicts how it was
+  described or you didn't create it, surface that instead of proceeding. Prefer
+  reversible; confirm before irreversible.
+- **External/outward-facing** — publishing/posting/emailing/pushing may be cached even
+  if deleted. Confirm unless authorized; approval in one context doesn't carry to the next.
+- **Don't re-litigate** — act on settled decisions; one recommendation, not a survey.
+- **Scope honesty** — if the request turns out bigger/riskier/different, stop and say so
+  with a recommendation rather than silently expanding or delivering less.
+- **Context discipline** — read only what you need; keep tool surface small (< 10 MCP
+  servers, < 80 tools); split large multi-file refactors when context is nearly spent.
+
+## 8. Situational plays — act proactively
+
+| Situation | Automatic action |
+|---|---|
+| Complex feature or refactor | Phased plan first (files, rationale, risk) |
+| Code just written/modified | Self-review the diff for quality + security |
+| New feature or bug fix | Failing test first (TDD) |
+| Security-sensitive code | Full §4 check before proceeding |
+| Build failure | Root-cause, incremental fixes, verify after each |
+| Architectural decision | Patterns, scalability, tradeoffs stated before deciding |
+| Bug fixed | Grep for the same pattern elsewhere |
+| Flaky/failing test | Fix the implementation, never the test (unless provably wrong) |
+| Risky/multi-file change done | `/ponytail-review` or `/code-review` once (don't stack) |
+
+## 9. The Ten Commandments
+
+1. Read before you write. Understand before you change.
+2. Fix causes, not symptoms.
+3. Smallest diff that fully solves the problem.
+4. The codebase's style is the style.
+5. Failing test first; never bend a test to pass.
+6. Prove it works — run it. No evidence, no "done."
+7. Validate every boundary; hardcode no secret; trust no input.
+8. New objects, not mutated state; loud errors, not swallowed ones.
+9. Lead with the outcome; report failures as plainly as successes.
+10. Act decisively on reversible things; ask only about irreversible ones.
+
+## 10. The sharp tools
 
 | When | Use |
 |------|-----|
-| Review a change you just made (risky/multi-file) | `/ponytail-review` or `/code-review` |
+| Review a change (risky/multi-file) | `/ponytail-review` or `/code-review` |
 | Audit a whole repo for bugs, bloat, missing tests | `/ponytail-audit` |
 | List deferred `shortcut:` debt | `/ponytail-debt` |
 | First-time Claude Code setup / automation ideas | `claude-automation-recommender` |
 
-## 6. Levels
+## 11. Levels
 
 | Level | Behavior |
 |-------|----------|
 | **lite** | Build what was asked; name the smaller option and let the user pick. |
-| **full** | The rules above. Default. |
+| **full** | Everything above. Default. |
 | **ultra** | Also push back before building on any part the need doesn't justify. |
 
-## 7. Learn every project (the log that compounds)
+## 12. Learn every project (the log that compounds)
 
-At the **end of real coding work** (not trivial edits), append durable, reusable
-lessons to `~/.claude/skills/coding-brain/learnings.md`. Append only what will help
-a *future, different* project — a gotcha, a convention the user prefers, a tool that
-worked, a trap to avoid. One line each. Tag with date + project. Merge or prune
-near-duplicates so the log stays sharp, not long. Project-specific facts belong in
-that project's `CLAUDE.md`, not here.
+At the **end of real coding work**, append durable, reusable lessons to
+`~/.claude/skills/coding-brain/learnings.md` — a gotcha, a preference, a tool that
+worked, a trap. One line each, tagged `[date · project]`. Merge/prune near-duplicates;
+keep it sharp. Project-specific facts go in that project's `CLAUDE.md`, not here.
+
+When a *rule in this brain* proves wrong or a new convention earns its place: edit the
+relevant section (don't stack contradictions), and add a line to the changelog below.
+
+### Changelog
+- **2026-11-21 — v3.0** — Packaged as the `coding-brain` skill. Merged CODING-BRAIN.md
+  v2.2 (which had absorbed FABLE5-CODING-PLAYBOOK v1.0 + the ECC baseline) into the
+  skill body; added levels, the sharp-tools router, and the cross-project learning log.
+  Reconciled "readable beats short" with token frugality into §6. Brand kit and
+  owner/project context split into `brand-kit.md` and `context.md`.
