@@ -22,9 +22,16 @@
         "source": "github",
         "repo": "lemomo-ai/lemo-opuscar"
       }
+    },
+    "hyperframes": {
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes"
+      }
     }
   },
   "enabledPlugins": {
-    "lemo-opuscar@lemolab": true
+    "lemo-opuscar@lemolab": true,
+    "hyperframes@hyperframes": true
   }
 }

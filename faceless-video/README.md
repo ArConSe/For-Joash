@@ -5,9 +5,10 @@ nursing lessons, and social media, by asking Claude in plain words.
 
 ## What is set up
 
-This repo now turns on the **Lemo-Opuscar** video plugin automatically. Any
-Claude Code session opened on the `For-Joash` repo (on claude.ai/code in the
-cloud, or on your computer) loads it. You do not install anything by hand.
+This repo now turns on two video plugins automatically: **Lemo-Opuscar** and
+**HyperFrames**. Any Claude Code session opened on the `For-Joash` repo (on
+claude.ai/code in the cloud, or on your computer) loads both. You do not
+install anything by hand.
 
 Lemo-Opuscar has 99 drawn, animated styles (whiteboard, blueprint, watercolor,
 neon, product render and more). Claude writes the script, draws every frame in
@@ -72,13 +73,26 @@ Browse all styles with demos: https://lemomo-ai.github.io/lemo-opuscar/
 - **Licence:** videos you make are yours to use, including for business ads,
   with no credit needed. Do not resell the plugin's style guides themselves.
 
+## HyperFrames (also turned on)
+
+HyperFrames (https://github.com/heygen-com/hyperframes) turns animated web
+pages into MP4 videos. It is quicker than Lemo-Opuscar and good for text
+animations, product intros, captions and slideshows. Start your ask with
+`/hyperframes`, for example:
+
+```text
+/hyperframes Make a 30-second vertical product intro for an automated
+composter: bold title, 3 benefit lines, our logo at the end, upbeat music.
+Save it in faceless-video/films/composter.
+```
+
+Rule of thumb: Lemo-Opuscar for a drawn, story-style film; HyperFrames for a
+fast, clean promo with text and your own photos.
+
 ## Other tools from our research
 
-These are not turned on here. Ask Claude if you want one added later.
+Not turned on here. Ask Claude if you want it added later.
 
-- **HyperFrames** (https://github.com/heygen-com/hyperframes): turns simple web
-  pages into MP4 videos. Good for text and product animations. You already
-  have a copy at `ArConSe/hyperframes`.
 - **FFmpeg skill** (https://github.com/kajisho5/ffmpeg-skill): lets Claude cut,
   trim, add captions and reframe videos you already have (for example, turn a
   site video into a vertical clip with subtitles).

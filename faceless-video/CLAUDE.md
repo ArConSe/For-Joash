@@ -3,7 +3,8 @@
 Joash is not a developer. Explain in plain words, no jargon.
 
 - Videos are faceless, 30-45 s. Default to vertical 1080x1920 unless asked for wide.
-- Use the `lemo-opuscar` plugin (enabled in the repo's `.claude/settings.json`).
+- Plugins `lemo-opuscar` (drawn story films) and `hyperframes` (fast HTML-to-MP4
+  promos, captions) are enabled in the repo's `.claude/settings.json`.
 - Put each film in `faceless-video/films/<short-name>/`. Commit only the final MP4
   (and its .srt), not frames, caches or `node_modules`.
 - Lemo-Opuscar needs ffmpeg 7+. If `ffmpeg -version` shows an older one, install a
