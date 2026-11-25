@@ -70,8 +70,11 @@ Browse all styles with demos: https://lemomo-ai.github.io/lemo-opuscar/
   first". If it cannot download it, run the video on your computer instead.
 - **Your own material:** you can give it your logo, product photos, or your
   own voice recording or music. Upload them into `faceless-video/assets/`.
-- **Licence:** videos you make are yours to use, including for business ads,
-  with no credit needed. Do not resell the plugin's style guides themselves.
+- **Licence:** the plugin's own part of your videos is yours to use, including
+  for business ads. But music, sound samples and fonts inside a video keep
+  their own rules, and some need a credit. Before posting an ad, open the
+  video's CREDITS file (or ask Claude "what credits does this video need?").
+  Do not resell the plugin's style guides themselves.
 
 ## HyperFrames (also turned on)
 
