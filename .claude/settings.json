@@ -15,5 +15,16 @@
   },
   "env": {
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1"
+  },
+  "extraKnownMarketplaces": {
+    "lemolab": {
+      "source": {
+        "source": "github",
+        "repo": "lemomo-ai/lemo-opuscar"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "lemo-opuscar@lemolab": true
   }
 }
