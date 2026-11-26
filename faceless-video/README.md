@@ -92,6 +92,42 @@ Save it in faceless-video/films/composter.
 Rule of thumb: Lemo-Opuscar for a drawn, story-style film; HyperFrames for a
 fast, clean promo with text and your own photos.
 
+## Earshot: sound effects (also turned on)
+
+Earshot (https://github.com/Leonxlnx/earshot) makes sound effects from plain
+words: whooshes, clicks, rain, a drill, a water splash, a "ding" for a price
+reveal. It builds each sound in code, so there is no music licence to worry
+about, and you can use the sounds in business ads. It is free and works on a
+normal computer (no graphics card needed).
+
+Claude has to install the Earshot tool once per session. Ask like this:
+
+```text
+Install earshot first, then make a soft water-splash sound and a "ding" for
+my rainwater harvesting video. Save them in faceless-video/assets/sfx.
+```
+
+## Blender skills: 3D product scenes (turned on, but needs your computer)
+
+Blender Skills (https://github.com/arjun988/blender-skills) adds 94 skills for
+3D modelling, lighting, materials, camera moves and rendering in Blender, for
+example a 3D turntable of a power station or a cutaway of an STP tank.
+
+This one only works on your own computer, not on claude.ai in the cloud,
+because Claude has to control a Blender window that is open on your screen.
+To use it:
+
+1. Install Blender (free, version 3.0 or newer) from https://www.blender.org.
+2. Ask Claude Code on your computer: "set up Blender MCP for blender-skills".
+   It will add the Blender add-on and connect it.
+3. In Blender press N, open the BlenderMCP tab and click "Connect to Claude".
+4. Save your Blender file first, then ask, for example: "Make a 10-second 3D
+   turntable of a portable power station on a table, soft studio light,
+   vertical 1080x1920".
+
+The project's own setup guide is written for Windows. 3D rendering is faster
+with a good graphics card, but you can render short clips without one.
+
 ## Other tools from our research
 
 Not turned on here. Ask Claude if you want it added later.

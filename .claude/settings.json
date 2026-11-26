@@ -28,10 +28,24 @@
         "source": "github",
         "repo": "heygen-com/hyperframes"
       }
+    },
+    "blender-skills": {
+      "source": {
+        "source": "github",
+        "repo": "arjun988/blender-skills"
+      }
+    },
+    "earshot": {
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/earshot"
+      }
     }
   },
   "enabledPlugins": {
     "lemo-opuscar@lemolab": true,
-    "hyperframes@hyperframes": true
+    "hyperframes@hyperframes": true,
+    "blender-skills@blender-skills": true,
+    "earshot@earshot": true
   }
 }
