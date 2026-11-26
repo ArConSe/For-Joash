@@ -6,6 +6,9 @@ Joash is not a developer. Explain in plain words, no jargon.
 - Plugins `lemo-opuscar` (drawn story films) and `hyperframes` (fast HTML-to-MP4
   promos, captions), `earshot` (code-made sound effects) and `blender-skills`
   (3D in Blender via MCP) are enabled in the repo's `.claude/settings.json`.
+- rea-video (video breakdown): the skill installs its CLI on first use; needs
+  ffmpeg and Python 3.10+. Stay in free tools-only mode. Ask Joash before using a
+  paid VLM key, `remake-run` without `--dry-run`, or installing ChatCut.
 - Earshot: before first use in a session run
   `pip install "earshot[mcp] @ git+https://github.com/Leonxlnx/earshot"`
   (not `pip install earshot`: that PyPI name is another project). CPU only.

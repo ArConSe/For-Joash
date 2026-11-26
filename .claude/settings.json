@@ -40,12 +40,19 @@
         "source": "github",
         "repo": "Leonxlnx/earshot"
       }
+    },
+    "rea-video": {
+      "source": {
+        "source": "github",
+        "repo": "JuneYaooo/rea-video"
+      }
     }
   },
   "enabledPlugins": {
     "lemo-opuscar@lemolab": true,
     "hyperframes@hyperframes": true,
     "blender-skills@blender-skills": true,
-    "earshot@earshot": true
+    "earshot@earshot": true,
+    "rea-video@rea-video": true
   }
 }

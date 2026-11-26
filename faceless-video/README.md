@@ -92,6 +92,29 @@ Save it in faceless-video/films/composter.
 Rule of thumb: Lemo-Opuscar for a drawn, story-style film; HyperFrames for a
 fast, clean promo with text and your own photos.
 
+## rea-video: break down a video you like (also turned on)
+
+rea-video (https://github.com/JuneYaooo/rea-video) studies a video shot by
+shot and tells you how it was made: real filming, AI, 3D or code animation,
+the captions and text effects, the music and sound effects, and the editing
+rhythm. Then it gives you a plan to make your own version. It is free, works
+offline and does not need a graphics card or an account.
+
+Upload the video into `faceless-video/assets/reference/`, then ask:
+
+```text
+Break down faceless-video/assets/reference/competitor-ad.mp4 and give me a
+plan to remake it for our inline water dispenser.
+```
+
+You get a readable report (`report.html`) plus notes Claude can reuse.
+Use it to learn the style and pacing, then remake with your own footage,
+music and products. Do not reuse other people's clips, music or faces.
+
+Optional extras that cost money, and Claude should ask you first: a video AI
+key (Gemini) for more accurate results on downloaded videos, automatic AI shot
+generation, and ChatCut (the project's sponsor, a paid editing app).
+
 ## Earshot: sound effects (also turned on)
 
 Earshot (https://github.com/Leonxlnx/earshot) makes sound effects from plain
