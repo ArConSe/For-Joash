@@ -1,0 +1,6 @@
+# Keep only finished videos; skip render scratch
+films/**/frames/
+films/**/build/
+films/**/cache/
+films/**/*.wav
+films/**/node_modules/

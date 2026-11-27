@@ -19,5 +19,44 @@
     "CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"
   },
   "model": "sonnet",
-  "advisorModel": "opus"
+  "advisorModel": "opus",
+  "extraKnownMarketplaces": {
+    "lemolab": {
+      "source": {
+        "source": "github",
+        "repo": "lemomo-ai/lemo-opuscar"
+      }
+    },
+    "hyperframes": {
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes"
+      }
+    },
+    "blender-skills": {
+      "source": {
+        "source": "github",
+        "repo": "arjun988/blender-skills"
+      }
+    },
+    "earshot": {
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/earshot"
+      }
+    },
+    "rea-video": {
+      "source": {
+        "source": "github",
+        "repo": "JuneYaooo/rea-video"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "lemo-opuscar@lemolab": true,
+    "hyperframes@hyperframes": true,
+    "blender-skills@blender-skills": true,
+    "earshot@earshot": true,
+    "rea-video@rea-video": true
+  }
 }
